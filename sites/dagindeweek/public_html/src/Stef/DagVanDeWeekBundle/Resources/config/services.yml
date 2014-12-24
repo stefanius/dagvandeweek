@@ -1,0 +1,4 @@
+services:
+#    stef_dag_van_de_week.example:
+#        class: Stef\DagVanDeWeekBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

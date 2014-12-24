@@ -1,0 +1,28 @@
+stef_dag_van_de_week_homepage:
+    path:     /
+    defaults: { _controller: StefDagVanDeWeekBundle:Index:index }
+
+stef_dag_van_de_week_dictionary:
+    path:     /bier-van-a-tot-z
+    defaults: { _controller: StefDagVanDeWeekBundle:Dictionary:index }
+    requirements:
+        _method:  GET
+
+stef_dag_van_de_week_dictionary_slug:
+    path:     /bier-van-a-tot-z/{letter}
+    defaults: { _controller: StefDagVanDeWeekBundle:Dictionary:index }
+    requirements:
+        _method:  GET
+        letter: .+
+
+stef_dag_van_de_week_news_archive_index:
+    pattern:  /nieuws
+    defaults: { _controller: StefDagVanDeWeekBundle:News:showMainNewsPage }
+    requirements:
+        _method:  GET
+
+stef_dag_van_de_week_news_show:
+    pattern:  /nieuws/{slug}
+    defaults: { _controller: StefDagVanDeWeekBundle:News:show }
+    requirements:
+        _method:  GET

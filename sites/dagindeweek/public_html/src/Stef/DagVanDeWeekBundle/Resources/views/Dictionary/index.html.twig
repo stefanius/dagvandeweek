@@ -1,0 +1,30 @@
+{% extends 'StefBierInDeKlokBundle::layout.html.twig' %}
+
+{% block content %}
+
+            {% if letter == null %}
+                <h1>Begrippenlijst</h1>
+            {% else %}
+                <h1>Bier van A tot Z - Begrippen met letter {{ letter|upper }}</h1>
+            {% endif %}
+            <div class="alphabet">
+                <ul>
+                    {% for alphabet in 'a'|upper..'z'|upper %}
+                        <li style="width: 2.75em;"><a href="{{ path('stef_bier_in_de_klok_dictionary_slug', { 'letter': alphabet|lower }) }}">{{ alphabet }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% if letter == null %}
+                {% include 'StefBierInDeKlokBundle:Dictionary:noletter.html.twig' %}
+            {% else %}
+                {% include 'StefBierInDeKlokBundle:Dictionary:' ~ letter ~ '.html.twig' %}
+            {% endif %}
+
+            <ul>
+                {% for word in wordlist %}
+                    <li><a href="{{ path('stef_bier_in_de_klok_dictionary_slug', { 'letter': word.slug }) }}">{{ word.title }}</a></li>
+                {% endfor %}
+            </ul>
+
+{% endblock %}

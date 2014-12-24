@@ -1,0 +1,18 @@
+{% extends "StefBierInDeKlokBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="inner cover" style="font-size: 120%;">
+        <h1>Het Bier op tafel</h1>
+        <p>Het is de vraag die menig Student op de lippen brand. Mag de goudgele rakker nu wel of niet worden gedronken. En hoe zit het nu precies met Bieruur? Allemaal vragen
+        waar je tijdens je college geen antwoord op krijgt.</p>
+        <p> Maar je kan WEL tijdens je college naar BierInDeKlok.nl om op al deze vragen antwoord te krijgen. Want wat is er nu mooier
+        dan precies op tijd je biertje te krijgen.</p>
+        <p>Niet te vroeg, want dan zou je wellicht beticht kunnen worden van alcholisme. Maar ook zeker niet te laat. Het gerstennat moet namelijk vloeien!
+        En als het in het vat blijft zitten, kan het wel degelijk bederven.</p>
+    </div>
+
+    {% include "StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig" with {'pubid' : 'ca-pub-1143505562670221', 'slotid' : '5087446017' } %}
+
+    {% include "StefBierInDeKlokBundle:Elements:beerclock.html.twig" %}
+
+{% endblock %}

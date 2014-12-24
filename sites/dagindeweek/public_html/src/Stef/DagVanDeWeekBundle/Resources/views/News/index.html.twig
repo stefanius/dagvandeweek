@@ -1,0 +1,12 @@
+{% extends 'StefBierInDeKlokBundle::layout.html.twig' %}
+
+{% block content %}
+
+            <h1>Overzicht laatste nieuws</h1>
+            <p class="lead">Bier is een hot item. Terwijl je je biertje zelf natuurlijk graag zo koud mogelijk wilt drinken! En wij snappen dat je tijdens je biertje graag het laatste nieuws tot je wilt nemen. Over bier uiteraard, maar ook andere onderwerpen die wellicht interessant zijn.</p>
+            <p class="lead">Dus ook voor het laatste biernieuws moet je hier zijn. Onze BIDK reporters gaan als de brandweer op zoek naar die berichten die jij leuk vind. Maar je mag ons altijd tippen!</p>
+            {% for news in newsitems %}
+                <li><a href="{{ path('stef_bier_in_de_klok_news_show', { 'slug': news.slug }) }}">{{ news.title|e }}</a></li>
+            {% endfor %}
+
+{% endblock %}

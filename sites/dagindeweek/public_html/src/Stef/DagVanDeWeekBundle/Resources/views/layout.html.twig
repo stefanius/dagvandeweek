@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if page is defined and page.title is defined%}
+        <title>{{ page.title }} | BIDK.NL</title>
+    {% endif %}
+
+    {% include 'StefSimpleCmsBundle:Elements:metainfo.html.twig' %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/cover.css" rel="stylesheet">
+    <link href="/css/bidk.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">BierInDeKlok.nl</h3>
+                    <ul class="nav masthead-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/studenten.php">Studenten</a></li>
+                        <li><a href="/bier-van-a-tot-z">Bier Alfabet</a></li>
+                        <li><a href="/nieuws">Nieuws</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            {% include "StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig" with {'pubid' : 'ca-pub-1143505562670221', 'slotid' : '5087446017' } %}
+
+            {% block content %}
+
+            {% endblock %}
+
+            {% include "StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig" with {'pubid' : 'ca-pub-1143505562670221', 'slotid' : '5087446017' } %}
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/docs.min.js"></script>
+
+</body>
+</html>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36212308-4', 'bierindeklok.nl');
+    ga('send', 'pageview');
+
+</script>
+

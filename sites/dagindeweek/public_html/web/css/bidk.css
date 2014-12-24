@@ -1,0 +1,15 @@
+.alphabet {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.alphabet ul {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.alphabet ul, .alphabet li, .alphabet ul li{
+    display: inline-block;
+}

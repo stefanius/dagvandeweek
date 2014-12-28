@@ -1,0 +1,52 @@
+{% extends "StefDagVanDeWeekBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <article class="col-sm-9 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Kalender {{ page.year }}</h1>
+            </header>
+
+            {{ page.body|raw }}
+
+            {% include "StefDagVanDeWeekBundle:Calendar:extrainfo.html.twig" %}
+            {% include "StefDagVanDeWeekBundle:Calendar:leapyear.html.twig" %}
+            {% include "StefDagVanDeWeekBundle:Calendar:months.html.twig" %}
+            {% include "StefDagVanDeWeekBundle:Calendar:century.html.twig" %}
+
+        </article>
+        <!-- /Article -->
+
+        <aside class="col-sm-3 sidebar sidebar-right">
+
+            <div class="widget">
+                <h4>Kijk eens verder</h4>
+                <p class="small text-muted">Kijk ook eens verder dan alleen het jaar {{ page.year }}. Wij hebben de beschikking over meerdere kalenders en belangrijke periodes uit onze geschiedenis. Kijk snel op onderstaande links voor een kalender of periode die jij verder wilt inzien!</p>
+                <ul class="list-unstyled list-spaces">
+                    {% if page.year > 900 %}
+                        <li class="small text-muted"><a href="/kalender/{{ page.year - 5 }}">Kalender {{ page.year - 5 }}</a></li>
+                        <li class="small text-muted"><a href="/kalender/{{ page.year - 4 }}">Kalender {{ page.year - 4 }}</a></li>
+                        <li class="small text-muted"><a href="/kalender/{{ page.year - 3 }}">Kalender {{ page.year - 3 }}</a></li>
+                        <li class="small text-muted"><a href="/kalender/{{ page.year - 2 }}">Kalender {{ page.year - 2 }}</a></li>
+                    {% endif %}
+
+                    {% if page.year < 2350 %}
+                        <li class="small text-muted"><a href="/kalender/{{ page.year + 3 }}">Kalender {{ page.year + 3 }}</a></li>
+                        <li class="small text-muted"><a href="/kalender/{{ page.year + 4 }}">Kalender {{ page.year + 4 }}</a></li>
+                        <li class="small text-muted"><a href="/kalender/{{ page.year + 5 }}">Kalender {{ page.year + 5 }}</a></li>
+                        <li class="small text-muted"><a href="/kalender/{{ page.year + 6 }}">Kalender {{ page.year + 6 }}</a></li>
+                        <li class="small text-muted"><a href="/kalender/{{ page.year + 10 }}">Tien jaar later</a></li>
+                    {% endif %}
+
+                </ul>
+                {% if page.year > 800 and page.year < 2400 %}
+                    <p class="small text-muted">Maar wij snappen ook dat je wellicht gewoon even door de geschiedenis heen wilt surfen en daarom naar de <a href="/kalender/{{ page.year - 1 }}">kalender voorgaand jaar</a> wilt. Of misschien wel de <a href="/kalender/{{ page.year + 1 }}">opvolgende kalender</a> wilt inzien.</p>
+                {% endif %}
+
+            </div>
+
+        </aside>
+
+
+    </div>
+{% endblock %}

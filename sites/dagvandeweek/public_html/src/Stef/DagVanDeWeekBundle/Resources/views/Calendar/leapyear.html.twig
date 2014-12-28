@@ -1,0 +1,13 @@
+
+{% if page.year|leap %}
+    <h2>Schrikkeljaar</h2>
+    <p>{{ page.year }} is een schrikkeljaar. De extra dag is toegevoegd op 29 februari en het jaar {{ page.year }} heeft daarom 366 dagen.</p>
+{% else %}
+    <h2>Geen Schrikkeljaar</h2>
+    {% if page.year|century %}
+        <p>{{ page.year }} is een eeuwjaar. Andere eeuwjaren zijn bijvoorbeeld {{ page.year + 300 }} en {{ page.year + 100 }}. Eeuwjaren zijn volgens de huidige correcties nooit een schrikkeljaar. Uitzonderingen hierop zijn de eeuwjaren die deelbaar zijn door 400, zoals het jaar 2000.</p>
+    {% else %}
+        <p>{{ page.year }} is niet deelbaar door vier. Het is daarom geen schrikkeljaar en heeft daarom slechts 365 dagen.</p>
+    {% endif %}
+
+{% endif %}

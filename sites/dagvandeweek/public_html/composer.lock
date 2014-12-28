@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9baef3b130be95ee8e14c0ba3cdf466a",
+    "hash": "cbe79ceb53802071f51033e9f571866f",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -1164,6 +1164,47 @@
                 "json"
             ],
             "time": "2014-11-08 10:51:34"
+        },
+        {
+            "name": "frequence-web/calendr-bundle",
+            "version": "1.0.0",
+            "target-dir": "FrequenceWeb/Bundle/CalendRBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/frequence-web/FrequenceWebCalendRBundle.git",
+                "reference": "469dc42aa37d46cf4702ffa70353587e9305d63b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/frequence-web/FrequenceWebCalendRBundle/zipball/469dc42aa37d46cf4702ffa70353587e9305d63b",
+                "reference": "469dc42aa37d46cf4702ffa70353587e9305d63b",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": "2.*",
+                "yohang/calendr": ">=1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "FrequenceWeb\\Bundle\\CalendRBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yohan Giarelli",
+                    "homepage": "http://github.com/yohang"
+                }
+            ],
+            "description": "This bundle provides an integration of the CalendR library",
+            "keywords": [
+                "calendar"
+            ],
+            "time": "2013-01-23 12:08:05"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -3751,6 +3792,62 @@
                 "templating"
             ],
             "time": "2014-10-17 12:53:44"
+        },
+        {
+            "name": "yohang/calendr",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yohang/CalendR.git",
+                "reference": "c602eda9d246e9c61eded01bf98dfec967bea4b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yohang/CalendR/zipball/c602eda9d246e9c61eded01bf98dfec967bea4b9",
+                "reference": "c602eda9d246e9c61eded01bf98dfec967bea4b9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "doctrine/common": "~2.3",
+                "doctrine/orm": "~2.3",
+                "google/google-api-php-client": "0.6.2",
+                "phpunit/phpunit": "~3.7",
+                "silex/silex": "~1.1",
+                "twig/twig": "~1.13"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "CalendR": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yohan Giarelli",
+                    "email": "yohan@giarel.li",
+                    "homepage": "http://yohan.giarel.li"
+                }
+            ],
+            "description": "Object Oriented calendar management",
+            "homepage": "https://github.com/yohang/CalendR",
+            "keywords": [
+                "calendar",
+                "date",
+                "events"
+            ],
+            "time": "2013-09-10 14:18:04"
         }
     ],
     "packages-dev": [],

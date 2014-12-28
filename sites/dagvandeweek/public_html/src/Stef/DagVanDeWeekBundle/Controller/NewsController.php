@@ -1,6 +1,6 @@
 <?php
 
-namespace Stef\BierInDeKlokBundle\Controller;
+namespace Stef\DagVanDeWeekBundle\Controller;
 
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\EntityManager;

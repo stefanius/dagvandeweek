@@ -1,4 +1,38 @@
 services:
-#    stef_dag_van_de_week.example:
-#        class: Stef\DagVanDeWeekBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    stef.twig.leap_extension:
+        class: Stef\DagVanDeWeekBundle\Twig\Extension\IsLeapYearExtension
+        tags:
+            - { name: twig.extension }
+
+    stef.twig.century_extension:
+        class: Stef\DagVanDeWeekBundle\Twig\Extension\IsCenturyYearExtension
+        tags:
+            - { name: twig.extension }
+
+    stef.twig.month_extension:
+        class: Stef\DagVanDeWeekBundle\Twig\Extension\GetTranslatedMonthExtension
+        tags:
+            - { name: twig.extension }
+
+    stef_simple_cms.history_year_manager:
+        class: Stef\DagVanDeWeekBundle\Manager\HistoryYearManager
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    stef_simple_cms.history_manager:
+        class: Stef\DagVanDeWeekBundle\Manager\HistoryManager
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    stef_simple_cms.calendar_year_manager:
+        class: Stef\DagVanDeWeekBundle\Manager\CalendarYearManager
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    stef_simple_cms.entity_mapper:
+        class: Stef\SimpleCmsBundle\EntityMapper\Mapper
+        calls:
+            - [addNewMapping, ["News", "StefSimpleCmsBundle", "Stef\SimpleCmsBundle\Entity", "@stef_simple_cms.news_manager"]]
+            - [addNewMapping, ["Page", "StefSimpleCmsBundle", "Stef\SimpleCmsBundle\Entity", "@stef_simple_cms.page_manager"]]
+            - [addNewMapping, ["Dictionary", "StefSimpleCmsBundle", "Stef\SimpleCmsBundle\Entity", "@stef_simple_cms.dictionary_manager"]]
+            - [addNewMapping, ["User", "StefSimpleCmsBundle", "Stef\SimpleCmsBundle\Entity", "@stef_simple_cms.user_manager"]]
+            - [addNewMapping, ["CalendarYear", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.calendar_year_manager"]]
+            - [addNewMapping, ["HistoryYear", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.history_year_manager"]]
+            - [addNewMapping, ["History", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.history_manager"]]

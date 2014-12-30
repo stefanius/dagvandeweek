@@ -92,6 +92,16 @@ class HistoryManager extends AbstractObjectManager {
         $qb->setParameter('year', $year);
         $qb->setParameter('slug', $slug);
 
-        return $qb->getQuery()->getResult()[0];
+        return $qb->getQuery()->getSingleResult();
+    }
+
+    public function getActiveYears()
+    {
+        $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
+
+        $qb->select('e.year')
+            ->distinct();
+
+        return $qb->getQuery()->getResult();
     }
 }

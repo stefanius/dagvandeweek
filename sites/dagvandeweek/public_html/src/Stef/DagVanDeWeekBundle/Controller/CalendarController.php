@@ -3,6 +3,7 @@
 namespace Stef\DagVanDeWeekBundle\Controller;
 
 use Stef\DagVanDeWeekBundle\Entity\CalendarYear;
+use Stef\SimpleCmsBundle\Entity\Page;
 
 class CalendarController extends BaseController
 {
@@ -35,6 +36,20 @@ class CalendarController extends BaseController
         $page = $this->buildCalendarPage($year);
 
         return $this->render('StefDagVanDeWeekBundle:Calendar:year.html.twig', [
+            'page' => $page
+        ]);
+    }
+
+    public function showIndexAction()
+    {
+        $years = $this->getHistoryManager()->getActiveYears();
+        $page = new Page();
+
+        $page->setTitle("Jaarkalenders");
+        $page->setDescription("Elk jaar bevat maanden, dagen en weken. Elk dag is een klein stukje van een jaar! Wij bieden hier uitgebreide kalenders aan van een groot aantal jaren!");
+
+        return $this->render('StefDagVanDeWeekBundle:Calendar:index.html.twig', [
+            'years' => $years,
             'page' => $page
         ]);
     }

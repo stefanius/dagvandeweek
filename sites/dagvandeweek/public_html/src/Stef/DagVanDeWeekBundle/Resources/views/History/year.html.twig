@@ -4,7 +4,11 @@
     <div class="row">
         <article class="col-sm-9 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Historie {{ page.year }}</h1>
+                {% if month is defined %}
+                    <h1 class="page-title">{{ month|translate_month|capitalize }} {{ page.year }}</h1>
+                {% else %}
+                    <h1 class="page-title">Historie {{ page.year }}</h1>
+                {% endif %}
             </header>
 
             {{ page.body|raw }}

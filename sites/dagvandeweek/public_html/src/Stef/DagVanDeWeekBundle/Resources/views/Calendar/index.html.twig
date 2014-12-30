@@ -1,0 +1,34 @@
+{% extends "StefDagVanDeWeekBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <article class="col-sm-9 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">{{ page.title }}</h1>
+            </header>
+
+            <p>Zoek hieronder de kalender die jij wilt zien. Wanneer is het kerstdag? Op welke dag val oudjaar? Wanneer is het pasen of hemelvaart? Allemaal vragen, maar met de juiste kalender krijg je hier een goed antwoord op!</p>
+
+            <h4>Beschikbare jaren</h4>
+            <p>Hieronder is een overzicht van de beschikbare jaren waar wij gegevens van hebben verzameld. Uiteraard is van elk jaar ook een kalender beschikbaar!</p>
+
+            <ul>
+                {% for year in years %}
+                    <li>
+                        <a href="/kalender/{{ year.year }}">
+                            Kalender {{ year.year }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </article>
+
+        <aside class="col-sm-3 sidebar sidebar-right">
+            <h4>Nog meer kalenders</h4>
+            {%  for i in range (1800, 2020, 9) %}
+                <a class="small text-muted" href="/kalender/"{{ i }}>Kalender&nbsp;{{ i }}</a>
+            {% endfor %}
+        </aside>
+    </div>
+{% endblock %}

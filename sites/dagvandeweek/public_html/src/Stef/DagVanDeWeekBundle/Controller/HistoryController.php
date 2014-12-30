@@ -3,6 +3,7 @@
 namespace Stef\DagVanDeWeekBundle\Controller;
 
 use Stef\DagVanDeWeekBundle\Entity\HistoryYear;
+use Stef\SimpleCmsBundle\Entity\Page;
 
 class HistoryController extends BaseController
 {
@@ -41,11 +42,54 @@ class HistoryController extends BaseController
         ]);
     }
 
+    public function showByYearMonthAction($year, $month)
+    {
+        $page = $this->buildHistoryPage($year);
+        $items = $this->getHistoryManager()->findByMonthYear($month, $year);
+
+        $page->setRobotsIndex(false);
+
+        return $this->render('StefDagVanDeWeekBundle:History:year.html.twig', [
+            'page' => $page,
+            'items' => $items,
+            'month' => $month
+        ]);
+    }
+
+    public function showByYearMonthDayAction($year, $month, $day)
+    {
+        $page = $this->buildHistoryPage($year);
+        $items = $this->getHistoryManager()->findByDayMonthYear($day, $month, $year);
+
+        $page->setRobotsIndex(false);
+
+        return $this->render('StefDagVanDeWeekBundle:History:year.html.twig', [
+            'page' => $page,
+            'items' => $items,
+            'month' => $month
+        ]);
+    }
+
     public function showArticleAction($year, $month, $day, $slug)
     {
         $page = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
 
         return $this->render('StefDagVanDeWeekBundle:History:article.html.twig', [
+            'page' => $page
+        ]);
+    }
+
+    public function showIndexAction()
+    {
+        $latestItems = $this->getHistoryManager()->getLatestEntries(10);
+        $years = $this->getHistoryManager()->getActiveYears();
+        $page = new Page();
+        $page->setTitle("Historisch Jaaroverzicht");
+        $page->setDescription("DagVanDeWeek heeft een uitgebreide database met gegevens. Hier kan je (bijna) alles vinden wat je wilt! Voor je werkstuk, spreekbeurt of gewoon omdat je het WILT weten! Elke dag van de week is er weer een dag bij in de geschiedenis!");
+
+        return $this->render('StefDagVanDeWeekBundle:History:index.html.twig', [
+            'latestItems' => $latestItems,
+            'years' => $years,
             'page' => $page
         ]);
     }

@@ -2,7 +2,7 @@
 <ul class="calendar-container">
     {% for mNumber in 1..12 %}
 
-                {% set month = calendr_month(page.year, mNumber) %}
+        {% set month = calendr_month(page.year, mNumber) %}
 
                 <li>
                 <div class="calendar-wrapper">
@@ -17,7 +17,7 @@
                         <th>VR</th>
                         <th>ZA</th>
                         <th>ZO</th>
-                        <th class="weeknumber">#</td>
+                        <th class="weeknumber">#</th>
                     </tr>
                 {% for week in month %}
 

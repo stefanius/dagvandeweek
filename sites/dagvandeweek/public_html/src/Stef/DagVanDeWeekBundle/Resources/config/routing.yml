@@ -1,3 +1,12 @@
+stef_dag_van_de_week_calendar_routing:
+    resource: "@StefDagVanDeWeekBundle/Resources/config/calendar_routing.yml"
+
+stef_dag_van_de_week_history_routing:
+    resource: "@StefDagVanDeWeekBundle/Resources/config/history_routing.yml"
+
+stef_dag_van_de_week_weekhero_routing:
+    resource: "@StefDagVanDeWeekBundle/Resources/config/weekhero_routing.yml"
+
 stef_dag_van_de_week_homepage:
     path:     /
     defaults: { _controller: StefDagVanDeWeekBundle:Index:index }
@@ -11,47 +20,5 @@ stef_dag_van_de_week_news_archive_index:
 stef_dag_van_de_week_news_show:
     pattern:  /nieuws/{slug}
     defaults: { _controller: StefDagVanDeWeekBundle:News:show }
-    requirements:
-        _method:  GET
-
-stef_dag_van_de_week_calendar_show:
-    pattern:  /kalender/{year}
-    defaults: { _controller: StefDagVanDeWeekBundle:Calendar:show }
-    requirements:
-        _method:  GET
-
-stef_dag_van_de_week_history_article_show:
-    pattern:  /historie/{year}/{month}/{day}/{slug}
-    defaults: { _controller: StefDagVanDeWeekBundle:History:showArticle }
-    requirements:
-        _method:  GET
-
-stef_dag_van_de_week_history_year_month_day_show:
-    pattern:  /historie/{year}/{month}/{day}
-    defaults: { _controller: StefDagVanDeWeekBundle:History:showByYearMonthDay }
-    requirements:
-        _method:  GET
-
-stef_dag_van_de_week_history_year_month_show:
-    pattern:  /historie/{year}/{month}
-    defaults: { _controller: StefDagVanDeWeekBundle:History:showByYearMonth }
-    requirements:
-        _method:  GET
-
-stef_dag_van_de_week_history_year_show:
-    pattern:  /historie/{year}
-    defaults: { _controller: StefDagVanDeWeekBundle:History:showByYear }
-    requirements:
-        _method:  GET
-
-stef_dag_van_de_week_history_index:
-    pattern:  /historie
-    defaults: { _controller: StefDagVanDeWeekBundle:History:showIndex }
-    requirements:
-        _method:  GET
-
-stef_dag_van_de_week_calendar_index:
-    pattern:  /kalender
-    defaults: { _controller: StefDagVanDeWeekBundle:Calendar:showIndex }
     requirements:
         _method:  GET

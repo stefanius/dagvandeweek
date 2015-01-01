@@ -18,7 +18,7 @@ class NewsController extends BaseController
             throw $this->createNotFoundException('Unable to find News post.');
         }
 
-        return $this->render('StefBierInDeKlokBundle:News:show.html.twig', array(
+        return $this->render('StefDagVanDeWeekBundle:News:show.html.twig', array(
             'page'      => $news,
         ));
     }
@@ -47,7 +47,7 @@ class NewsController extends BaseController
 
         $page['title'] = "Nieuws overzicht";
 
-        return $this->render('StefBierInDeKlokBundle:News:index.html.twig', array(
+        return $this->render('StefDagVanDeWeekBundle:News:index.html.twig', array(
             'newsitems' => $newsitems,
             'page' => $page,
         ));

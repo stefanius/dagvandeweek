@@ -1,0 +1,32 @@
+{% extends "StefDagVanDeWeekBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <article class="col-sm-9 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">{{ dayInfo.dutchWeekdayName }} {{ page.day }} {{ dayInfo.dutchMonthName }} {{ page.year }}</h1>
+            </header>
+
+            <p>{{ page.day }} {{ dayInfo.dutchMonthName }} is de {{ dayInfo.yearDayNumber }}e dag van het jaar {{ page.year }}. Verder valt deze dag in week {{ dayInfo.weekNumber }}.</p>
+
+            <h2>Gebeurtenissen {{ page.day }} {{ dayInfo.dutchMonthName }} {{ page.year }}</h2>
+            <p>In onderstaand overzicht staan de (bij ons bekende) gebeurtenissen</p>
+            <ol>
+                {% for item in items %}
+                    <li>
+                        <a href="{{ path('stef_dag_van_de_week_history_article_show', {'slug': item.slug, 'day': '%02d'|format(item.day), 'month': '%02d'|format(item.month), 'year': item.year}) }}">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ol>
+        </article>
+
+        <aside class="col-sm-3 sidebar sidebar-right">
+            <div class="widget">
+                <h4>Kalender</h4>
+                <p class="small text-muted">Naast het historische overzicht uit {{ page.year }} hebben wij ook de beschikking over de <a href="/kalender/{{ page.year }}">kalender uit {{ page.year }}</a>. Ontdek snel wat onze andere pagina's aan je kennis kunnen bijdragen.</p>
+            </div>
+        </aside>
+    </div>
+{% endblock %}

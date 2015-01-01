@@ -9,6 +9,9 @@
 
             {{ page.body|raw }}
 
+            <h2>Dag van de week</h2>
+            <p>Deze gebeurtenis vond plaats op <a href="/historie/{{ page.year }}/{{ "%02d"|format(page.month) }}/{{ "%02d"|format(page.day) }}">{{ dayInfo.dutchWeekdayName }} {{ page.day }} {{ dayInfo.dutchMonthName }} {{ page.year }}</a>. Deze dag viel in week {{ dayInfo.weekNumber }} van dat jaar.</p>
+            <p>{{ page.day }} {{ dayInfo.dutchMonthName }} was dag {{ dayInfo.yearDayNumber }} in {{ page.year }}. Het zou nog {{ 365 - dayInfo.yearDayNumber }} dagen duren tot {{ page.year + 1 }} kon beginnen.</p>
         </article>
 
         <aside class="col-sm-3 sidebar sidebar-right">

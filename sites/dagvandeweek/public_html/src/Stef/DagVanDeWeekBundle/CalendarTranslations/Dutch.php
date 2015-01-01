@@ -4,7 +4,6 @@ namespace Stef\DagVanDeWeekBundle\CalendarTranslations;
 
 class Dutch
 {
-
     protected $months = [];
 
     protected $weekdays = [];
@@ -23,6 +22,15 @@ class Dutch
         $this->months['10'] = 'oktober';
         $this->months['11'] = 'november';
         $this->months['12'] = 'december';
+
+        $this->weekdays[0] = 'zondag';
+        $this->weekdays[1] = 'maandag';
+        $this->weekdays[2] = 'dinsdag';
+        $this->weekdays[3] = 'woensdag';
+        $this->weekdays[4] = 'donderdag';
+        $this->weekdays[5] = 'vrijdag';
+        $this->weekdays[6] = 'zaterdag';
+        $this->weekdays[7] = 'zondag';
     }
 
     public function getMonth($number)
@@ -32,5 +40,10 @@ class Dutch
         }
 
         return $this->months[$number];
+    }
+
+    public function getDay($number)
+    {
+        return $this->weekdays[(integer) $number];
     }
 }

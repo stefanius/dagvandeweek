@@ -2,6 +2,8 @@
 
 namespace Stef\DagVanDeWeekBundle\Controller;
 
+use Proxies\__CG__\Stef\DagVanDeWeekBundle\Entity\History;
+use Stef\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stef\DagVanDeWeekBundle\Entity\HistoryYear;
 use Stef\SimpleCmsBundle\Entity\Page;
 
@@ -31,6 +33,28 @@ class HistoryController extends BaseController
         return $page;
     }
 
+    protected function createDayInfo($year, $month, $day)
+    {
+        $translation = new Dutch();
+        $date = new \DateTime($year . '-' . $month . '-' . $day);
+
+        $weekDayNumber = $date->format("w");
+        $yearDayNumber = $date->format("z");
+        $weekNumber = $date->format("W");
+        $unixSeconds = $date->format("U");
+        $dutchMonthName = $translation->getMonth($month);
+        $dutchWeekdayName = $translation->getDay($day);
+
+        return [
+            'weekDayNumber' => $weekDayNumber,
+            'yearDayNumber' => $yearDayNumber,
+            'weekNumber' => $weekNumber,
+            'unixSeconds' => $unixSeconds,
+            'dutchMonthName' => $dutchMonthName,
+            'dutchWeekdayName' => $dutchWeekdayName,
+        ];
+    }
+
     public function showByYearAction($year)
     {
         $page = $this->buildHistoryPage($year);
@@ -48,6 +72,7 @@ class HistoryController extends BaseController
         $items = $this->getHistoryManager()->findByMonthYear($month, $year);
 
         $page->setRobotsIndex(false);
+        $page->setRobotsFollow(true);
 
         return $this->render('StefDagVanDeWeekBundle:History:year.html.twig', [
             'page' => $page,
@@ -58,24 +83,34 @@ class HistoryController extends BaseController
 
     public function showByYearMonthDayAction($year, $month, $day)
     {
-        $page = $this->buildHistoryPage($year);
         $items = $this->getHistoryManager()->findByDayMonthYear($day, $month, $year);
+        $dayInfo = $this->createDayInfo($year, $month, $day);
+
+        $page = new History();
+        $page->setDay($day);
+        $page->setMonth($month);
+        $page->setYear($year);
+        $page->setTitle(ucfirst($dayInfo['dutchWeekdayName']) . ' ' . $day . ' ' . $dayInfo['dutchMonthName'] . ' ' . $year);
 
         $page->setRobotsIndex(false);
+        $page->setRobotsFollow(true);
 
-        return $this->render('StefDagVanDeWeekBundle:History:year.html.twig', [
+        return $this->render('StefDagVanDeWeekBundle:History:day.html.twig', [
             'page' => $page,
             'items' => $items,
-            'month' => $month
+            'month' => $month,
+            'dayInfo' => $dayInfo
         ]);
     }
 
     public function showArticleAction($year, $month, $day, $slug)
     {
         $page = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
+        $dayInfo = $this->createDayInfo($year, $month, $day);
 
         return $this->render('StefDagVanDeWeekBundle:History:article.html.twig', [
-            'page' => $page
+            'page' => $page,
+            'dayInfo' => $dayInfo
         ]);
     }
 

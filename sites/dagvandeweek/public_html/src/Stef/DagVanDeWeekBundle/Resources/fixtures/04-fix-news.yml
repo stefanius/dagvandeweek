@@ -1,0 +1,57 @@
+Stef\SimpleCmsBundle\Entity\News:
+  hist-1:
+    id: 10
+    title: Wij Zijn Online
+    description: Het is eindelijk zover. Dag Van De Week is online. Wat is Dag Van De Week en wat is het nieuws. Lees het hier!
+    body: <p>Hoera! De website die uw en mijn leven gaat veranderen is online. Omdat te vieren wil ik deze dag uitroepen tot de dag van&nbsp;<strong>Geboorte.&nbsp;</strong>Vandaag zal dus in het teken staan van de creatie van iets nieuws, maar toch ook iets vertrouwds. Hulde. Een nieuwe website. Maar wat nu?</p>\n\n<h2>Waarom DagVanDeWeek.nl?</h2>\n\n<p>Tja. Wat mij betreft: Waarom ook niet? Soms word je wakker en denk je aan een woord. Zet er &#39;.nl&#39; achter, en je hebt een website. Deze vervelende bijwerking in mijn hersenpan kost mij al enkele euro&#39;s per maand. Maar, voor deze website heb ik ook nog eens een doel. Een concept. Want, zeg nu zelf, wie word er nu niet wakker met de vraag &#39;shit, welke dag is het nu vandaag?&#39; of &#39;het is vandaag woensdag 26 juni, is die datum al eens eerder geweest?&#39; of &#39;mag ik al een <a href=\"http://dagvandeweek.nl/bieruur/\">pilsje</a>?&#39;&nbsp;</p>\n\n<p>Om aan al deze onzekerheid een einde te maken, heb ik deze website opgezet. Nu kunt u zien welke dag het vandaag en morgen is, wanneer het weekend is of&nbsp;<a href=\"http://dagvandeweek.nl/gehaktdag/\">gehaktdag</a>. Er gaat een wereld voor u open, om de uren op kantoor aangenaam te maken of om de tijd die u niet op de soci&euml;teit zit nuttig te besteden. Wilt u weten welke dag het is? Of u al de kerstboom mag optuigen of wanneer die drie koningen komen? Of dichterbij in de tijd: wanneer het maandag is of het bier al open mag? Of wilt u nu eindelijk eens weten wie zaagmans is?</p>\n\n<p>U leest het hier. U leest het vandaag. En u leest het morgen. Ik heet u van harte welkom voor vandaag, maar ook in de toekomst. Wekom op <a href=\"http://dagvandeweek.nl\">DagVanDeWeek.nl</a></p>\n
+    slug: we-zijn-online
+    created: <dateTimeBetween('2013-06-26 21:08:39', '2013-06-26 21:08:39')>
+  hist-2:
+    id: 11
+    title: Dag van het feest
+    description: Elke dag is een feestje. Maar is het feest elke dag? Op deze vraag geef ik antwoord op Dag Van De Week. Elke dag nieuws, elke dag feest.
+    body: <p>Eigenlijk vier ik het leven elke dag een beetje meer. Desondanks is de ene dag de andere niet, en dus zijn sommige dagen feestelijker dan andere.</p>\n\n<h2>Feest</h2>\n\n<p>Het ene feest is het andere niet, maar het feest dat alle andere feesten overbodig maakt is een feest met pannenkoeken. Zo ook vandaag. Na een dag hard werken zijn wij welverdiend naar de lokale prethoek gegaan. Hier is vandaag uitgeroepen tot de Dag van het Feest en hebben we erg genoten van de spekpannenkoek.</p>\n
+    slug: dag-van-het-feest
+    created: <dateTimeBetween('2013-06-27 22:52:55', '2013-06-27 22:52:55')>
+  hist-3:
+    id: 12
+    title: Binnenstebuiten op kantoor Week
+    description: Elke week een nieuwe week. Deze week is het Binnenstebuiten week op je werk. Begin elke dag op Dag Van De Week. Begin deze week Binnenstebuiten .
+    body: <p>De wekker gaat. Je drukt op snooze. De wekker gaat alweer. Het proces van snoozen en wakker worden herhaalt zich een paar keer tot het moment waarop je denkt &#39;shit! ik moet opschieten!&#39; Op dat moment duikel je uit bed, bezoek je de badkamer en vis je wat kleding van de waslijn. En dan gaat het mis.</p>\n\n<h2>Binnenstebuiten</h2>\n\n<p>Herkenbaar? Vast wel. Terug naar de waslijn. Je steekt alvast een been je broek en je rukt intussen een verse polo van de waslijn. Alleen, je vriendin was deze altijd&nbsp;binnenstebuiten.. &nbsp;Alleen de wakkere helft weet dat niet. Je gaat goed gemutst naar de buurtsuper voor je amandelbroodje en daarna fluitend naar kantoorl Tot het moment daar is.... de ontdekking van de polo.</p>\n\n<p>Het is genant en gedenkwaardig. En daar, voor iedereen, roep ik deze week uit tot&nbsp;Binnenstebuiten Week.</p>\n
+    slug: binnenstebuiten-week
+    created: <dateTimeBetween('2013-06-27 23:05:45', '2013-06-27 23:05:45')>
+  hist-4:
+    id: 13
+    title: Dalai Lama nog steeds niet vereerd.
+    description: Ook voor de Dalai Lama is er een Dag Van De Week. China ontkent versoepeling van religieuze uitingen.
+    body: <p>Vandaag is bekend geworden dat de Dalai Lama nog steeds niet vereerd mag worden door de Tibetanen.</p>\n\n<h2>Tibet</h2>\n\n<p>Tibet was tot de jaren 50 onafhankelijk. In religieus opzicht waren er twee religies, een ervan was&nbsp;Tibetaans boeddhisme.&nbsp;Hier kwam abrupt een einde aan na de Chinese veldtocht in 1950 en 51. Het land is nu al meer dan 60 jaar bezet door de Chinezen en al die tijd was het verboden om de religieuze leiden, de Dalai Lama, te vereren.</p>\n\n<h2>Gerucht</h2>\n\n<p>Afgelopen dagen doken er geruchten op dat China het de Tibetanen makkelijker zou maken om hun grote leider te eren. Echter, vandaag werd dit door de Chinzen zelf ontkent. Wie het weet, mag het zeggen. Maar, door deze domper voor de Tibetaanse bevolking, roep ik deze dag uit als de Dag Van de Dalai Lama. Maar, als we toch bezig zijn, ook voor andere lama&#39;s. Zolang ze maar niet spugen.</p>\n
+    slug: dalai-lama-toch-niet-vereerd
+    created: <dateTimeBetween('2013-06-28 23:19:16', '2013-06-28 23:19:16')>
+  hist-5:
+    id: 19
+    title: Dag 2 - 97e Vierdaagse
+    description: Na het overslaan van de eerste dag, hier iets over dag 2 van de Nijmeegse Vierdaagse!
+    body: <p>De tweede dag van de Nijmeegse Vierdaagse (of Vierdaagse van Nijmegen) is woensdag.&nbsp;</p>\n\n<p>De officiele website zegt over vandaag dit:</p>\n\n<p><em><span style=\"color:rgb(0, 0, 0); font-family:arial,verdana,helvetica,sans-serif; font-size:12px\">&quot;Ook de tweede dag verliep voorspoedig; 40.719 deelnemers&nbsp;bereikten de finish. Donderdag is de dag van Groesbeek met de Zevenheuvelenweg. De supporters hebben hun tenten en&nbsp;caravans al neergezet en&nbsp;staan morgen klaar om de wandelaars&nbsp;aan te moedigen.&quot;</span></em></p>\n\n<p><span style=\"color:rgb(0, 0, 0); font-family:arial,verdana,helvetica,sans-serif; font-size:12px\">Helaas is men vergeten de temperatuur te vermelden: Vandaag was het een mooie 20-23 graden rond Nijmegen. Zo. En dan nu aftellen tot vrijdag, wellicht dat we hier een Weektopper uit kunnen slepen!</span></p>\n
+    slug: zeer-kort-4daagse-nieuws
+    created: <dateTimeBetween('2013-07-17 23:35:46', '2013-07-17 23:35:46')>
+  hist-6:
+    id: 20
+    title: Code Geel (Temperatuur)
+    description: Vanwege het warme weer op 22 juli 2013 en de vooruitzichten voor komende week word Code Geel afgegeven.
+    body: <p>Vandaag was het op veel plaatsen in ons land boven de 30 graden. Omdat de komende dagen dit nog steeds mogelijk is, raad men aan om voldoende te drinken en verkoeling op te zoeken. Badgasten wordt aangeraden om goed ingesmeerd de dag door te brengen.</p>\n
+    slug: code-geel-22-juli-2013
+    created: <dateTimeBetween('2013-07-22 00:56:54', '2013-07-22 00:56:54')>
+  hist-7:
+    id: 21
+    title: Hoera voor de Regen!
+    description: Wij van Dag Van De Week dansten vandaag in de regen na enige dagen hittegolf. Wij houden van Zon, maar maak het niet te gek! Lees nieuws van elke Dag Van De Week!
+    body: <p>Sinds het begin van de hittegolf in ons land was het niet te harden. Een vies, plakkerig atmosfeertje, hoge temperaturen en geen draagbare airco. Het waren zware dagen, die ons volk heeft moeten doorstaan.</p>\n\n<h2>Opluchting</h2>\n\n<p>De opluchting was dan ook groot, toen op de zaterdagochtend 27 juli 2013, het wolkendek in twee&euml;n brak. &#39;Zuurstof!&#39; was mijn eerste gedachte. Met een grote glimlach rende ik naar buiten om als een bezetene in de ontstane plassen te springen. Ik waande mij even als een kind in een speelgoedwinkel.</p>\n\n<h2>Wisselende reacties</h2>\n\n<p>Toch was niet iedereen te spreken over deze wolkbreuk, zo ook de heer O. Zon van een paar huizen verder. Hij was de afgelopen dag flink bezig om een gat in zijn bovenste woonlaag te maken, maar door de ontstane regenbui moest hij dat staken &#39;Ik maak het liefste gaten als het weer wat warmer en droger is. Van de week zag ik vanaf mijn dak een mooie lichtgrijze waas over de stad. Mooi gezicht om te zien, dan krijg ik meteen zin om te klussen.&#39; Aldus onze buurtbewoner.</p>\n\n<h2>Klagen</h2>\n\n<p>Verder zijn wij natuurlijk een volk van klagen en mekkeren. Nog niet zo lang geleden moest ik mijn auto nog ontdooien. Veel van onze medelanders klaagden dat de winter te lang duurde, omdat in maart en april de straten nog vaak nat en soms nog wit waren, maar dat is niet het geval. Al sinds jaar en dag weten wij dat ook in deze maanden nog van alles kan gebeuren. Want sons roert maart zijn staart. En aprilletje zoet, geeft nog wel eens een witte hoed. Ja, de eigenwijze april, doet wat hij wil!</p>\n\n<h2>Zomer</h2>\n\n<p>En toch ben ik een echte zomer-man, maar wel graag met minder benauwd weer. Nu maar hopen dat we deze week een gunstiger klimaat gaan krijgen.</p>\n
+    slug: hoera-voor-de-regen
+    created: <dateTimeBetween('2013-07-27 17:09:36', '2013-07-27 17:09:36')>
+  hist-8:
+    id: 22
+    title: Gestrande Potvis overleden
+    description: De potvis die maandag 29 juli aanspoelde op Terschelling is overleden. Dag Van De Week brengt verslag uit. Elke dag nieuws en geschiedenis, vers op Dag Van De Week!
+    body: <p>De potvis die maandagmiddag 29 juli 2013 aanspoelde op het strand van Terschelling is uiteindelijk in de loop van de avond overleden. Het komt regelmatig voor dat potvissen of soortelijke diersoorten aanspoelen op het strand. Enige maanden geleden lag er een bultrug aan de kust. Na diverse reddingspogingen, heeft ook hij de geest gegeven. De media hebben het beestje een naam gegeven: Johannes.</p>\n\n<h2>Sonar</h2>\n\n<p>Hoewel walvis-achtigen altijd al op het strand te vinden waren, zijn dit in de meeste gevallen zieke dieren. Echter spoelen er tegenwoordig ook steeds vaker gezonde dieren aan. Deze dieren worden waarschijnlijk misleid door de sonar aparatuur die wij gebruiken op zee. Deze singalen zijn vaak rond de 200 decibel en zijn onder water oorverdovend voor de vissen en zoogdieren die dit kunnen horen.</p>\n
+    slug: gestrande-potvis-overleden
+    created: <dateTimeBetween('2013-07-30 00:17:21', '2013-07-30 00:17:21')>

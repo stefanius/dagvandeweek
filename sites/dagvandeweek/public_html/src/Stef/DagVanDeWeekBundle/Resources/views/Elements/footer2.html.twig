@@ -5,11 +5,14 @@
             <div class="col-md-6 widget">
                 <div class="widget-body">
                     <p class="simplenav">
-                        <a href="#">Home</a> |
-                        <a href="about.html">About</a> |
-                        <a href="sidebar-right.html">Sidebar</a> |
-                        <a href="contact.html">Contact</a> |
-                        <b><a href="signup.html">Sign up</a></b>
+                        {% if not '/kalender/2013' in app.request.uri or not '/kalender/2014' in app.request.uri or not '/kalender/2015' in app.request.uri or not '/kalender/2016' in app.request.uri %}
+                            <a href="#">Home</a> |
+                            <a href="/kalender/2013">Kalender 2013</a> |
+                            <a href="/kalender/2014">Kalender 2014</a> |
+                            <a href="/kalender/2015">Kalender 2015</a> |
+                            <a href="/kalender/2016">Kalender 2016</a> |
+                            <a href="/kalender/2017">Kalender 2017</a> |
+                        {% endif %}
                     </p>
                 </div>
             </div>
@@ -17,7 +20,7 @@
             <div class="col-md-6 widget">
                 <div class="widget-body">
                     <p class="text-right">
-                        Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a>
+                        Copyright &copy; 2012 - 2015, <a href="http://stefanius.nl">Stefanius</a>. Bootstrap3 template inspired by <a href="http://gettemplate.com/">gettemplate</a>
                     </p>
                 </div>
             </div>

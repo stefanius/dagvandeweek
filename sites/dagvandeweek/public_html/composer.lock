@@ -705,12 +705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
+                "reference": "e5eaf8c7ded0877195b5d2848491e17b1c0a6c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/e5eaf8c7ded0877195b5d2848491e17b1c0a6c4d",
+                "reference": "e5eaf8c7ded0877195b5d2848491e17b1c0a6c4d",
                 "shasum": ""
             },
             "require": {
@@ -764,7 +764,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2014-12-20 21:24:13"
+            "time": "2015-01-01 18:34:57"
         },
         {
             "name": "doctrine/instantiator",
@@ -3139,12 +3139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stefanius/simple-cms-bundle.git",
-                "reference": "9db0e9674603588a8bfc2ce5bb39ce04bdd867ce"
+                "reference": "7e01b8117c6c4dd7efd72b5087e15ac9a9c8f178"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/9db0e9674603588a8bfc2ce5bb39ce04bdd867ce",
-                "reference": "9db0e9674603588a8bfc2ce5bb39ce04bdd867ce",
+                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/7e01b8117c6c4dd7efd72b5087e15ac9a9c8f178",
+                "reference": "7e01b8117c6c4dd7efd72b5087e15ac9a9c8f178",
                 "shasum": ""
             },
             "require": {
@@ -3211,7 +3211,7 @@
                 "source": "https://github.com/stefanius/simple-cms-bundle/tree/master",
                 "issues": "https://github.com/stefanius/simple-cms-bundle/issues"
             },
-            "time": "2015-01-01 15:28:35"
+            "time": "2015-01-01 23:48:44"
         },
         {
             "name": "stef/slug-manipulation",

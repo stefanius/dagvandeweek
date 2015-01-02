@@ -3139,12 +3139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stefanius/simple-cms-bundle.git",
-                "reference": "7e01b8117c6c4dd7efd72b5087e15ac9a9c8f178"
+                "reference": "9d403d471aee3f10dc3dc52c895fc6e0b7772af2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/7e01b8117c6c4dd7efd72b5087e15ac9a9c8f178",
-                "reference": "7e01b8117c6c4dd7efd72b5087e15ac9a9c8f178",
+                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/9d403d471aee3f10dc3dc52c895fc6e0b7772af2",
+                "reference": "9d403d471aee3f10dc3dc52c895fc6e0b7772af2",
                 "shasum": ""
             },
             "require": {
@@ -3211,7 +3211,7 @@
                 "source": "https://github.com/stefanius/simple-cms-bundle/tree/master",
                 "issues": "https://github.com/stefanius/simple-cms-bundle/issues"
             },
-            "time": "2015-01-01 23:48:44"
+            "time": "2015-01-02 09:27:47"
         },
         {
             "name": "stef/slug-manipulation",

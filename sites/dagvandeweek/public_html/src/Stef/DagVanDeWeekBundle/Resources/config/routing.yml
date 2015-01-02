@@ -22,3 +22,9 @@ stef_dag_van_de_week_news_show:
     defaults: { _controller: StefDagVanDeWeekBundle:News:show }
     requirements:
         _method:  GET
+
+stef_dag_van_de_week_news_pages:
+    pattern:  /{slug}
+    defaults: { _controller: StefDagVanDeWeekBundle:Page:show }
+    requirements:
+        _method:  GET

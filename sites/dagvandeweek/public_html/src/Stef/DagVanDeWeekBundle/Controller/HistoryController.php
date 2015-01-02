@@ -2,7 +2,7 @@
 
 namespace Stef\DagVanDeWeekBundle\Controller;
 
-use Proxies\__CG__\Stef\DagVanDeWeekBundle\Entity\History;
+use Stef\DagVanDeWeekBundle\Entity\History;
 use Stef\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stef\DagVanDeWeekBundle\Entity\HistoryYear;
 use Stef\SimpleCmsBundle\Entity\Page;

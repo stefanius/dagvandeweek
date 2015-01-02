@@ -8,15 +8,16 @@
             </header>
 
             {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
-            {{ page.body }}
+            {{ page.body|raw }}
             {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
 
         </article>
 
         <aside class="col-sm-3 sidebar sidebar-right">
             {% if page.description is defined and page.description|length > 1 %}
-            <h4>Samenvatting</h4>
-            <p class="small text-muted">{{ page.description }}</p>
+                <h4>Samenvatting</h4>
+                <p class="small text-muted">{{ page.description }}</p>
+            {% endif %}
         </aside>
     </div>
 {% endblock %}

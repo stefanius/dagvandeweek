@@ -1,7 +1,3 @@
-stef_dag_van_de_week:
-    resource: "@StefDagVanDeWeekBundle/Resources/config/routing.yml"
-    prefix:   /
-
 stef_simple_cms_crud:
     resource: "@StefSimpleCmsBundle/Resources/config/routing/crud.yml"
     prefix:   /cms
@@ -12,3 +8,7 @@ stef_simple_cms_index:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+stef_dag_van_de_week:
+    resource: "@StefDagVanDeWeekBundle/Resources/config/routing.yml"
+    prefix:   /

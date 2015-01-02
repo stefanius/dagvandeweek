@@ -7,13 +7,13 @@
                 <h1 class="page-title">Overzicht laatste nieuws</h1>
             </header>
             <p>Welkom op de nieuwspagina van DagVanDeWeek.nl. Naast diverse oude berichten en gebeurtenissen uit het verleden, bieden wij u ook graag een blik in het heden en de toekomst.</p>
-
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
             <p>Maar zonder een goed inzicht in gisteren, is het nieuws van morgen niet te volgen. Daarom bieden wij u graag beide aan, het verleden en het heden bij elkaar. Hieronder ziet u alle berichten uit het heden, het nieuws van vandaag!</p>
 
             {% for news in newsitems %}
                 <li><a href="{{ path('stef_dag_van_de_week_news_show', { 'slug': news.slug }) }}">{{ news.title|e }}</a></li>
             {% endfor %}
-
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
         </article>
     </div>
 

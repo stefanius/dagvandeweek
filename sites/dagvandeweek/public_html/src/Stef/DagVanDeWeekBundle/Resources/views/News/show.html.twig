@@ -7,8 +7,9 @@
                 <h1 class="page-title">{{ page.title }}</h1>
                 <span>Het dagelijkse nieuws van {{ page.created|date("d/m/Y") }}</span>
             </header>
-
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
             {{ page.body|raw }}
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
         </article>
     </div>
 

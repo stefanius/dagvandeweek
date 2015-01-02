@@ -10,8 +10,8 @@ class IndexController extends Controller
     public function indexAction()
     {
         $page = new Page();
-        $page->setDescription('Staat de 4 in de klok? Dan staat er Bier in de klok. Elk moment van de dag de vier willen checken? Dat kan bij BierInDeKlok.nl!');
-        $page->setTitle('Bier in de Klok?!');
+        $page->setDescription('Het heden en verleden komen samen op DagVanDeWeek! Elke dag een nieuwe dag. Bekijk onze kalenders en laat het verleden naar vandaag komen!');
+        $page->setTitle('Alle dagen van de week welkom bij DagVanDeWeek.nl');
 
         return $this->render('StefDagVanDeWeekBundle:Default:index.html.twig', [
             'page' => $page

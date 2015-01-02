@@ -1,4 +1,4 @@
-Stef\DagVanDeWeekBundle\Entity\HistoryYear:
+Stef\DagVanDeWeekBundle\Entity\CalendarYear:
   hist-6:
     id: 6
     year: 1940

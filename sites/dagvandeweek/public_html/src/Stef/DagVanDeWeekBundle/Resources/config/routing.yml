@@ -28,3 +28,4 @@ stef_dag_van_de_week_website_pages:
     defaults: { _controller: StefDagVanDeWeekBundle:Page:show }
     requirements:
         _method:  GET
+        slug: .+

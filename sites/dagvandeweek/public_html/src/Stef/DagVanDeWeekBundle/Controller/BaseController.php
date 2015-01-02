@@ -98,4 +98,9 @@ class BaseController extends Controller
     {
         return $this->get('ivory_google_map.map');
     }
+
+    protected function isAuthenticatedFully()
+    {
+        return $this->container->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY');
+    }
 }

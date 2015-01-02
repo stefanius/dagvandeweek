@@ -40,3 +40,13 @@ services:
             - [addNewMapping, ["CalendarYear", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.calendar_year_manager"]]
             - [addNewMapping, ["HistoryYear", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.history_year_manager"]]
             - [addNewMapping, ["History", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.history_manager"]]
+
+    stef_simple_cms.form_options:
+        class: Stef\SimpleCmsBundle\Form\FormOptions
+        calls:
+            - [addOptions, ['page', 'body', [], 'ckeditor']]
+            - [addOptions, ['news', 'body', [], 'ckeditor']]
+            - [addOptions, ['historyyear', 'body', [], 'ckeditor']]
+            - [addOptions, ['calendaryear', 'body', [], 'ckeditor']]
+            - [addOptions, ['dictionary', 'body', [], 'ckeditor']]
+            - [addOptions, ['news', 'slug', [], 'hidden']]

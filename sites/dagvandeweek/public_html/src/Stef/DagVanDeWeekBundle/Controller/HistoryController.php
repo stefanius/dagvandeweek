@@ -43,7 +43,7 @@ class HistoryController extends BaseController
         $weekNumber = $date->format("W");
         $unixSeconds = $date->format("U");
         $dutchMonthName = $translation->getMonth($month);
-        $dutchWeekdayName = $translation->getDay($day);
+        $dutchWeekdayName = $translation->getDay($weekDayNumber);
 
         return [
             'weekDayNumber' => $weekDayNumber,

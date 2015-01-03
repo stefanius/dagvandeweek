@@ -47,6 +47,7 @@ services:
             - [addOptions, ['page', 'body', [], 'ckeditor']]
             - [addOptions, ['news', 'body', [], 'ckeditor']]
             - [addOptions, ['historyyear', 'body', [], 'ckeditor']]
+            - [addOptions, ['history', 'body', [], 'ckeditor']]
             - [addOptions, ['calendaryear', 'body', [], 'ckeditor']]
             - [addOptions, ['dictionary', 'body', [], 'ckeditor']]
             - [addOptions, ['news', 'slug', [], 'hidden']]

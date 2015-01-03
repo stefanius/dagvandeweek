@@ -60,6 +60,10 @@ class HistoryController extends BaseController
         $page = $this->buildHistoryPage($year);
         $items = $this->getHistoryManager()->findByYear($year);
 
+        if (count($items) == 0) {
+            $page->setRobotsIndex(false);
+        }
+
         return $this->render('StefDagVanDeWeekBundle:History:year.html.twig', [
             'page' => $page,
             'items' => $items

@@ -13,7 +13,7 @@ class CalendarController extends BaseController
 
         if ($page === null) {
             $page = new CalendarYear();
-            $page->setTitle($year);
+            $page->setTitle('Kalender' . $year);
             $page->setYear($year);
             $page->setSlug($year);
 

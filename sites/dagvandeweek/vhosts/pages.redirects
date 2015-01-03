@@ -1,1 +1,21 @@
 #Pages
+
+#misc
+rewrite ^/index.html / permanent;
+rewrite ^/historie/index.html / permanent;
+
+#historie
+rewrite ^/histories/historie/1944 /historie/1944 permanent;
+rewrite ^/histories/historie/2001 /historie/2001 permanent;
+rewrite ^/histories/historie/1911 /historie/1911 permanent;
+rewrite ^/histories/historie/1980 /historie/1980 permanent;
+rewrite ^/histories/historie/2000 /historie/2000 permanent;
+
+#Alle zeven op een rijtje
+rewrite ^/watis/maandag /alle-zeven-op-een-rijtje/maandag permanent;
+rewrite ^/watis/dinsdag /alle-zeven-op-een-rijtje/dinsdag permanent;
+rewrite ^/watis/woensdag /alle-zeven-op-een-rijtje/woensdag permanent;
+rewrite ^/watis/donderdag /alle-zeven-op-een-rijtje/donderdag permanent;
+rewrite ^/watis/vrijdag /alle-zeven-op-een-rijtje/vrijdag permanent;
+rewrite ^/watis/zaterdag /alle-zeven-op-een-rijtje/zaterdag permanent;
+rewrite ^/watis/zondag /alle-zeven-op-een-rijtje/zondag permanent;

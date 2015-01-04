@@ -1,11 +1,11 @@
 stef_dag_van_de_week_weekhero_show:
-    pattern:  /topper-van-de-week/{year}/{week}/
+    pattern:  /topper-van-de-week/{year}/{week}
     defaults: { _controller: StefDagVanDeWeekBundle:WeekHero:show }
     requirements:
         _method:  GET
 
 stef_dag_van_de_week_weekhero_year_index:
-    pattern:  /topper-van-de-week/{year}/
+    pattern:  /topper-van-de-week/{year}
     defaults: { _controller: StefDagVanDeWeekBundle:WeekHero:showByYear }
     requirements:
         _method:  GET

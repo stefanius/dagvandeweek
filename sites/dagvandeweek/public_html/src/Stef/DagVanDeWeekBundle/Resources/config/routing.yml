@@ -1,3 +1,7 @@
+stef_dag_van_de_week_homepage:
+    path:     /
+    defaults: { _controller: StefDagVanDeWeekBundle:Index:index }
+
 stef_dag_van_de_week_calendar_routing:
     resource: "@StefDagVanDeWeekBundle/Resources/config/calendar_routing.yml"
 
@@ -7,24 +11,27 @@ stef_dag_van_de_week_history_routing:
 stef_dag_van_de_week_weekhero_routing:
     resource: "@StefDagVanDeWeekBundle/Resources/config/weekhero_routing.yml"
 
-stef_dag_van_de_week_homepage:
-    path:     /
-    defaults: { _controller: StefDagVanDeWeekBundle:Index:index }
-
 stef_dag_van_de_week_news_archive_index:
-    pattern:  /nieuws/
+    pattern:  /nieuws
     defaults: { _controller: StefDagVanDeWeekBundle:News:showMainNewsPage }
     requirements:
         _method:  GET
 
 stef_dag_van_de_week_news_show:
-    pattern:  /nieuws/{slug}/
+    pattern:  /nieuws/{slug}
     defaults: { _controller: StefDagVanDeWeekBundle:News:show }
     requirements:
         _method:  GET
 
+remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: StefDagVanDeWeekBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]
+
 stef_dag_van_de_week_website_pages:
-    pattern:  /{slug}/
+    pattern:  /{slug}
     defaults: { _controller: StefDagVanDeWeekBundle:Page:show }
     requirements:
         _method:  GET

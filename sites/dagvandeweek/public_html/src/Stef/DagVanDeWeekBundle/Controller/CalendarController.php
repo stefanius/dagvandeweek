@@ -28,6 +28,14 @@ class CalendarController extends BaseController
             }
         }
 
+        if ($page->getTitle() == $year && strlen($page->getTitle()) < 5) {
+            $page->setTitle('Kalender ' . $page->getYear() );
+        }
+
+        if ($page->getDescription() === null || strlen($page->getDescription()) < 5) {
+            $page->setDescription($page->getYear() . ' was een TOP jaar! Kijk hier voor de kalender ' . $page->getYear() . '. Op Dag Van De Week kunt u de historie ' . $page->getYear() . ' bekijken! Bekijk hier de Kalender ' . $page->getYear());
+        }
+
         return $page;
     }
 

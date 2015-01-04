@@ -12,19 +12,19 @@ stef_dag_van_de_week_homepage:
     defaults: { _controller: StefDagVanDeWeekBundle:Index:index }
 
 stef_dag_van_de_week_news_archive_index:
-    pattern:  /nieuws
+    pattern:  /nieuws/
     defaults: { _controller: StefDagVanDeWeekBundle:News:showMainNewsPage }
     requirements:
         _method:  GET
 
 stef_dag_van_de_week_news_show:
-    pattern:  /nieuws/{slug}
+    pattern:  /nieuws/{slug}/
     defaults: { _controller: StefDagVanDeWeekBundle:News:show }
     requirements:
         _method:  GET
 
 stef_dag_van_de_week_website_pages:
-    pattern:  /{slug}
+    pattern:  /{slug}/
     defaults: { _controller: StefDagVanDeWeekBundle:Page:show }
     requirements:
         _method:  GET

@@ -15,7 +15,7 @@ class HistoryController extends BaseController
 
         if ($page === null) {
             $page = new HistoryYear();
-            $page->setTitle($year);
+            $page->setTitle('Historie ' . $year);
             $page->setYear($year);
             $page->setSlug($year);
 
@@ -28,6 +28,10 @@ class HistoryController extends BaseController
 
                 $page->setBody($p1);
             }
+        }
+
+        if ($page->getTitle() == $year && strlen($page->getTitle()) < 5) {
+            $page->setTitle('Historie ' . $page->getYear() );
         }
 
         return $page;

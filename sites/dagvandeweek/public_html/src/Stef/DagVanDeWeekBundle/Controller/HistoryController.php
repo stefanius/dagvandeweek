@@ -91,6 +91,10 @@ class HistoryController extends BaseController
 
     public function showByYearMonthDayAction($year, $month, $day)
     {
+        if (strlen($month) < 2 || strlen($day) === 2) {
+            return $this->redirect('/' . $year . '/' . sprintf('02d', $month) . '/' . sprintf('02d', $day));
+        }
+
         $items = $this->getHistoryManager()->findByDayMonthYear($day, $month, $year);
         $dayInfo = $this->createDayInfo($year, $month, $day);
 
@@ -113,6 +117,10 @@ class HistoryController extends BaseController
 
     public function showArticleAction($year, $month, $day, $slug)
     {
+        if (strlen($month) < 2 || strlen($day) === 2) {
+            return $this->redirect('/' . $year . '/' . sprintf('02d', $month) . '/' . sprintf('02d', $day) . '/' . $slug);
+        }
+
         $page = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
         $dayInfo = $this->createDayInfo($year, $month, $day);
 

@@ -1,5 +1,5 @@
 remove_trailing_slash:
-    path: /{url}
+    path: /{url}/
     defaults: { _controller: StefRedirectTrailingSlashBundle:Redirecting:removeTrailingSlash }
     requirements:
         url: .*/$

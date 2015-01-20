@@ -9,11 +9,11 @@ server {
     root        /home/vagrant/sites/dagvandeweek/public_html/web;
 
     location / {
+        # try to serve file directly, fallback to app.php
         try_files $uri /app.php$is_args$args;
     }
 
     location ~ ^/(app|app_dev|config)\.php(/|$) {
-        rewrite ^(.*[^/])$ $1/ permanent;
         fastcgi_pass unix:/var/run/php5-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi_params;
@@ -30,12 +30,11 @@ server {
         expires 1d;
         add_header Cache-Control public;
     }
-
-    location ~ ^/(img|cjs|ccss)/ {
-        access_log off;
-        expires 7d;
-        add_header Cache-Control public;
-    }
+    #location ~ ^/(img|cjs|ccss)/ {
+    #    access_log off;
+    #    expires 7d;
+    #    add_header Cache-Control public;
+    #}
 
     # Deny access to .htaccess   files,
     # git & svn repositories, etc

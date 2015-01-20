@@ -23,13 +23,6 @@ stef_dag_van_de_week_news_show:
     requirements:
         _method:  GET
 
-remove_trailing_slash:
-    path: /{url}
-    defaults: { _controller: StefDagVanDeWeekBundle:Redirecting:removeTrailingSlash }
-    requirements:
-        url: .*/$
-    methods: [GET]
-
 stef_dag_van_de_week_website_pages:
     pattern:  /{slug}
     defaults: { _controller: StefDagVanDeWeekBundle:Page:show }

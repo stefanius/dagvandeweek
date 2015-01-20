@@ -1,6 +1,6 @@
 <?php
 
-namespace Stef\DagVanDeWeekBundle\Controller;
+namespace Stef\RedirectTrailingSlashBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;

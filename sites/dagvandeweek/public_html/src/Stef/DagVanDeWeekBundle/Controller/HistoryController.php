@@ -59,6 +59,35 @@ class HistoryController extends BaseController
         ];
     }
 
+    /**
+     * @param null $year
+     * @param null $month
+     * @param null $day
+     * @param null $slug
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    protected function internalRedirect($year = null, $month = null, $day = null, $slug = null)
+    {
+        if ($year == null) {
+            return $this->redirect('/historie/');
+        }
+
+        if ($month == null) {
+            return $this->redirect('/historie/' . $year);
+        }
+
+        if ($day == null) {
+            return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d', $month));
+        }
+
+        if ($slug == null) {
+            return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d/%1$02d', $month, $day));
+        }
+
+        return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d/%1$02d', $month, $day) . '/' . $slug);
+    }
+
     public function showByYearAction($year)
     {
         $page = $this->buildHistoryPage($year);
@@ -76,6 +105,10 @@ class HistoryController extends BaseController
 
     public function showByYearMonthAction($year, $month)
     {
+        if (strlen($month) < 2) {
+            return $this->internalRedirect($year, $month);
+        }
+
         $page = $this->buildHistoryPage($year);
         $items = $this->getHistoryManager()->findByMonthYear($month, $year);
 
@@ -91,8 +124,8 @@ class HistoryController extends BaseController
 
     public function showByYearMonthDayAction($year, $month, $day)
     {
-        if (strlen($month) < 2 || strlen($day) === 2) {
-            return $this->redirect('/' . $year . '/' . sprintf('02d', $month) . '/' . sprintf('02d', $day));
+        if (strlen($month) < 2 || strlen($day) < 2) {
+            return $this->internalRedirect($year, $month, $day);
         }
 
         $items = $this->getHistoryManager()->findByDayMonthYear($day, $month, $year);
@@ -117,8 +150,8 @@ class HistoryController extends BaseController
 
     public function showArticleAction($year, $month, $day, $slug)
     {
-        if (strlen($month) < 2 || strlen($day) === 2) {
-            return $this->redirect('/' . $year . '/' . sprintf('02d', $month) . '/' . sprintf('02d', $day) . '/' . $slug);
+        if (strlen($month) < 2 || strlen($day) < 2) {
+            return $this->internalRedirect($year, $month, $day, $slug);
         }
 
         $page = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);

@@ -5,7 +5,9 @@ namespace Stef\DagVanDeWeekBundle\Controller;
 use Stef\DagVanDeWeekBundle\Entity\History;
 use Stef\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stef\DagVanDeWeekBundle\Entity\HistoryYear;
+use Stef\SimpleCmsBundle\Entity\AbstractCmsContent;
 use Stef\SimpleCmsBundle\Entity\Page;
+use Symfony\Component\HttpFoundation\Request;
 
 class HistoryController extends BaseController
 {
@@ -148,7 +150,37 @@ class HistoryController extends BaseController
         ]);
     }
 
-    public function showArticleAction($year, $month, $day, $slug)
+    protected function generateBreadCrumbs(Request $request, AbstractCmsContent $page = null)
+    {
+        $breadcrumbs = $this->getWhiteOctoberBreadcrumbs();
+        $url = trim($request->getRequestUri(), '/');
+        $explode = explode('/', $url);
+
+        if ($explode[0] !== trim($request->getBaseUrl(), '/')) {
+            array_unshift($explode, '/');
+        } else {
+            $explode[0] = '/' . $explode[0];
+        }
+
+        $path = [];
+        $i = 0;
+
+        foreach ($explode as $p) {
+            $path[] = $p;
+            $crumblink = '/' . trim(implode('/', $path), '/');
+            $i++;
+
+            if (count($path) === 1) {
+                $breadcrumbs->addItem('Home', $crumblink);
+            } elseif ($i === count($explode) && $page !== null) {
+                $breadcrumbs->addItem($page->getTitle(), $crumblink);
+            } else {
+                $breadcrumbs->addItem(ucfirst($p), $crumblink);
+            }
+        }
+    }
+
+    public function showArticleAction(Request $request, $year, $month, $day, $slug)
     {
         if (strlen($month) < 2 || strlen($day) < 2) {
             return $this->internalRedirect($year, $month, $day, $slug);
@@ -156,6 +188,8 @@ class HistoryController extends BaseController
 
         $page = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
         $dayInfo = $this->createDayInfo($year, $month, $day);
+
+        $this->generateBreadCrumbs($request, $page);
 
         return $this->render('StefDagVanDeWeekBundle:History:article.html.twig', [
             'page' => $page,

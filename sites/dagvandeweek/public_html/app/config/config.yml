@@ -123,3 +123,14 @@ ivory_google_map:
             border: "1px solid #000"
             background-color: "#fff"
         language: en
+
+white_october_breadcrumbs:
+    separator:          ~
+    separatorClass:     'separator'
+    listId:             'wo-breadcrumbs'
+    listClass:          'breadcrumb'
+    itemClass:          active
+    linkRel:            ''
+    locale:             ~
+    translation_domain: ~
+    viewTemplate:       "StefDagVanDeWeekBundle:Elements:breadcrumbs.html.twig"

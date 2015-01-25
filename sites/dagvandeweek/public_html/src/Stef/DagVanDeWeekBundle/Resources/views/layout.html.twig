@@ -26,17 +26,13 @@
 <!-- container -->
 <div class="container">
 
-    <ol class="breadcrumb">
-        <li><a href="/">Home</a></li>
-        <li class="active">Ipsum</li>
-    </ol>
+    {{ wo_render_breadcrumbs() }}
 
     {% block content %}
 
     {% endblock %}
 
 </div>	<!-- /container -->
-
 
 {% include 'StefDagVanDeWeekBundle:Elements:social.html.twig' %}
 {% include 'StefDagVanDeWeekBundle:PageLayout:footer.html.twig' %}

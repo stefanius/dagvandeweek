@@ -12,6 +12,7 @@ use Stef\SimpleCmsBundle\Manager\DictionaryManager;
 use Stef\SimpleCmsBundle\Manager\NewsManager;
 use Stef\SimpleCmsBundle\Manager\PageManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 class BaseController extends Controller
 {
@@ -102,5 +103,13 @@ class BaseController extends Controller
     protected function isAuthenticatedFully()
     {
         return $this->container->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY');
+    }
+
+    /**
+     * @return Breadcrumbs
+     */
+    protected function getWhiteOctoberBreadcrumbs()
+    {
+        return $this->get("white_october_breadcrumbs");
     }
 }

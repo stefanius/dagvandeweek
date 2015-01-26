@@ -2,28 +2,24 @@
 
 namespace Stef\DagVanDeWeekBundle\BreadcrumbGenerator;
 
-use Stef\SimpleCmsBundle\Entity\AbstractCmsContent;
 use Symfony\Component\HttpFoundation\Request;
-use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
-class Generator {
+class Generator
+{
+    /**
+     * @var string
+     */
+    protected $linkKey = 'link';
 
     /**
-     * @var Breadcrumbs
+     * @var string
      */
-    protected $breadcrumbs;
+    protected $titleKey = 'title';
 
     /**
      * @var TitleBuilderInterface
      */
     protected $titleBuilder;
-    /**
-     * @param Breadcrumbs $breadcrumbs
-     */
-    function __construct(Breadcrumbs $breadcrumbs)
-    {
-        $this->breadcrumbs = $breadcrumbs;
-    }
 
     /**
      * @param TitleBuilderInterface $titleBuilder
@@ -38,7 +34,7 @@ class Generator {
      *
      * @return array
      */
-    public function explodeUrlPath($path)
+    protected function explodeUrlPath($path)
     {
         $path = trim($path, '/');
 
@@ -51,7 +47,7 @@ class Generator {
      *
      * @return array
      */
-    public function prepareFirstPathElement(Request $request, array $pathElements)
+    protected function prepareFirstPathElement(Request $request, array $pathElements)
     {
         if ($pathElements[0] !== trim($request->getBaseUrl(), '/')) {
             array_unshift($pathElements, '/');
@@ -62,26 +58,60 @@ class Generator {
         return $pathElements;
     }
 
-    public function generate(Request $request, AbstractCmsContent $page = null)
+    /**
+     * @param $path
+     * @param $crumblink
+     * @param $splitItems
+     * @param $splitItem
+     * @param $page
+     * @param $index
+     *
+     * @return array
+     */
+    protected function createCrumb($path, $crumblink, $splitItems, $splitItem, $page, $index)
     {
-        $explode = $this->explodeUrlPath($request->getRequestUri());
-        $explode = $this->prepareFirstPathElement($request, $explode);
+        if (count($path) === 1) {
+            $crumb = [
+                $this->linkKey => $crumblink,
+                $this->titleKey => 'Home'
+            ];
+        } elseif ($index === count($splitItems) && $page !== null && property_exists($page, 'title')) {
+            $crumb = [
+                $this->linkKey => $crumblink,
+                $this->titleKey => $page->getTitle()
+            ];
+        } else {
+            $crumb = [
+                $this->linkKey => $crumblink,
+                $this->titleKey => $this->titleBuilder->build($splitItem, $index, $path)
+            ];
+        }
 
+        return $crumb;
+    }
+
+    /**
+     * @param Request $request
+     * @param null $page
+     * @return array
+     */
+    public function generate(Request $request, $page = null)
+    {
+        $splitItems = $this->prepareFirstPathElement($request, $this->explodeUrlPath($request->getRequestUri()));
+
+        $crumbs = [];
         $path = [];
         $i = 0;
 
-        foreach ($explode as $p) {
-            $path[] = $p;
+        foreach ($splitItems as $splitItem) {
+            $path[] = $splitItem;
+            $crumb = null;
             $crumblink = '/' . trim(implode('/', $path), '/');
             $i++;
 
-            if (count($path) === 1) {
-                $this->breadcrumbs->addItem('Home', $crumblink);
-            } elseif ($i === count($explode) && $page !== null) {
-                $this->breadcrumbs->addItem($page->getTitle(), $crumblink);
-            } else {
-                $this->breadcrumbs->addItem($this->titleBuilder->build($p, $i), $crumblink);
-            }
+            $crumbs[] = $this->createCrumb($path, $crumblink, $splitItems, $splitItem, $page, $i);
         }
+
+        return $crumbs;
     }
 }

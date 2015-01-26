@@ -6,10 +6,11 @@ namespace Stef\DagVanDeWeekBundle\BreadcrumbGenerator;
 interface TitleBuilderInterface {
 
     /**
-     * @param string $title
-     * @param integer $elementIndex
+     * @param $title
+     * @param $elementIndex
+     * @param null $path
      *
-     * @return string
+     * @return mixed
      */
-    public function build($title, $elementIndex);
+    public function build($title, $elementIndex, $path = null);
 }

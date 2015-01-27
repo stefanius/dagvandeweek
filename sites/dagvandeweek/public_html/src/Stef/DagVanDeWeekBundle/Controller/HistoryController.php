@@ -2,14 +2,13 @@
 
 namespace Stef\DagVanDeWeekBundle\Controller;
 
-use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\DefaultTitleBuilder;
-use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\Generator;
 use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\HistoryTitleBuilder;
+use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
 use Stef\DagVanDeWeekBundle\Entity\History;
 use Stef\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stef\DagVanDeWeekBundle\Entity\HistoryYear;
-use Stef\SimpleCmsBundle\Entity\AbstractCmsContent;
 use Stef\SimpleCmsBundle\Entity\Page;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 class HistoryController extends BaseController
@@ -93,7 +92,13 @@ class HistoryController extends BaseController
         return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d/%1$02d', $month, $day) . '/' . $slug);
     }
 
-    public function showByYearAction($year)
+    /**
+     * @param Request $request
+     * @param $year
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function showByYearAction(Request $request, $year)
     {
         $page = $this->buildHistoryPage($year);
         $items = $this->getHistoryManager()->findByYear($year);
@@ -105,10 +110,17 @@ class HistoryController extends BaseController
         return $this->render('StefDagVanDeWeekBundle:History:year.html.twig', [
             'page' => $page,
             'items' => $items
-        ]);
+        ], null, $request);
     }
 
-    public function showByYearMonthAction($year, $month)
+    /**
+     * @param Request $request
+     * @param $year
+     * @param $month
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function showByYearMonthAction(Request $request, $year, $month)
     {
         if (strlen($month) < 2) {
             return $this->internalRedirect($year, $month);
@@ -124,10 +136,18 @@ class HistoryController extends BaseController
             'page' => $page,
             'items' => $items,
             'month' => $month
-        ]);
+        ], null, $request);
     }
 
-    public function showByYearMonthDayAction($year, $month, $day)
+    /**
+     * @param Request $request
+     * @param $year
+     * @param $month
+     * @param $day
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function showByYearMonthDayAction(Request $request, $year, $month, $day)
     {
         if (strlen($month) < 2 || strlen($day) < 2) {
             return $this->internalRedirect($year, $month, $day);
@@ -150,22 +170,18 @@ class HistoryController extends BaseController
             'items' => $items,
             'month' => $month,
             'dayInfo' => $dayInfo
-        ]);
+        ], null, $request);
     }
 
-    protected function generateBreadCrumbs(Request $request, AbstractCmsContent $page = null)
-    {
-        $generator = new Generator($this->getWhiteOctoberBreadcrumbs());
-        $generator->setTitleBuilder(new HistoryTitleBuilder(new Dutch()));
-        $crumbs = $generator->generate($request, $page);
-
-        $breadcrumbs = $this->getWhiteOctoberBreadcrumbs();
-
-        foreach ($crumbs as $crumb) {
-            $breadcrumbs->addItem($crumb['title'], $crumb['link']);
-        }
-    }
-
+    /**
+     * @param Request $request
+     * @param $year
+     * @param $month
+     * @param $day
+     * @param $slug
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     public function showArticleAction(Request $request, $year, $month, $day, $slug)
     {
         if (strlen($month) < 2 || strlen($day) < 2) {
@@ -175,12 +191,10 @@ class HistoryController extends BaseController
         $page = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
         $dayInfo = $this->createDayInfo($year, $month, $day);
 
-        $this->generateBreadCrumbs($request, $page);
-
         return $this->render('StefDagVanDeWeekBundle:History:article.html.twig', [
             'page' => $page,
             'dayInfo' => $dayInfo
-        ]);
+        ], null, $request);
     }
 
     public function showIndexAction()
@@ -196,5 +210,17 @@ class HistoryController extends BaseController
             'years' => $years,
             'page' => $page
         ]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function render($view, array $parameters = array(), Response $response = null, Request $request = null, TitleBuilderInterface $breadcrumbTitleBuilder = null)
+    {
+        if ($breadcrumbTitleBuilder === null) {
+            $breadcrumbTitleBuilder = new HistoryTitleBuilder(new Dutch());
+        }
+
+        return parent::render($view, $parameters, $response, $request, $breadcrumbTitleBuilder);
     }
 }

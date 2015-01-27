@@ -3,15 +3,20 @@
 namespace Stef\DagVanDeWeekBundle\Controller;
 
 use Ivory\GoogleMap\Map;
+use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\Generator;
+use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
 use Stef\DagVanDeWeekBundle\Manager\CalendarYearManager;
 use Stef\DagVanDeWeekBundle\Manager\HistoryManager;
 use Stef\DagVanDeWeekBundle\Manager\HistoryYearManager;
 use Stef\DagVanDeWeekBundle\Manager\WeekHeroManager;
+use Stef\SimpleCmsBundle\Entity\AbstractCmsContent;
 use Stef\SimpleCmsBundle\KeyValueParser\Parser;
 use Stef\SimpleCmsBundle\Manager\DictionaryManager;
 use Stef\SimpleCmsBundle\Manager\NewsManager;
 use Stef\SimpleCmsBundle\Manager\PageManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 class BaseController extends Controller
@@ -111,5 +116,42 @@ class BaseController extends Controller
     protected function getWhiteOctoberBreadcrumbs()
     {
         return $this->get("white_october_breadcrumbs");
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function render($view, array $parameters = array(), Response $response = null, Request $request = null, TitleBuilderInterface $breadcrumbTitleBuilder = null)
+    {
+
+        if ($request !== null && $breadcrumbTitleBuilder !== null) {
+            $page = null;
+
+            if (array_key_exists('page', $parameters) && $parameters['page'] instanceof AbstractCmsContent) {
+                $page = $parameters['page'];
+            }
+
+            $this->generateBreadCrumbs($request, $breadcrumbTitleBuilder, $page);
+        }
+
+        return parent::render($view, $parameters, $response);
+    }
+
+    /**
+     * @param Request $request
+     * @param TitleBuilderInterface $breadcrumbTitleBuilder
+     * @param AbstractCmsContent $page
+     */
+    protected function generateBreadCrumbs(Request $request, TitleBuilderInterface $breadcrumbTitleBuilder, AbstractCmsContent $page = null)
+    {
+        $generator = new Generator($this->getWhiteOctoberBreadcrumbs());
+        $generator->setTitleBuilder($breadcrumbTitleBuilder);
+        $crumbs = $generator->generate($request, $page);
+
+        $breadcrumbs = $this->getWhiteOctoberBreadcrumbs();
+
+        foreach ($crumbs as $crumb) {
+            $breadcrumbs->addItem($crumb['title'], $crumb['link']);
+        }
     }
 }

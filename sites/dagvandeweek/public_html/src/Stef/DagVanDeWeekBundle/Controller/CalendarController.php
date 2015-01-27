@@ -2,8 +2,14 @@
 
 namespace Stef\DagVanDeWeekBundle\Controller;
 
+use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\CalendarTitleBuilder;
+use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\HistoryTitleBuilder;
+use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
+use Stef\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stef\DagVanDeWeekBundle\Entity\CalendarYear;
 use Stef\SimpleCmsBundle\Entity\Page;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class CalendarController extends BaseController
 {
@@ -39,16 +45,16 @@ class CalendarController extends BaseController
         return $page;
     }
 
-    public function showAction($year)
+    public function showAction(Request $request, $year)
     {
         $page = $this->buildCalendarPage($year);
 
         return $this->render('StefDagVanDeWeekBundle:Calendar:year.html.twig', [
             'page' => $page
-        ]);
+        ], null, $request);
     }
 
-    public function showIndexAction()
+    public function showIndexAction(Request $request)
     {
         $years = $this->getHistoryManager()->getActiveYears();
         $page = new Page();
@@ -59,6 +65,18 @@ class CalendarController extends BaseController
         return $this->render('StefDagVanDeWeekBundle:Calendar:index.html.twig', [
             'years' => $years,
             'page' => $page
-        ]);
+        ],null, $request);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function render($view, array $parameters = array(), Response $response = null, Request $request = null, TitleBuilderInterface $breadcrumbTitleBuilder = null)
+    {
+        if ($breadcrumbTitleBuilder === null) {
+            $breadcrumbTitleBuilder = new CalendarTitleBuilder();
+        }
+
+        return parent::render($view, $parameters, $response, $request, $breadcrumbTitleBuilder);
     }
 }

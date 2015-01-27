@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "18b3a5cc66f4a09871072d34f3612504",
+    "hash": "791ebf57aa9411cb69b26e894b98f6a7",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -3828,6 +3828,49 @@
                 "templating"
             ],
             "time": "2015-01-14 10:15:49"
+        },
+        {
+            "name": "whiteoctober/breadcrumbs-bundle",
+            "version": "1.0.2",
+            "target-dir": "WhiteOctober/BreadcrumbsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/whiteoctober/BreadcrumbsBundle.git",
+                "reference": "d330a5907855fea7cfabb96fbc0b64813d6c9cbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/whiteoctober/BreadcrumbsBundle/zipball/d330a5907855fea7cfabb96fbc0b64813d6c9cbe",
+                "reference": "d330a5907855fea7cfabb96fbc0b64813d6c9cbe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "2.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "WhiteOctober\\BreadcrumbsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rich Sage",
+                    "email": "rich.sage@gmail.com"
+                }
+            ],
+            "description": "A small breadcrumbs bundle for Symfony2",
+            "homepage": "https://github.com/whiteoctober/BreadcrumbsBundle",
+            "keywords": [
+                "breadcrumbs",
+                "symfony"
+            ],
+            "time": "2014-10-27 22:40:10"
         },
         {
             "name": "yohang/calendr",

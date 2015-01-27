@@ -54,6 +54,7 @@
         "egeloen/ckeditor-bundle": "~2.0",
         "egeloen/google-map-bundle": "~2.2",
         "frequence-web/calendr-bundle": "~1.0",
+        "whiteoctober/breadcrumbs-bundle": "~1.0",
 
         "stef/crud-contract": "dev-master",
         "stef/manipulation": "dev-master",

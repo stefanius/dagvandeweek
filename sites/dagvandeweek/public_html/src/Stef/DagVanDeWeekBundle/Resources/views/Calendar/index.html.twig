@@ -25,10 +25,26 @@
         </article>
 
         <aside class="col-sm-3 sidebar sidebar-right">
-            <h4>Nog meer kalenders</h4>
-            {%  for i in range (1800, 2020, 9) %}
-                <a class="small text-muted" href="/kalender/"{{ i }}>Kalender&nbsp;{{ i }}</a>
-            {% endfor %}
+
+            <div class="widget">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- responsive -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1143505562670221"
+                     data-ad-slot="2674477613"
+                     data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <div class="widget">
+                <h4>Nog meer kalenders</h4>
+                {%  for i in range (1800, 2020, 9) %}
+                    <a class="small text-muted" href="/kalender/"{{ i }}>Kalender&nbsp;{{ i }}</a>
+                {% endfor %}
+            </div>
         </aside>
     </div>
 {% endblock %}

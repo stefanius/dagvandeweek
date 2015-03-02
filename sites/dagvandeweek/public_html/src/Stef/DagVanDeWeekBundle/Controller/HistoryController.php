@@ -49,6 +49,7 @@ class HistoryController extends BaseController
         $weekDayNumber = $date->format("w");
         $yearDayNumber = $date->format("z");
         $weekNumber = $date->format("W");
+        $lastDayOfMonth = $date->format("t");
         $unixSeconds = $date->format("U");
         $dutchMonthName = $translation->getMonth($month);
         $dutchWeekdayName = $translation->getDay($weekDayNumber);
@@ -56,10 +57,12 @@ class HistoryController extends BaseController
         return [
             'weekDayNumber' => $weekDayNumber,
             'yearDayNumber' => $yearDayNumber,
+            'monthNumber' => (int)$month,
             'weekNumber' => $weekNumber,
             'unixSeconds' => $unixSeconds,
             'dutchMonthName' => $dutchMonthName,
             'dutchWeekdayName' => $dutchWeekdayName,
+            'lastDayOfMonth' => $lastDayOfMonth,
         ];
     }
 
@@ -77,11 +80,11 @@ class HistoryController extends BaseController
             return $this->redirect('/historie/');
         }
 
-        if ($month == null) {
+        if ($month == null || $month === '00' || $month === '0') {
             return $this->redirect('/historie/' . $year);
         }
 
-        if ($day == null) {
+        if ($day == null || $day === '00' || $day === '0') {
             return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d', $month));
         }
 
@@ -126,16 +129,27 @@ class HistoryController extends BaseController
             return $this->internalRedirect($year, $month);
         }
 
+        if ($month === '00') {
+            return $this->internalRedirect($year, $month);
+        }
+
+        $dayInfo = $this->createDayInfo($year, $month, 1);
+
         $page = $this->buildHistoryPage($year);
         $items = $this->getHistoryManager()->findByMonthYear($month, $year);
 
         $page->setRobotsIndex(false);
         $page->setRobotsFollow(true);
 
-        return $this->render('StefDagVanDeWeekBundle:History:year.html.twig', [
+        if (count($items) > 0) {
+            $page->setRobotsIndex(true);
+        }
+
+        return $this->render('StefDagVanDeWeekBundle:History:month.html.twig', [
             'page' => $page,
             'items' => $items,
-            'month' => $month
+            'month' => $month,
+            'dayInfo' => $dayInfo,
         ], null, $request);
     }
 
@@ -153,6 +167,10 @@ class HistoryController extends BaseController
             return $this->internalRedirect($year, $month, $day);
         }
 
+        if ($month === '00' && $day === '00') {
+            return $this->internalRedirect($year, $month, $day);
+        }
+
         $items = $this->getHistoryManager()->findByDayMonthYear($day, $month, $year);
         $dayInfo = $this->createDayInfo($year, $month, $day);
 
@@ -164,6 +182,10 @@ class HistoryController extends BaseController
 
         $page->setRobotsIndex(false);
         $page->setRobotsFollow(true);
+
+        if (count($items) > 0) {
+            $page->setRobotsIndex(true);
+        }
 
         return $this->render('StefDagVanDeWeekBundle:History:day.html.twig', [
             'page' => $page,

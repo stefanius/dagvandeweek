@@ -6,6 +6,8 @@ class DutchPancakeDay extends AbstractSpecialDate
 {
     protected function generate()
     {
+        $this->description = "Pannenkoekendag";
+
         if ($this->year >= 2007) {
             $timestamp = strtotime('last friday', mktime(0,0,0,4,0,$this->year));
             $this->startDate = new \DateTime();

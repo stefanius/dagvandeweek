@@ -11,15 +11,28 @@ use Stef\SpecialDatesBundle\Dates\SecondChristmasDay;
 
 class Parser
 {
-    public function getAllValidDates($year)
+    public function getAllDates($year)
     {
         return [
-            new ChristmasEvening($year),
-            new DutchPancakeDay($year),
-            new FirstChristmasDay($year),
-            new LastDayOfYear($year),
             new NewYearsDay($year),
+            new DutchPancakeDay($year),
+            new ChristmasEvening($year),
+            new FirstChristmasDay($year),
             new SecondChristmasDay($year),
+            new LastDayOfYear($year),
         ];
+    }
+
+    public function getAllValidDates($year)
+    {
+        $items = $this->getAllDates($year);
+
+        foreach ($items as $key => $value) {
+            if ($value->isValid() === false) {
+                unset($items[$key]);
+            }
+        }
+
+        return $items;
     }
 }

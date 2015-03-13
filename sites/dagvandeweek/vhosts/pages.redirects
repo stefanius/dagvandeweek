@@ -5,6 +5,7 @@ rewrite ^/index.html / permanent;
 rewrite ^/historie/index.html / permanent;
 rewrite ^/nieuws/index.html / permanent;
 rewrite ^/kalender/index.html / permanent;
+rewrite ^/kalender/-3 /kalender permanent;
 rewrite ^/historie/1909/00/01/index.html / permanent;
 rewrite ^/historie/1909/00/index.html / permanent;
 

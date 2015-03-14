@@ -9,6 +9,11 @@ services:
         tags:
             - { name: twig.extension }
 
+    stef.twig.weekday_extension:
+        class: Stef\DagVanDeWeekBundle\Twig\Extension\GetTranslatedWeekdayExtension
+        tags:
+            - { name: twig.extension }
+
     stef.twig.month_extension:
         class: Stef\DagVanDeWeekBundle\Twig\Extension\GetTranslatedMonthExtension
         tags:

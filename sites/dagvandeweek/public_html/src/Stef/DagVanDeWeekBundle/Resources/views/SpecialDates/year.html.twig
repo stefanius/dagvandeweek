@@ -1,0 +1,42 @@
+{% extends "StefDagVanDeWeekBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <article class="col-sm-9 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Bijzondere dagen {{ year }}</h1>
+            </header>
+
+            <p>
+                In {{ year }} kennen we {{ dates|length }} bijzondere dagen. Dit zijn feestdagen of dagen die zijn uitgeroepen om stil te staan bij een bepaald onderwerp. Wij hebben ons best gedaan om zoveel mogelijk van deze dagen bij elkaar te verzamelen. Niet elk jaar heeft alle dagen. Het kan dus zo zijn dag in {{ year }} een dag ontbreekt omdat deze pas in {{ year + 15}} is bedacht.
+            </p>
+
+            <h2>Overzicht dagen {{ year }}</h2>
+
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Omschrijving</th>
+                    <th>Datum volledig</th>
+                    <th>Datum kort</th>
+                </tr>
+
+                {% for date in dates %}
+                    {% if date.valid %}
+                        <tr>
+                            <td>{{ date.description }} {{ year }}</td>
+                            <td>{{ date.startDate|date("w")|translate_weekday|capitalize }} {{ date.startDate|date("j") }} {{ date.startDate|date("m")|translate_month }}   {{ date.startDate|date("Y") }}</td>
+                            <td>{{ date.startDate|date("d/m/Y") }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+
+        </article>
+
+        <aside class="col-sm-3 sidebar sidebar-right">
+
+        </aside>
+    </div>
+{% endblock %}
+
+

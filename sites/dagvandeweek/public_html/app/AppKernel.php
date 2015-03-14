@@ -35,6 +35,7 @@ class AppKernel extends Kernel
             new Stef\SimpleCmsBundle\StefSimpleCmsBundle(),
             new Stef\DagVanDeWeekBundle\StefDagVanDeWeekBundle(),
             new Stef\RedirectTrailingSlashBundle\StefRedirectTrailingSlashBundle(),
+            new Stef\SpecialDatesBundle\StefSpecialDatesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

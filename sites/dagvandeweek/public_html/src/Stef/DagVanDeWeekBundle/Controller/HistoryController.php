@@ -210,6 +210,11 @@ class HistoryController extends BaseController
             return $this->internalRedirect($year, $month, $day, $slug);
         }
 
+        if ($slug === 'bombardement%20-rotterdam' || $slug === 'bombardement -rotterdam') {
+            $slug = 'bombardement-rotterdam';
+            return $this->internalRedirect($year, $month, $day, $slug);
+        }
+
         $page = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
         $dayInfo = $this->createDayInfo($year, $month, $day);
 

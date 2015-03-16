@@ -6,6 +6,7 @@ rewrite ^/historie/index.html / permanent;
 rewrite ^/nieuws/index.html / permanent;
 rewrite ^/kalender/index.html / permanent;
 rewrite ^/kalender/-3 /kalender permanent;
+rewrite ^/kalender/-7 /kalender permanent;
 rewrite ^/historie/1909/00/01/index.html / permanent;
 rewrite ^/historie/1909/00/index.html / permanent;
 
@@ -15,6 +16,10 @@ rewrite ^/histories/historie/2001 /historie/2001 permanent;
 rewrite ^/histories/historie/1911 /historie/1911 permanent;
 rewrite ^/histories/historie/1980 /historie/1980 permanent;
 rewrite ^/histories/historie/2000 /historie/2000 permanent;
+
+#Corrected URLs
+rewrite ^/historie/1940/05/14/bombardement%20-rotterdam /historie/1940/05/14/bombardement-rotterdam permanent;
+rewrite ^/historie/1940/05/14/bombardement -rotterdam /historie/1940/05/14/bombardement-rotterdam permanent;
 
 #Alle zeven op een rijtje
 rewrite ^/watis/maandag /alle-zeven-op-een-rijtje/maandag permanent;

@@ -19,7 +19,7 @@ rewrite ^/histories/historie/2000 /historie/2000 permanent;
 
 #Corrected URLs
 rewrite ^/historie/1940/05/14/bombardement%20-rotterdam /historie/1940/05/14/bombardement-rotterdam permanent;
-rewrite ^/historie/1940/05/14/bombardement -rotterdam /historie/1940/05/14/bombardement-rotterdam permanent;
+rewrite ^/historie/1940/05/14/bombardement20-rotterdam /historie/1940/05/14/bombardement-rotterdam permanent;
 
 #Alle zeven op een rijtje
 rewrite ^/watis/maandag /alle-zeven-op-een-rijtje/maandag permanent;

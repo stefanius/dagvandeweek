@@ -1,0 +1,4 @@
+services:
+#    stef_contact_form.example:
+#        class: Stef\ContactFormBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -42,6 +42,19 @@ class FormDefinition
      */
     private $formFields;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created", type="datetime")
+     */
+    private $created;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="modified", type="datetime")
+     */
+    private $modified;
 
     /**
      * Get id
@@ -120,5 +133,51 @@ class FormDefinition
     public function getFormFields()
     {
         return $this->formFields;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return FormData
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set modified
+     *
+     * @param \DateTime $modified
+     * @return FormData
+     */
+    public function setModified($modified)
+    {
+        $this->modified = $modified;
+
+        return $this;
+    }
+
+    /**
+     * Get modified
+     *
+     * @return \DateTime
+     */
+    public function getModified()
+    {
+        return $this->modified;
     }
 }

@@ -1,3 +1,0 @@
-stef_contact_form_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: StefContactFormBundle:Default:index }

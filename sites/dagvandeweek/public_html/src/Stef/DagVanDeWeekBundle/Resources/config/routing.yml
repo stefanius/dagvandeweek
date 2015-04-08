@@ -23,6 +23,7 @@ stef_dag_van_de_week_special_days_by_year:
     defaults: { _controller: StefDagVanDeWeekBundle:SpecialDates:show }
     requirements:
         _method:  GET
+        year:  \d+
 
 stef_dag_van_de_week_news_archive_index:
     pattern:  /nieuws

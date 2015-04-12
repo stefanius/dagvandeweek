@@ -1,0 +1,17 @@
+<h2>{{ dayInfo.dutchMonthName|capitalize }} in getallen</h2>
+<p>Iedereen weet dat een jaar 12 maanden heeft. Dat betekent elke maand goed is voor 8.33333333333% van een heel jaar. Niet voor niets bouw je daarom vaak (bijna) een extra maand salaris aan vakantiegeld op in mei.</p>
+<p>Bij de start van {{ dayInfo.dutchMonthName }} zat je al op {{ ((dayInfo.monthNumber - 1) * 8.33333333333) }}% van {{ page.year }}. Aan het einde van de maand op {{ (dayInfo.monthNumber * 8.33333333333) }}%</p>
+
+{% if(dayInfo.monthNumber < 4) %}
+    <h2>Eerste kwartaal</h2>
+    <p>Het eerste kwartaal begint met de start van het nieuwe jaar. In de eerste weken zullen veel mensen je nog vaak het beste wensen. De temperaturen in het eerste kwartaal zijn vaak aan de koude kant. In de loop van het kwartaal gaat de winter over in de lente en zal de temperatuur langzaamaan richting 'korte broeken weer' gaan. </p>
+{% elseif(dayInfo.monthNumber > 3 and dayInfo.monthNumber < 7) %}
+    <h2>Tweede kwartaal</h2>
+    <p>Het tweede kwartaal van {{ page.year }} was tof!</p>
+{% elseif(dayInfo.monthNumber > 6 and dayInfo.monthNumber < 10) %}
+    <h2>Derde kwartaal</h2>
+    <p>Het derde kwartaal van {{ page.year }} was tof!</p>
+{% elseif(dayInfo.monthNumber > 9) %}
+    <h2>Vierde kwartaal</h2>
+    <p>Het vierde kwartaal van {{ page.year }} was tof!</p>
+{% endif %}

@@ -8,6 +8,7 @@ use Stef\SpecialDatesBundle\Dates\FirstChristmasDay;
 use Stef\SpecialDatesBundle\Dates\LastDayOfYear;
 use Stef\SpecialDatesBundle\Dates\NewYearsDay;
 use Stef\SpecialDatesBundle\Dates\SecondChristmasDay;
+use Stef\SpecialDatesBundle\Dates\WorldPiDay;
 
 class Parser
 {
@@ -16,6 +17,7 @@ class Parser
         return [
             new NewYearsDay($year),
             new DutchPancakeDay($year),
+            new WorldPiDay($year),
             new ChristmasEvening($year),
             new FirstChristmasDay($year),
             new SecondChristmasDay($year),

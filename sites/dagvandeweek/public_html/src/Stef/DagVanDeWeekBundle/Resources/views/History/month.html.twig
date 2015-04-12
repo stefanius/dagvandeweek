@@ -4,14 +4,16 @@
     <div class="row">
         <article class="col-sm-9 maincontent">
             <header class="page-header">
-                <h1 class="page-title">{{ dayInfo.dutchWeekdayName }} {{ page.day }} {{ dayInfo.dutchMonthName }} {{ page.year }}</h1>
+                <h1 class="page-title">Geschiedenis van {{ dayInfo.dutchMonthName }} {{ page.year }}</h1>
             </header>
 
-            <p>{{ page.day }} {{ dayInfo.dutchMonthName }} is de {{ dayInfo.yearDayNumber }}e dag van het jaar {{ page.year }}. Verder valt deze dag in week {{ dayInfo.weekNumber }}.</p>
+            <p>De maand {{ dayInfo.dutchMonthName }} was maand {{ dayInfo.monthNumber }} uit het jaar {{ page.year }}. De maand begon op <strong>{{ dayInfo.dutchWeekdayName }} 1 {{ dayInfo.dutchMonthName }} {{ page.year }}</strong> en eindigde op <strong>{{ dayInfo.lastDayOfMonth }} {{ dayInfo.dutchMonthName }} {{ page.year }}</strong>. Deze maand had <strong>{{ dayInfo.lastDayOfMonth }} dagen</strong>.</p>
 
             {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
 
-            <h2>Gebeurtenissen {{ page.day }} {{ dayInfo.dutchMonthName }} {{ page.year }}</h2>
+            {% include 'StefDagVanDeWeekBundle:History:monthdetails.html.twig' %}
+
+            <h2>Historisch overzicht van {{ dayInfo.dutchMonthName }} {{ page.year }}</h2>
             <p>In onderstaand overzicht staan de (bij ons bekende) gebeurtenissen</p>
             <ol>
                 {% for item in items %}

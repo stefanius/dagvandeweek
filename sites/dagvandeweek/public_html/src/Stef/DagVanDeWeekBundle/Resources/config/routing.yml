@@ -37,6 +37,10 @@ stef_dag_van_de_week_news_show:
     requirements:
         _method:  GET
 
+stef_dag_van_de_week_contact:
+    pattern:  /contact
+    defaults: { _controller: StefDagVanDeWeekBundle:Index:contact }
+
 stef_dag_van_de_week_website_pages:
     pattern:  /{slug}
     defaults: { _controller: StefDagVanDeWeekBundle:Page:show }

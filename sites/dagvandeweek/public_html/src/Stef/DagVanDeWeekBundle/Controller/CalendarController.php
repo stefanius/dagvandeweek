@@ -47,6 +47,14 @@ class CalendarController extends BaseController
 
     public function showAction(Request $request, $year)
     {
+        if (!is_numeric($year)) {
+            $this->redirect('/kalender');
+        }
+
+        if ((int)$year < 30) {
+            $this->redirect('/kalender', 301);
+        }
+
         $page = $this->buildCalendarPage($year);
 
         return $this->render('StefDagVanDeWeekBundle:Calendar:year.html.twig', [

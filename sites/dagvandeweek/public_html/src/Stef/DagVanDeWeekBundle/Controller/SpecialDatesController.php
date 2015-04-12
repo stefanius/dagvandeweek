@@ -25,7 +25,7 @@ class SpecialDatesController extends BaseController
         $page->setDescription($year . ' heeft een groot aantal bijzondere dagen. Wij hebben er ' . count($dates) . ' verzameld! Bekijk hier het overzicht van bijzondere dagen uit ' . $year . '!');
         $page->setRobotsIndex(false);
 
-        if ($year === 2015) {
+        if ($year === 2015 || $year === '2015') {
             $page->setRobotsIndex(true);
         }
 

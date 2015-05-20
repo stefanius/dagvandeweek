@@ -19,7 +19,7 @@ rewrite ^/historie/1909/00/01/index.html / permanent;
 rewrite ^/historie/1909/00/index.html / permanent;
 rewrite ^/historie/1909/00/01/eerste-vierdaagse-van-nijmegen /historie/1909/09/01/eerste-vierdaagse-van-nijmegen permanent;
 rewrite ^/historie/1909/index.html /historie/1909 permanent;
-rewrite ^/historie/1944/00/05/dolle-dinsdag /historie/1944/09/05/dolle-dinsdag9 permanent;
+rewrite ^/historie/1944/00/05/dolle-dinsdag /historie/1944/09/05/dolle-dinsdag permanent;
 
 #remove stupid kalenders
 #rewrite ^/kalender/0 /kalender permanent;

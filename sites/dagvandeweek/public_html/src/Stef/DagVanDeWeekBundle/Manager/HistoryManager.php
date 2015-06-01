@@ -78,6 +78,18 @@ class HistoryManager extends AbstractObjectManager {
         return $qb->getQuery()->getResult();
     }
 
+    public function findByDayMonth($day, $month)
+    {
+        $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
+
+        $qb->select('e');
+        $qb->where('e.month = :month AND e.day = :day');
+        $qb->setParameter('day', $day);
+        $qb->setParameter('month', $month);
+
+        return $qb->getQuery()->getResult();
+    }
+
     public function findByDayMonthYearSlug($day, $month, $year, $slug)
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');

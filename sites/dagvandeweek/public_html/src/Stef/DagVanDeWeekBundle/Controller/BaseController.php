@@ -5,6 +5,7 @@ namespace Stef\DagVanDeWeekBundle\Controller;
 use Ivory\GoogleMap\Map;
 use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\Generator;
 use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
+use Stef\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stef\DagVanDeWeekBundle\Manager\CalendarYearManager;
 use Stef\DagVanDeWeekBundle\Manager\ContactManager;
 use Stef\DagVanDeWeekBundle\Manager\HistoryManager;
@@ -162,5 +163,37 @@ class BaseController extends Controller
         foreach ($crumbs as $crumb) {
             $breadcrumbs->addItem($crumb['title'], $crumb['link']);
         }
+    }
+
+    /**
+     * @param $year
+     * @param $month
+     * @param $day
+     *
+     * @return array
+     */
+    protected function createDayInfo($year, $month, $day)
+    {
+        $translation = new Dutch();
+        $date = new \DateTime($year . '-' . $month . '-' . $day);
+
+        $weekDayNumber = $date->format("w");
+        $yearDayNumber = $date->format("z");
+        $weekNumber = $date->format("W");
+        $lastDayOfMonth = $date->format("t");
+        $unixSeconds = $date->format("U");
+        $dutchMonthName = $translation->getMonth($month);
+        $dutchWeekdayName = $translation->getDay($weekDayNumber);
+
+        return [
+            'weekDayNumber' => $weekDayNumber,
+            'yearDayNumber' => $yearDayNumber,
+            'monthNumber' => (int)$month,
+            'weekNumber' => $weekNumber,
+            'unixSeconds' => $unixSeconds,
+            'dutchMonthName' => $dutchMonthName,
+            'dutchWeekdayName' => $dutchWeekdayName,
+            'lastDayOfMonth' => $lastDayOfMonth,
+        ];
     }
 }

@@ -3,9 +3,7 @@
 namespace Stef\DagVanDeWeekBundle\Controller;
 
 use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\CalendarTitleBuilder;
-use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\HistoryTitleBuilder;
 use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
-use Stef\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stef\DagVanDeWeekBundle\Entity\CalendarYear;
 use Stef\SimpleCmsBundle\Entity\Page;
 use Symfony\Component\HttpFoundation\Request;

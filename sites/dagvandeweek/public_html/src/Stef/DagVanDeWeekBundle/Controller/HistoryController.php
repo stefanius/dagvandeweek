@@ -89,10 +89,10 @@ class HistoryController extends BaseController
         }
 
         if ($slug == null) {
-            return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d/%1$02d', $month, $day));
+            return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d', $month) . '/' . sprintf('%1$02d', $day));
         }
 
-        return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d/%1$02d', $month, $day) . '/' . $slug);
+        return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d', $month) . '/' . sprintf('%1$02d', $day) . '/' . $slug);
     }
 
     /**

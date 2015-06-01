@@ -6,6 +6,7 @@ use Ivory\GoogleMap\Map;
 use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\Generator;
 use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
 use Stef\DagVanDeWeekBundle\Manager\CalendarYearManager;
+use Stef\DagVanDeWeekBundle\Manager\ContactManager;
 use Stef\DagVanDeWeekBundle\Manager\HistoryManager;
 use Stef\DagVanDeWeekBundle\Manager\HistoryYearManager;
 use Stef\DagVanDeWeekBundle\Manager\WeekHeroManager;
@@ -47,6 +48,14 @@ class BaseController extends Controller
     protected function getPageManager()
     {
         return $this->get('stef_simple_cms.page_manager');
+    }
+
+    /**
+     * @return ContactManager
+     */
+    protected function getContactManager()
+    {
+        return $this->get('stef_simple_cms.contact_manager');
     }
 
     /**

@@ -23,6 +23,10 @@ services:
         class: Stef\DagVanDeWeekBundle\Manager\HistoryYearManager
         arguments: ["@doctrine.orm.entity_manager"]
 
+    stef_simple_cms.contact_manager:
+        class: Stef\DagVanDeWeekBundle\Manager\ContactManager
+        arguments: ["@doctrine.orm.entity_manager"]
+
     stef_simple_cms.history_manager:
         class: Stef\DagVanDeWeekBundle\Manager\HistoryManager
         arguments: ["@doctrine.orm.entity_manager"]
@@ -45,6 +49,7 @@ services:
             - [addNewMapping, ["CalendarYear", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.calendar_year_manager"]]
             - [addNewMapping, ["HistoryYear", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.history_year_manager"]]
             - [addNewMapping, ["History", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.history_manager"]]
+            - [addNewMapping, ["Contact", "StefDagVanDeWeekBundle", "Stef\DagVanDeWeekBundle\Entity", "@stef_simple_cms.contact_manager"]]
 
     stef_simple_cms.form_options:
         class: Stef\SimpleCmsBundle\Form\FormOptions

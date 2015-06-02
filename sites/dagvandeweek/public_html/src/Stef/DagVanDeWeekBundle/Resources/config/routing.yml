@@ -41,6 +41,10 @@ stef_dag_van_de_week_contact:
     pattern:  /contact
     defaults: { _controller: StefDagVanDeWeekBundle:Index:contact }
 
+stef_dag_van_de_week_today_in_the_past:
+    pattern:  /vandaag-in-het-verleden
+    defaults: { _controller: StefDagVanDeWeekBundle:TodayInThePast:showToday }
+
 stef_dag_van_de_week_website_pages:
     pattern:  /{slug}
     defaults: { _controller: StefDagVanDeWeekBundle:Page:show }

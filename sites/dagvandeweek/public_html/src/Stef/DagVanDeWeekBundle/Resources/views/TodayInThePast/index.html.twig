@@ -1,0 +1,35 @@
+{% extends 'StefDagVanDeWeekBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <article class="col-sm-9 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">{{ page.title }}</h1>
+            </header>
+            <p>Geen heden zonder verleden, maar zonder het heden kan je een toekomst ook wel vergeten. Dit was de inspiratie voor de reeks <strong>Vandaag in het verleden</strong>. Vandaag leven we in het jaar {{ year }}. Verder is het vandaag de {{ monthNumber }}e maand, een maand die wij als {{ dutchMonthName }} kennen.</p>
+            <p>Vandaag is het om precies te zijn: <strong>{{ dutchWeekdayName }} {{ day }} {{ dutchMonthName }} {{ year }}</strong>. In de meeste agenda's kunnen we zien dat het deze week <strong>week {{ weekNumber }}</strong> is.</p>
+
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
+
+            {% if histories|length > 0 %}
+                <h2>Het verleden van {{ day }} {{ dutchMonthName }}</h2>
+                <p>
+                    Wij hebben speciaal voor jou een kleine selectie op een rijtje gezet! Laat ons weten wat je van de teksten vind of geef het aan als onze teksten niet kloppen met de werkelijkheid. Ondanks onze grote zorg om goede teksten te schrijven, gaat het soms wel eens mis.
+                </p>
+
+                <ul>
+                    {% for history in histories %}
+                        <li><a href="{{ path('stef_dag_van_de_week_history_article_show', {'slug': history.slug, 'day': '%02d'|format(history.day), 'month': '%02d'|format(history.month), 'year': history.year}) }}">({{ history.year }}) {{ history.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <h2>Verleden onbekend</h2>
+                <p>Natuurlijk is het verleden van vandaag gigantisch en zijn er onwerkelijke dingen gebeurd op een dag als deze. Maar wij hebben nog niet de tijd gehad om alles uit te pluizen. Wellicht dat wij voor morgen meer in petto hebben!</p>
+            {% endif %}
+
+
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
+        </article>
+    </div>
+
+{% endblock %}

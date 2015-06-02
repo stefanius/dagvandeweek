@@ -41,31 +41,6 @@ class HistoryController extends BaseController
         return $page;
     }
 
-    protected function createDayInfo($year, $month, $day)
-    {
-        $translation = new Dutch();
-        $date = new \DateTime($year . '-' . $month . '-' . $day);
-
-        $weekDayNumber = $date->format("w");
-        $yearDayNumber = $date->format("z");
-        $weekNumber = $date->format("W");
-        $lastDayOfMonth = $date->format("t");
-        $unixSeconds = $date->format("U");
-        $dutchMonthName = $translation->getMonth($month);
-        $dutchWeekdayName = $translation->getDay($weekDayNumber);
-
-        return [
-            'weekDayNumber' => $weekDayNumber,
-            'yearDayNumber' => $yearDayNumber,
-            'monthNumber' => (int)$month,
-            'weekNumber' => $weekNumber,
-            'unixSeconds' => $unixSeconds,
-            'dutchMonthName' => $dutchMonthName,
-            'dutchWeekdayName' => $dutchWeekdayName,
-            'lastDayOfMonth' => $lastDayOfMonth,
-        ];
-    }
-
     /**
      * @param null $year
      * @param null $month

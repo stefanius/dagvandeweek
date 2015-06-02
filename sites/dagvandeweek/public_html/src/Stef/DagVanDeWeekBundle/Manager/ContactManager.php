@@ -42,14 +42,4 @@ class ContactManager extends AbstractObjectManager {
 
         return $entity;
     }
-
-    public function findByYear($year)
-    {
-        return $this->om->getRepository($this->repoName)->findByYear($year);
-    }
-
-    public function findByMonth($month)
-    {
-        return $this->om->getRepository($this->repoName)->findByMonth($month);
-    }
 }

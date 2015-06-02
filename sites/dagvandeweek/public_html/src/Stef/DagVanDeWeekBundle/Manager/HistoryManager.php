@@ -6,8 +6,8 @@ use Doctrine\Entity;
 use Stef\SimpleCmsBundle\Manager\AbstractObjectManager;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
-class HistoryManager extends AbstractObjectManager {
-
+class HistoryManager extends AbstractObjectManager
+{
     protected $repoName = 'StefDagVanDeWeekBundle:History';
 
     /**

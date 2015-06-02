@@ -22,6 +22,9 @@
                         <li><a href="{{ path('stef_dag_van_de_week_history_article_show', {'slug': history.slug, 'day': '%02d'|format(history.day), 'month': '%02d'|format(history.month), 'year': history.year}) }}">({{ history.year }}) {{ history.title }}</a></li>
                     {% endfor %}
                 </ul>
+            {% else %}
+                <h2>Verleden onbekend</h2>
+                <p>Natuurlijk is het verleden van vandaag gigantisch en zijn er onwerkelijke dingen gebeurd op een dag als deze. Maar wij hebben nog niet de tijd gehad om alles uit te pluizen. Wellicht dat wij voor morgen meer in petto hebben!</p>
             {% endif %}
 
 

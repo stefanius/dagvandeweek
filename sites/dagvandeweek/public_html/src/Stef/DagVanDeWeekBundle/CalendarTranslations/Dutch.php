@@ -2,16 +2,12 @@
 
 namespace Stef\DagVanDeWeekBundle\CalendarTranslations;
 
-class Dutch
+class Dutch extends AbstractTranslator
 {
-    protected $months = [];
-
-    protected $weekdays = [];
-
     function __construct()
     {
         $this->months['01'] = 'januari';
-        $this->months['02'] = 'februarie';
+        $this->months['02'] = 'februari';
         $this->months['03'] = 'maart';
         $this->months['04'] = 'april';
         $this->months['05'] = 'mei';
@@ -31,19 +27,5 @@ class Dutch
         $this->weekdays[5] = 'vrijdag';
         $this->weekdays[6] = 'zaterdag';
         $this->weekdays[7] = 'zondag';
-    }
-
-    public function getMonth($number)
-    {
-        if (strlen($number) < 2) {
-            $number = '0' . $number;
-        }
-
-        return $this->months[$number];
-    }
-
-    public function getDay($number)
-    {
-        return $this->weekdays[(integer) $number];
     }
 }

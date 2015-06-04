@@ -8,6 +8,7 @@ use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
 use Stef\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stef\DagVanDeWeekBundle\Manager\CalendarYearManager;
 use Stef\DagVanDeWeekBundle\Manager\ContactManager;
+use Stef\DagVanDeWeekBundle\Manager\DayManager;
 use Stef\DagVanDeWeekBundle\Manager\HistoryManager;
 use Stef\DagVanDeWeekBundle\Manager\HistoryYearManager;
 use Stef\DagVanDeWeekBundle\Manager\WeekHeroManager;
@@ -97,6 +98,14 @@ class BaseController extends Controller
     protected function getWeekHeroManager()
     {
         return $this->get('stef_simple_cms.weekhero_manager');
+    }
+
+    /**
+     * @return DayManager
+     */
+    protected function getDayManager()
+    {
+        return $this->get('stef_simple_cms.day_manager');
     }
 
     /**
@@ -195,5 +204,17 @@ class BaseController extends Controller
             'dutchWeekdayName' => $dutchWeekdayName,
             'lastDayOfMonth' => $lastDayOfMonth,
         ];
+    }
+
+    /**
+     * @param $monthName
+     * @param bool $leadingZero
+     * @return int
+     */
+    protected function getMonthNumber($monthName, $leadingZero = true)
+    {
+        $translation = new Dutch();
+
+        return $translation->getMonthNumberByName($monthName, $leadingZero);
     }
 }

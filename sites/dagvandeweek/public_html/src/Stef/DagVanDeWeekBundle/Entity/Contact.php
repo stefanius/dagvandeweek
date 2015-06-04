@@ -5,7 +5,7 @@ namespace Stef\DagVanDeWeekBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Contact
+ * Contact.
  *
  * @ORM\Table()
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Contact
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -77,11 +77,10 @@ class Contact
      */
     private $modified;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -89,9 +88,10 @@ class Contact
     }
 
     /**
-     * Set ip
+     * Set ip.
      *
      * @param string $ip
+     *
      * @return Contact
      */
     public function setIp($ip)
@@ -102,9 +102,9 @@ class Contact
     }
 
     /**
-     * Get ip
+     * Get ip.
      *
-     * @return string 
+     * @return string
      */
     public function getIp()
     {
@@ -112,9 +112,10 @@ class Contact
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
+     *
      * @return Contact
      */
     public function setName($name)
@@ -125,9 +126,9 @@ class Contact
     }
 
     /**
-     * Get name
+     * Get name.
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -135,9 +136,10 @@ class Contact
     }
 
     /**
-     * Set phone
+     * Set phone.
      *
      * @param string $phone
+     *
      * @return Contact
      */
     public function setPhone($phone)
@@ -148,9 +150,9 @@ class Contact
     }
 
     /**
-     * Get phone
+     * Get phone.
      *
-     * @return string 
+     * @return string
      */
     public function getPhone()
     {
@@ -158,9 +160,10 @@ class Contact
     }
 
     /**
-     * Set email
+     * Set email.
      *
      * @param string $email
+     *
      * @return Contact
      */
     public function setEmail($email)
@@ -171,9 +174,9 @@ class Contact
     }
 
     /**
-     * Get email
+     * Get email.
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -181,9 +184,10 @@ class Contact
     }
 
     /**
-     * Set reason
+     * Set reason.
      *
      * @param string $reason
+     *
      * @return Contact
      */
     public function setReason($reason)
@@ -194,9 +198,9 @@ class Contact
     }
 
     /**
-     * Get reason
+     * Get reason.
      *
-     * @return string 
+     * @return string
      */
     public function getReason()
     {
@@ -204,9 +208,10 @@ class Contact
     }
 
     /**
-     * Set summary
+     * Set summary.
      *
      * @param string $summary
+     *
      * @return Contact
      */
     public function setSummary($summary)
@@ -217,9 +222,9 @@ class Contact
     }
 
     /**
-     * Get summary
+     * Get summary.
      *
-     * @return string 
+     * @return string
      */
     public function getSummary()
     {
@@ -227,9 +232,10 @@ class Contact
     }
 
     /**
-     * Set created
+     * Set created.
      *
      * @param \DateTime $created
+     *
      * @return Contact
      */
     public function setCreated($created)
@@ -240,9 +246,9 @@ class Contact
     }
 
     /**
-     * Get created
+     * Get created.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreated()
     {
@@ -250,9 +256,10 @@ class Contact
     }
 
     /**
-     * Set modified
+     * Set modified.
      *
      * @param \DateTime $modified
+     *
      * @return Contact
      */
     public function setModified($modified)
@@ -263,9 +270,9 @@ class Contact
     }
 
     /**
-     * Get modified
+     * Get modified.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getModified()
     {

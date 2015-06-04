@@ -23,19 +23,19 @@ class HistoryController extends BaseController
             $page->setYear($year);
             $page->setSlug($year);
 
-            if ($year < date("Y")) {
-                $p1 = "<p>Het jaar " . $year . " ligt alweer " . (date("Y") - $year) . " jaar achter ons. Er is in dat jaar veel gebeurt en wij willen dat graag met jou delen! Elke dag van de week is beinvloed door de dagen van voorgaande weken. OF iets nu gisteren of vorgie week is gebeurt. Vorig jaar of 400 jaar geleden. Wij zoeken het uit. En delen het met jou! Elke dag opnieuw. Wat vandaag in het nieuws is, is morgen geschiedenis!</p>";
+            if ($year < date('Y')) {
+                $p1 = '<p>Het jaar ' . $year . ' ligt alweer ' . (date('Y') - $year) . ' jaar achter ons. Er is in dat jaar veel gebeurt en wij willen dat graag met jou delen! Elke dag van de week is beinvloed door de dagen van voorgaande weken. OF iets nu gisteren of vorgie week is gebeurt. Vorig jaar of 400 jaar geleden. Wij zoeken het uit. En delen het met jou! Elke dag opnieuw. Wat vandaag in het nieuws is, is morgen geschiedenis!</p>';
 
                 $page->setBody($p1);
             } else {
-                $p1 = "<p>Deze pagina's gaan over de geschiedenis. Ons verleden. Het jaar " . $year . " laat nog " . ($year - date("Y")) . " jaar op zich wachten. Het is dus zeer aannemelijk dat wij nog niet beschikken over enorme hoeveelheden gebeurtenissen uit het jaar " . $year . ". Wellicht ben je wel geintreseerd in de " . '<a href="http://dagvandeweek.nl/kalender/' . $year . '">kalender</a> uit de (verre) toekomst?</p>';
+                $p1 = "<p>Deze pagina's gaan over de geschiedenis. Ons verleden. Het jaar " . $year . ' laat nog ' . ($year - date('Y')) . ' jaar op zich wachten. Het is dus zeer aannemelijk dat wij nog niet beschikken over enorme hoeveelheden gebeurtenissen uit het jaar ' . $year . '. Wellicht ben je wel geintreseerd in de ' . '<a href="http://dagvandeweek.nl/kalender/' . $year . '">kalender</a> uit de (verre) toekomst?</p>';
 
                 $page->setBody($p1);
             }
         }
 
         if ($page->getTitle() == $year && strlen($page->getTitle()) < 5) {
-            $page->setTitle('Historie ' . $page->getYear() );
+            $page->setTitle('Historie ' . $page->getYear());
         }
 
         return $page;
@@ -78,7 +78,7 @@ class HistoryController extends BaseController
      */
     public function showByYearAction(Request $request, $year)
     {
-        $page = $this->buildHistoryPage($year);
+        $page  = $this->buildHistoryPage($year);
         $items = $this->getHistoryManager()->findByYear($year);
 
         if (count($items) == 0) {
@@ -86,8 +86,8 @@ class HistoryController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:History:year.html.twig', [
-            'page' => $page,
-            'items' => $items
+            'page'  => $page,
+            'items' => $items,
         ], null, $request);
     }
 
@@ -110,7 +110,7 @@ class HistoryController extends BaseController
 
         $dayInfo = $this->createDayInfo($year, $month, 1);
 
-        $page = $this->buildHistoryPage($year);
+        $page  = $this->buildHistoryPage($year);
         $items = $this->getHistoryManager()->findByMonthYear($month, $year);
 
         $page->setRobotsIndex(false);
@@ -121,9 +121,9 @@ class HistoryController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:History:month.html.twig', [
-            'page' => $page,
-            'items' => $items,
-            'month' => $month,
+            'page'    => $page,
+            'items'   => $items,
+            'month'   => $month,
             'dayInfo' => $dayInfo,
         ], null, $request);
     }
@@ -146,7 +146,7 @@ class HistoryController extends BaseController
             return $this->internalRedirect($year, $month, $day);
         }
 
-        $items = $this->getHistoryManager()->findByDayMonthYear($day, $month, $year);
+        $items   = $this->getHistoryManager()->findByDayMonthYear($day, $month, $year);
         $dayInfo = $this->createDayInfo($year, $month, $day);
 
         $page = new History();
@@ -163,10 +163,10 @@ class HistoryController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:History:day.html.twig', [
-            'page' => $page,
-            'items' => $items,
-            'month' => $month,
-            'dayInfo' => $dayInfo
+            'page'    => $page,
+            'items'   => $items,
+            'month'   => $month,
+            'dayInfo' => $dayInfo,
         ], null, $request);
     }
 
@@ -187,30 +187,31 @@ class HistoryController extends BaseController
 
         if ($slug === 'bombardement%20-rotterdam' || $slug === 'bombardement -rotterdam') {
             $slug = 'bombardement-rotterdam';
+
             return $this->internalRedirect($year, $month, $day, $slug);
         }
 
-        $page = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
+        $page    = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
         $dayInfo = $this->createDayInfo($year, $month, $day);
 
         return $this->render('StefDagVanDeWeekBundle:History:article.html.twig', [
-            'page' => $page,
-            'dayInfo' => $dayInfo
+            'page'    => $page,
+            'dayInfo' => $dayInfo,
         ], null, $request);
     }
 
     public function showIndexAction()
     {
         $latestItems = $this->getHistoryManager()->getLatestEntries(10);
-        $years = $this->getHistoryManager()->getActiveYears();
-        $page = new Page();
-        $page->setTitle("Historisch Jaaroverzicht");
-        $page->setDescription("DagVanDeWeek heeft een uitgebreide database met gegevens. Hier kan je (bijna) alles vinden wat je wilt! Voor je werkstuk, spreekbeurt of gewoon omdat je het WILT weten! Elke dag van de week is er weer een dag bij in de geschiedenis!");
+        $years       = $this->getHistoryManager()->getActiveYears();
+        $page        = new Page();
+        $page->setTitle('Historisch Jaaroverzicht');
+        $page->setDescription('DagVanDeWeek heeft een uitgebreide database met gegevens. Hier kan je (bijna) alles vinden wat je wilt! Voor je werkstuk, spreekbeurt of gewoon omdat je het WILT weten! Elke dag van de week is er weer een dag bij in de geschiedenis!');
 
         return $this->render('StefDagVanDeWeekBundle:History:index.html.twig', [
             'latestItems' => $latestItems,
-            'years' => $years,
-            'page' => $page
+            'years'       => $years,
+            'page'        => $page,
         ]);
     }
 

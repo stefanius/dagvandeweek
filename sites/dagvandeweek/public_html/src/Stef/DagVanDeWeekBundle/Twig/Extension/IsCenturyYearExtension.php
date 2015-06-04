@@ -13,6 +13,7 @@ class IsCenturyYearExtension extends \Twig_Extension
 
     /**
      * @param $year
+     *
      * @return bool
      */
     public function isCenturyYearFilter($year)
@@ -22,11 +23,12 @@ class IsCenturyYearExtension extends \Twig_Extension
 
     /**
      * @param $number
+     *
      * @return bool
      */
     protected function isCentury($number)
     {
-        $result = preg_match ('/^([0-9])([0-9])([0])([0])$/', $number, $matchs) === 1;
+        $result = preg_match('/^([0-9])([0-9])([0])([0])$/', $number, $matchs) === 1;
 
         return $result;
     }

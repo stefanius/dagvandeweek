@@ -6,8 +6,8 @@ use Doctrine\Entity;
 use Stef\SimpleCmsBundle\Manager\AbstractObjectManager;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
-class WeekHeroManager extends AbstractObjectManager {
-
+class WeekHeroManager extends AbstractObjectManager
+{
     protected $repoName = 'StefDagVanDeWeekBundle:WeekHero';
 
     /**

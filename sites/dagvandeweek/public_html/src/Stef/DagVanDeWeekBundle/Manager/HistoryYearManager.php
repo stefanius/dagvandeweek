@@ -6,8 +6,8 @@ use Doctrine\Entity;
 use Stef\SimpleCmsBundle\Manager\AbstractObjectManager;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
-class HistoryYearManager extends AbstractObjectManager {
-
+class HistoryYearManager extends AbstractObjectManager
+{
     protected $repoName = 'StefDagVanDeWeekBundle:HistoryYear';
 
     /**
@@ -30,6 +30,7 @@ class HistoryYearManager extends AbstractObjectManager {
 
     /**
      * @param $key
+     *
      * @return mixed
      */
     public function read($key)

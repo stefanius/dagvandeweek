@@ -39,11 +39,11 @@ abstract class AbstractSpecialDate implements SpecialDateInterface
      */
     protected $year;
 
-    function __construct($year)
+    public function __construct($year)
     {
-        $this->year = $year;
+        $this->year     = $year;
         $this->zeroDate = new \DateTime();
-        $this->zeroDate->setDate(0,0,0);
+        $this->zeroDate->setDate(0, 0, 0);
         $this->generate();
     }
 

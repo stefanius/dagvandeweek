@@ -2,7 +2,6 @@
 
 namespace Stef\DagVanDeWeekBundle\BreadcrumbGenerator;
 
-
 class DefaultTitleBuilder implements TitleBuilderInterface
 {
     /**
@@ -16,5 +15,4 @@ class DefaultTitleBuilder implements TitleBuilderInterface
     {
         return ucfirst($title);
     }
-
 }

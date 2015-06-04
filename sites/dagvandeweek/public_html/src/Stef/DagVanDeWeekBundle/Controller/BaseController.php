@@ -134,7 +134,7 @@ class BaseController extends Controller
      */
     protected function getWhiteOctoberBreadcrumbs()
     {
-        return $this->get("white_october_breadcrumbs");
+        return $this->get('white_october_breadcrumbs');
     }
 
     /**
@@ -142,7 +142,6 @@ class BaseController extends Controller
      */
     public function render($view, array $parameters = array(), Response $response = null, Request $request = null, TitleBuilderInterface $breadcrumbTitleBuilder = null)
     {
-
         if ($request !== null && $breadcrumbTitleBuilder !== null) {
             $page = null;
 
@@ -157,9 +156,9 @@ class BaseController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param Request               $request
      * @param TitleBuilderInterface $breadcrumbTitleBuilder
-     * @param AbstractCmsContent $page
+     * @param AbstractCmsContent    $page
      */
     protected function generateBreadCrumbs(Request $request, TitleBuilderInterface $breadcrumbTitleBuilder, AbstractCmsContent $page = null)
     {
@@ -184,31 +183,32 @@ class BaseController extends Controller
     protected function createDayInfo($year, $month, $day)
     {
         $translation = new Dutch();
-        $date = new \DateTime($year . '-' . $month . '-' . $day);
+        $date        = new \DateTime($year . '-' . $month . '-' . $day);
 
-        $weekDayNumber = $date->format("w");
-        $yearDayNumber = $date->format("z");
-        $weekNumber = $date->format("W");
-        $lastDayOfMonth = $date->format("t");
-        $unixSeconds = $date->format("U");
-        $dutchMonthName = $translation->getMonth($month);
+        $weekDayNumber    = $date->format('w');
+        $yearDayNumber    = $date->format('z');
+        $weekNumber       = $date->format('W');
+        $lastDayOfMonth   = $date->format('t');
+        $unixSeconds      = $date->format('U');
+        $dutchMonthName   = $translation->getMonth($month);
         $dutchWeekdayName = $translation->getDay($weekDayNumber);
 
         return [
-            'weekDayNumber' => $weekDayNumber,
-            'yearDayNumber' => $yearDayNumber,
-            'monthNumber' => (int)$month,
-            'weekNumber' => $weekNumber,
-            'unixSeconds' => $unixSeconds,
-            'dutchMonthName' => $dutchMonthName,
+            'weekDayNumber'    => $weekDayNumber,
+            'yearDayNumber'    => $yearDayNumber,
+            'monthNumber'      => (int) $month,
+            'weekNumber'       => $weekNumber,
+            'unixSeconds'      => $unixSeconds,
+            'dutchMonthName'   => $dutchMonthName,
             'dutchWeekdayName' => $dutchWeekdayName,
-            'lastDayOfMonth' => $lastDayOfMonth,
+            'lastDayOfMonth'   => $lastDayOfMonth,
         ];
     }
 
     /**
      * @param $monthName
      * @param bool $leadingZero
+     *
      * @return int
      */
     protected function getMonthNumber($monthName, $leadingZero = true)

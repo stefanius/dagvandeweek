@@ -30,6 +30,7 @@ class HistoryManager extends AbstractObjectManager
 
     /**
      * @param $key
+     *
      * @return mixed
      */
     public function read($key)

@@ -33,7 +33,8 @@ class DayManager extends AbstractObjectManager
     /**
      * @param $entity
      */
-    public function persist($entity) {
+    public function persist($entity)
+    {
         $entity->setSlug($entity->getDay() . '-' . $entity->getMonth());
 
         parent::persist($entity);
@@ -49,7 +50,7 @@ class DayManager extends AbstractObjectManager
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
 
-        /**
+        /*
          * @var QueryBuilder $qb
          */
         $qb->select('e');
@@ -63,6 +64,6 @@ class DayManager extends AbstractObjectManager
             return $result[0];
         }
 
-        return null;
+        return;
     }
 }

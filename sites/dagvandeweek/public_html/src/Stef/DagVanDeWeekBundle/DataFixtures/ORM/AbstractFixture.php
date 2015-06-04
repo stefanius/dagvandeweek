@@ -8,9 +8,9 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 abstract class AbstractFixture implements FixtureInterface, OrderedFixtureInterface
 {
     /**
-     * Get the order of this fixture
+     * Get the order of this fixture.
      *
-     * @return integer
+     * @return int
      */
     public function getOrder()
     {

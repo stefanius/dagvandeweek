@@ -18,8 +18,8 @@ class SpecialDatesController extends BaseController
     public function showAction(Request $request, $year)
     {
         $parser = new Parser();
-        $dates = $parser->getAllValidDates($year);
-        $page = new Page();
+        $dates  = $parser->getAllValidDates($year);
+        $page   = new Page();
 
         $page->setTitle('Bijzondere dagen ' . $year);
         $page->setDescription($year . ' heeft een groot aantal bijzondere dagen. Wij hebben er ' . count($dates) . ' verzameld! Bekijk hier het overzicht van bijzondere dagen uit ' . $year . '!');
@@ -33,8 +33,8 @@ class SpecialDatesController extends BaseController
 
         return $this->render($twig, [
             'dates' => $dates,
-            'year' => $year,
-            'page' => $page,
+            'year'  => $year,
+            'page'  => $page,
         ]);
     }
 }

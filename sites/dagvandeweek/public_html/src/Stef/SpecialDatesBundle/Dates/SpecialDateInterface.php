@@ -2,7 +2,6 @@
 
 namespace Stef\SpecialDatesBundle\Dates;
 
-
 interface SpecialDateInterface
 {
     public function getStartDate();

@@ -12,7 +12,7 @@ class DateObjectFactory
      */
     protected $translator;
 
-    function __construct()
+    public function __construct()
     {
         $this->translator = new Dutch();
     }
@@ -54,7 +54,7 @@ class DateObjectFactory
     public function createByMonthDay($month, $day)
     {
         $today = new \DateTime();
-        $date = new \DateTime($today->format('Y') . '-' . $month . '-' . $day);
+        $date  = new \DateTime($today->format('Y') . '-' . $month . '-' . $day);
 
         return $this->createByDateTime($date);
     }
@@ -71,7 +71,7 @@ class DateObjectFactory
     public function createByYearConvertedMonthDay($year, $monthName, $day)
     {
         $month = $this->translator->getMonthNumberByName($monthName);
-        $date = new \DateTime($year . '-' . $month . '-' . $day);
+        $date  = new \DateTime($year . '-' . $month . '-' . $day);
 
         return $this->createByDateTime($date);
     }
@@ -88,11 +88,11 @@ class DateObjectFactory
     {
         $month = $this->translator->getMonthNumberByName($monthName);
 
-        if ((integer)$day === 29 && (integer)$month === 2) {
+        if ((integer) $day === 29 && (integer) $month === 2) {
             $year = 2016;
         } else {
             $today = new \DateTime();
-            $year = $today->format('Y');
+            $year  = $today->format('Y');
         }
 
         $date = new \DateTime($year . '-' . $month . '-' . $day);

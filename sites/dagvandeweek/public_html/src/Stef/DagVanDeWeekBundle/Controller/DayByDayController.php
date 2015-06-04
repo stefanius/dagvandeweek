@@ -19,19 +19,19 @@ class DayByDayController extends BaseController
     public function showTodayAction(Request $request, $day, $dutchMonthName)
     {
         $factory = new DateObjectFactory();
-        $date = $factory->createByConvertedMonthDay($dutchMonthName, $day);
+        $date    = $factory->createByConvertedMonthDay($dutchMonthName, $day);
 
-        if ((integer)$date->getDay() !== (integer)$day && (integer)$day > 0 && $date->getDay() > 0) {
+        if ((integer) $date->getDay() !== (integer) $day && (integer) $day > 0 && $date->getDay() > 0) {
             return $this->redirect($this->generateUrl($request->get('_route'), [
-                'day' => (integer)$date->getDay(),
-                'dutchMonthName' => $date->getTranslator()->getMonth($date->getMonthNumber() + 1)
+                'day'            => (integer) $date->getDay(),
+                'dutchMonthName' => $date->getTranslator()->getMonth($date->getMonthNumber() + 1),
             ]));
         }
 
         $dayBefore = $date->getDayBefore();
-        $dayAfter = $date->getDayAfter();
+        $dayAfter  = $date->getDayAfter();
 
-        $manager = $this->getHistoryManager();
+        $manager   = $this->getHistoryManager();
         $histories = $manager->findByDayMonth($day, $date->getMonthNumber());
 
         $page = $this->getDayManager()->findByDayAndMonth($date->getDay(), $date->getMonthNumber());
@@ -41,11 +41,11 @@ class DayByDayController extends BaseController
         }
 
         if ($page->getTitle() == null) {
-            $page->setTitle($day . " " . $dutchMonthName . " in het verleden");
+            $page->setTitle($day . ' ' . $dutchMonthName . ' in het verleden');
         }
 
         if ($page->getDescription() == null) {
-            $page->setDescription((integer)$day . ' ' . $dutchMonthName . ' is de ' . (integer)$day . 'e dag uit de ' . $date->getMonthNumber() . 'e maand. Bekijk hier een overzicht van gebeurtenissen op deze dag van het jaar!' );
+            $page->setDescription((integer) $day . ' ' . $dutchMonthName . ' is de ' . (integer) $day . 'e dag uit de ' . $date->getMonthNumber() . 'e maand. Bekijk hier een overzicht van gebeurtenissen op deze dag van het jaar!');
         }
 
         return $this->render('StefDagVanDeWeekBundle:DayByDay:index.html.twig', [

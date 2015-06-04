@@ -25,9 +25,9 @@ class SitemapController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:Sitemap:' . $mappingKey . '.xml.twig', [
-                'records'      => $records,
+                'records' => $records,
             ],
             $response
         );
     }
-} 
+}

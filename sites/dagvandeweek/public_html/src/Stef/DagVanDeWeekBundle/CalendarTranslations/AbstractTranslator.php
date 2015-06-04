@@ -11,6 +11,7 @@ abstract class AbstractTranslator implements TranslatorInterface
     /**
      * @param $number
      * @param $leadingZero
+     *
      * @return int|string
      */
     protected function formatNumber($number, $leadingZero)
@@ -32,6 +33,7 @@ abstract class AbstractTranslator implements TranslatorInterface
 
     /**
      * @param $number
+     *
      * @return string
      */
     public function getMonth($number)
@@ -45,6 +47,7 @@ abstract class AbstractTranslator implements TranslatorInterface
 
     /**
      * @param $number
+     *
      * @return string
      */
     public function getDay($number)
@@ -55,6 +58,7 @@ abstract class AbstractTranslator implements TranslatorInterface
     /**
      * @param $name
      * @param bool $leadingZero
+     *
      * @return int
      */
     public function getMonthNumberByName($name, $leadingZero = true)

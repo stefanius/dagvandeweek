@@ -76,12 +76,12 @@ class CustomDateObject
 
     protected function convert()
     {
-        $this->year = $this->dateTime->format("Y");
-        $this->day = $this->dateTime->format("d");
+        $this->year = (integer)$this->dateTime->format("Y");
+        $this->day = (integer)$this->dateTime->format("d");
         $this->weekDayNumber = $this->dateTime->format("w");
-        $this->monthNumber = $this->dateTime->format("m");
+        $this->monthNumber = (integer)$this->dateTime->format("m");
         $this->yearDayNumber = $this->dateTime->format("z") + 1;
-        $this->weekNumber = $this->dateTime->format("W");
+        $this->weekNumber = (integer)$this->dateTime->format("W");
         $this->lastDayOfMonth = $this->dateTime->format("t");
         $this->unixSeconds = $this->dateTime->format("U");
         $this->translatedMonthName = $this->translator->getMonth($this->monthNumber);
@@ -189,7 +189,7 @@ class CustomDateObject
      */
     public function getDayAfter()
     {
-        $dayAfter = $this->dateTime;
+        $dayAfter = new \DateTime($this->year . '-' . $this->monthNumber . '-' . $this->day);
         $dayAfter->modify('+1 day');
 
         return new CustomDateObject($dayAfter, $this->translator);
@@ -200,7 +200,7 @@ class CustomDateObject
      */
     public function getDayBefore()
     {
-        $dayBefore = $this->dateTime;
+        $dayBefore = new \DateTime($this->year . '-' . $this->monthNumber . '-' . $this->day);
         $dayBefore->modify('-1 day');
 
         return new CustomDateObject($dayBefore, $this->translator);

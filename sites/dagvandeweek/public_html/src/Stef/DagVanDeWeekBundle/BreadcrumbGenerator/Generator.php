@@ -43,7 +43,7 @@ class Generator
 
     /**
      * @param Request $request
-     * @param array $pathElements
+     * @param array   $pathElements
      *
      * @return array
      */
@@ -52,7 +52,7 @@ class Generator
         if ($pathElements[0] !== trim($request->getBaseUrl(), '/')) {
             array_unshift($pathElements, '/');
         } else {
-            $pathElements[0] = '/' . $pathElements[0];
+            $pathElements[0] = '/'.$pathElements[0];
         }
 
         return $pathElements;
@@ -73,17 +73,17 @@ class Generator
         if (count($path) === 1) {
             $crumb = [
                 $this->linkKey => $crumblink,
-                $this->titleKey => 'Home'
+                $this->titleKey => 'Home',
             ];
         } elseif ($index === count($splitItems) && $page !== null && property_exists($page, 'title')) {
             $crumb = [
                 $this->linkKey => $crumblink,
-                $this->titleKey => $page->getTitle()
+                $this->titleKey => $page->getTitle(),
             ];
         } else {
             $crumb = [
                 $this->linkKey => $crumblink,
-                $this->titleKey => $this->titleBuilder->build($splitItem, $index, $path)
+                $this->titleKey => $this->titleBuilder->build($splitItem, $index, $path),
             ];
         }
 
@@ -92,7 +92,8 @@ class Generator
 
     /**
      * @param Request $request
-     * @param null $page
+     * @param null    $page
+     *
      * @return array
      */
     public function generate(Request $request, $page = null)
@@ -106,7 +107,7 @@ class Generator
         foreach ($splitItems as $splitItem) {
             $path[] = $splitItem;
             $crumb = null;
-            $crumblink = '/' . trim(implode('/', $path), '/');
+            $crumblink = '/'.trim(implode('/', $path), '/');
             $i++;
 
             $crumbs[] = $this->createCrumb($path, $crumblink, $splitItems, $splitItem, $page, $i);

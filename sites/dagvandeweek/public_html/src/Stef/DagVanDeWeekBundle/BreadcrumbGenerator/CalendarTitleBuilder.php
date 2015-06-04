@@ -9,7 +9,7 @@ class CalendarTitleBuilder implements TitleBuilderInterface
      */
     public function build($title, $elementIndex, $path = null)
     {
-        switch($elementIndex) {
+        switch ($elementIndex) {
             case 2:
                 $title = 'Jaarkalenders';
                 break;
@@ -19,5 +19,4 @@ class CalendarTitleBuilder implements TitleBuilderInterface
 
         return $title;
     }
-
 }

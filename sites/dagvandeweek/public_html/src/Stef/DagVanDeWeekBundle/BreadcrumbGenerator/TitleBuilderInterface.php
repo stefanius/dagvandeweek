@@ -2,9 +2,8 @@
 
 namespace Stef\DagVanDeWeekBundle\BreadcrumbGenerator;
 
-
-interface TitleBuilderInterface {
-
+interface TitleBuilderInterface
+{
     /**
      * @param $title
      * @param $elementIndex

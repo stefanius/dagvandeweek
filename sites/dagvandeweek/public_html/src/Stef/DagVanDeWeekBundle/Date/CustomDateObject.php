@@ -68,7 +68,7 @@ class CustomDateObject
 
     public function __construct(\DateTime $dateTime, TranslatorInterface $translator)
     {
-        $this->dateTime = $dateTime;
+        $this->dateTime   = $dateTime;
         $this->translator = $translator;
 
         $this->convert();
@@ -76,15 +76,15 @@ class CustomDateObject
 
     protected function convert()
     {
-        $this->year = (integer) $this->dateTime->format('Y');
-        $this->day = (integer) $this->dateTime->format('d');
-        $this->weekDayNumber = $this->dateTime->format('w');
-        $this->monthNumber = (integer) $this->dateTime->format('m');
-        $this->yearDayNumber = $this->dateTime->format('z') + 1;
-        $this->weekNumber = (integer) $this->dateTime->format('W');
-        $this->lastDayOfMonth = $this->dateTime->format('t');
-        $this->unixSeconds = $this->dateTime->format('U');
-        $this->translatedMonthName = $this->translator->getMonth($this->monthNumber);
+        $this->year                  = (integer) $this->dateTime->format('Y');
+        $this->day                   = (integer) $this->dateTime->format('d');
+        $this->weekDayNumber         = $this->dateTime->format('w');
+        $this->monthNumber           = (integer) $this->dateTime->format('m');
+        $this->yearDayNumber         = $this->dateTime->format('z') + 1;
+        $this->weekNumber            = (integer) $this->dateTime->format('W');
+        $this->lastDayOfMonth        = $this->dateTime->format('t');
+        $this->unixSeconds           = $this->dateTime->format('U');
+        $this->translatedMonthName   = $this->translator->getMonth($this->monthNumber);
         $this->translatedWeekdayName = $this->translator->getDay($this->weekDayNumber);
     }
 

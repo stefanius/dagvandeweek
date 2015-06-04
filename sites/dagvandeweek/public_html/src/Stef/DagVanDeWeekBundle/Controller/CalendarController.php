@@ -63,14 +63,14 @@ class CalendarController extends BaseController
     public function showIndexAction(Request $request)
     {
         $years = $this->getHistoryManager()->getActiveYears();
-        $page = new Page();
+        $page  = new Page();
 
         $page->setTitle('Jaarkalenders');
         $page->setDescription('Elk jaar bevat maanden, dagen en weken. Elk dag is een klein stukje van een jaar! Wij bieden hier uitgebreide kalenders aan van een groot aantal jaren!');
 
         return $this->render('StefDagVanDeWeekBundle:Calendar:index.html.twig', [
             'years' => $years,
-            'page' => $page,
+            'page'  => $page,
         ], null, $request);
     }
 

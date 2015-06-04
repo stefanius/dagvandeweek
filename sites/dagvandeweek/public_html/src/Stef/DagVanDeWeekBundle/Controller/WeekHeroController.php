@@ -18,7 +18,7 @@ class WeekHeroController extends BaseController
     public function showByYearAction($year)
     {
         $heroes = $this->getWeekHeroManager()->findByYear($year);
-        $page = new Page();
+        $page   = new Page();
         $page->setTitle('Topper van de Week ' . $year);
 
         if (count($heroes) == 0 || $year < 2012 || $year > 2015) {
@@ -26,8 +26,8 @@ class WeekHeroController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:WeekHero:index.html.twig', [
-            'page' => $page,
-            'year' => $year,
+            'page'   => $page,
+            'year'   => $year,
             'heroes' => $heroes,
         ]);
     }

@@ -52,7 +52,7 @@ class NewsController extends BaseController
 
         return $this->render('StefDagVanDeWeekBundle:News:index.html.twig', array(
             'newsitems' => $newsitems,
-            'page' => $page,
+            'page'      => $page,
         ), null, $request);
     }
 

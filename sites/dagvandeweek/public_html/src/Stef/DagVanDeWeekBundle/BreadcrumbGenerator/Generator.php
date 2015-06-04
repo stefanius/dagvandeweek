@@ -72,17 +72,17 @@ class Generator
     {
         if (count($path) === 1) {
             $crumb = [
-                $this->linkKey => $crumblink,
+                $this->linkKey  => $crumblink,
                 $this->titleKey => 'Home',
             ];
         } elseif ($index === count($splitItems) && $page !== null && property_exists($page, 'title')) {
             $crumb = [
-                $this->linkKey => $crumblink,
+                $this->linkKey  => $crumblink,
                 $this->titleKey => $page->getTitle(),
             ];
         } else {
             $crumb = [
-                $this->linkKey => $crumblink,
+                $this->linkKey  => $crumblink,
                 $this->titleKey => $this->titleBuilder->build($splitItem, $index, $path),
             ];
         }
@@ -101,12 +101,12 @@ class Generator
         $splitItems = $this->prepareFirstPathElement($request, $this->explodeUrlPath($request->getRequestUri()));
 
         $crumbs = [];
-        $path = [];
-        $i = 0;
+        $path   = [];
+        $i      = 0;
 
         foreach ($splitItems as $splitItem) {
-            $path[] = $splitItem;
-            $crumb = null;
+            $path[]    = $splitItem;
+            $crumb     = null;
             $crumblink = '/' . trim(implode('/', $path), '/');
             $i++;
 

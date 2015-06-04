@@ -78,7 +78,7 @@ class HistoryController extends BaseController
      */
     public function showByYearAction(Request $request, $year)
     {
-        $page = $this->buildHistoryPage($year);
+        $page  = $this->buildHistoryPage($year);
         $items = $this->getHistoryManager()->findByYear($year);
 
         if (count($items) == 0) {
@@ -86,7 +86,7 @@ class HistoryController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:History:year.html.twig', [
-            'page' => $page,
+            'page'  => $page,
             'items' => $items,
         ], null, $request);
     }
@@ -110,7 +110,7 @@ class HistoryController extends BaseController
 
         $dayInfo = $this->createDayInfo($year, $month, 1);
 
-        $page = $this->buildHistoryPage($year);
+        $page  = $this->buildHistoryPage($year);
         $items = $this->getHistoryManager()->findByMonthYear($month, $year);
 
         $page->setRobotsIndex(false);
@@ -121,9 +121,9 @@ class HistoryController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:History:month.html.twig', [
-            'page' => $page,
-            'items' => $items,
-            'month' => $month,
+            'page'    => $page,
+            'items'   => $items,
+            'month'   => $month,
             'dayInfo' => $dayInfo,
         ], null, $request);
     }
@@ -146,7 +146,7 @@ class HistoryController extends BaseController
             return $this->internalRedirect($year, $month, $day);
         }
 
-        $items = $this->getHistoryManager()->findByDayMonthYear($day, $month, $year);
+        $items   = $this->getHistoryManager()->findByDayMonthYear($day, $month, $year);
         $dayInfo = $this->createDayInfo($year, $month, $day);
 
         $page = new History();
@@ -163,9 +163,9 @@ class HistoryController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:History:day.html.twig', [
-            'page' => $page,
-            'items' => $items,
-            'month' => $month,
+            'page'    => $page,
+            'items'   => $items,
+            'month'   => $month,
             'dayInfo' => $dayInfo,
         ], null, $request);
     }
@@ -191,11 +191,11 @@ class HistoryController extends BaseController
             return $this->internalRedirect($year, $month, $day, $slug);
         }
 
-        $page = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
+        $page    = $this->getHistoryManager()->findByDayMonthYearSlug($day, $month, $year, $slug);
         $dayInfo = $this->createDayInfo($year, $month, $day);
 
         return $this->render('StefDagVanDeWeekBundle:History:article.html.twig', [
-            'page' => $page,
+            'page'    => $page,
             'dayInfo' => $dayInfo,
         ], null, $request);
     }
@@ -203,15 +203,15 @@ class HistoryController extends BaseController
     public function showIndexAction()
     {
         $latestItems = $this->getHistoryManager()->getLatestEntries(10);
-        $years = $this->getHistoryManager()->getActiveYears();
-        $page = new Page();
+        $years       = $this->getHistoryManager()->getActiveYears();
+        $page        = new Page();
         $page->setTitle('Historisch Jaaroverzicht');
         $page->setDescription('DagVanDeWeek heeft een uitgebreide database met gegevens. Hier kan je (bijna) alles vinden wat je wilt! Voor je werkstuk, spreekbeurt of gewoon omdat je het WILT weten! Elke dag van de week is er weer een dag bij in de geschiedenis!');
 
         return $this->render('StefDagVanDeWeekBundle:History:index.html.twig', [
             'latestItems' => $latestItems,
-            'years' => $years,
-            'page' => $page,
+            'years'       => $years,
+            'page'        => $page,
         ]);
     }
 

@@ -26,9 +26,9 @@ class PageController extends BaseController
         }
 
         return $this->render($twig, array_merge($extra, [
-                'page' => $page,
+                'page'        => $page,
                 'pageOptions' => $pageOptions->all(),
-                'auth' => $this->isAuthenticatedFully(),
+                'auth'        => $this->isAuthenticatedFully(),
             ])
         );
     }

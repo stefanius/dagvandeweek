@@ -46,9 +46,9 @@ class DictionaryController extends BaseController
         }
 
         return $this->render('StefBierInDeKlokBundle:Dictionary:index.html.twig', [
-            'letter' => $letter,
+            'letter'   => $letter,
             'wordlist' => $wordlist,
-            'page' => $page,
+            'page'     => $page,
         ]);
     }
 }

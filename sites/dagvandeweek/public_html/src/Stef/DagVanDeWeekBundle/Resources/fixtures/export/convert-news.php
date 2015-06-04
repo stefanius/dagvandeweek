@@ -1,6 +1,6 @@
 <?php
 
-$row = 1;
+$row    = 1;
 $output = '';
 if (($handle = fopen('content.csv', 'r')) !== false) {
     while (($data = fgetcsv($handle, 1000, ',')) !== false) {

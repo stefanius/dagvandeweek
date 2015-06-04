@@ -22,17 +22,17 @@ class ContactType extends AbstractType
         $builder
             ->add('reason', 'choice', array(
                 'choices' => array(
-                    '' => 'Maak een keuze',
+                    ''                     => 'Maak een keuze',
                     'Tip voor de redactie' => 'Tip voor de redactie',
-                    'Linkruil' => 'Linkruil',
-                    'Anders' => 'Anders',
+                    'Linkruil'             => 'Linkruil',
+                    'Anders'               => 'Anders',
                 ),
                 'label' => 'Onderwerp',
             ))
             ->add('name', 'text', array(
                 'attr' => array(
                     'placeholder' => 'Jouw naam',
-                    'pattern' => '.{2,}', //minlength
+                    'pattern'     => '.{2,}', //minlength
                 ),
                 'label' => 'Naam',
             ))
@@ -50,8 +50,8 @@ class ContactType extends AbstractType
             ))
             ->add('summary', 'textarea', array(
                 'attr' => array(
-                    'cols' => 90,
-                    'rows' => 10,
+                    'cols'        => 90,
+                    'rows'        => 10,
                     'placeholder' => 'Schrijf hier nog iets dat je aan ons kwijt wilt',
                 ),
                 'label' => 'Bericht',
@@ -63,19 +63,19 @@ class ContactType extends AbstractType
         $collectionConstraint = new Collection(array(
             'name' => array(
                 new NotBlank(array('message' => 'Je naam is verplicht')),
-                new Length(array('min' => 2)),
+                new Length(array('min'       => 2)),
             ),
             'email' => array(
                 new NotBlank(array('message' => 'Je email is verplicht.')),
-                new Email(array('message' => 'Email is onjuist')),
+                new Email(array('message'    => 'Email is onjuist')),
             ),
             'reason' => array(
                 new NotBlank(array('message' => 'Het onderwerp is verplicht.')),
-                new Length(array('min' => 3)),
+                new Length(array('min'       => 3)),
             ),
             'summary' => array(
                 new NotBlank(array('message' => 'Geef een korte toelichting in het tekstvak.')),
-                new Length(array('min' => 5)),
+                new Length(array('min'       => 5)),
             ),
             'phone' => array(),
         ));

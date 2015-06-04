@@ -16,7 +16,7 @@ class IndexController extends BaseController
         $page->setTitle('Alle dagen van de week welkom bij DagVanDeWeek.nl');
 
         return $this->render('StefDagVanDeWeekBundle:Default:index.html.twig', [
-            'page' => $page
+            'page' => $page,
         ]);
     }
 

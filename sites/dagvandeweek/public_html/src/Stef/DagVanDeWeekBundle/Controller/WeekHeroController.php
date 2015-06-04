@@ -2,7 +2,6 @@
 
 namespace Stef\DagVanDeWeekBundle\Controller;
 
-use Stef\DagVanDeWeekBundle\Entity\CalendarYear;
 use Stef\SimpleCmsBundle\Entity\Page;
 
 class WeekHeroController extends BaseController
@@ -12,7 +11,7 @@ class WeekHeroController extends BaseController
         $page = $this->getWeekHeroManager()->findOneByYearAnWeek($year, $week);
 
         return $this->render('StefDagVanDeWeekBundle:WeekHero:show.html.twig', [
-            'page' => $page
+            'page' => $page,
         ]);
     }
 
@@ -20,7 +19,7 @@ class WeekHeroController extends BaseController
     {
         $heroes = $this->getWeekHeroManager()->findByYear($year);
         $page = new Page();
-        $page->setTitle('Topper van de Week ' . $year );
+        $page->setTitle('Topper van de Week '.$year);
 
         if (count($heroes) == 0 || $year < 2012 || $year > 2015) {
             $page->setRobotsIndex(false);
@@ -29,7 +28,7 @@ class WeekHeroController extends BaseController
         return $this->render('StefDagVanDeWeekBundle:WeekHero:index.html.twig', [
             'page' => $page,
             'year' => $year,
-            'heroes' => $heroes
+            'heroes' => $heroes,
         ]);
     }
 }

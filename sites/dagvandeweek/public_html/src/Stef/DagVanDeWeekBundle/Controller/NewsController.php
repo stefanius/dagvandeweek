@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 class NewsController extends BaseController
 {
     /**
-     * Show a news entry
+     * Show a news entry.
      */
     public function showAction(Request $request, $slug)
     {
@@ -23,21 +23,21 @@ class NewsController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:News:show.html.twig', array(
-            'page'      => $news,
+            'page' => $news,
         ), null, $request);
     }
 
     /**
-     * Show the news archive
+     * Show the news archive.
      */
     public function showMainNewsPageAction(Request $request)
     {
-        /**
+        /*
          * @var EntityManager
          */
         $em = $this->getDoctrine()->getManager();
 
-        /**
+        /*
          * @var QueryBuilder
          */
         $qb = $em->getRepository('StefSimpleCmsBundle:News')->createQueryBuilder('n');
@@ -46,10 +46,9 @@ class NewsController extends BaseController
             ->setMaxResults(20)
             ->orderBy('n.id', 'DESC');
 
-
         $newsitems = $qb->getQuery()->getResult();
 
-        $page['title'] = "Nieuws overzicht";
+        $page['title'] = 'Nieuws overzicht';
 
         return $this->render('StefDagVanDeWeekBundle:News:index.html.twig', array(
             'newsitems' => $newsitems,

@@ -24,10 +24,10 @@ class SitemapController extends BaseController
             $this->redirect('/');
         }
 
-        return $this->render('StefDagVanDeWeekBundle:Sitemap:' . $mappingKey . '.xml.twig', [
-                'records'      => $records,
+        return $this->render('StefDagVanDeWeekBundle:Sitemap:'.$mappingKey.'.xml.twig', [
+                'records' => $records,
             ],
             $response
         );
     }
-} 
+}

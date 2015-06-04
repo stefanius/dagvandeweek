@@ -21,14 +21,14 @@ class PageController extends BaseController
 
         $twig = $page->getTwig();
 
-        if (empty($twig)){
+        if (empty($twig)) {
             $twig = 'StefDagVanDeWeekBundle:Default:page.html.twig';
         }
 
         return $this->render($twig, array_merge($extra, [
-                'page'  => $page,
+                'page' => $page,
                 'pageOptions' => $pageOptions->all(),
-                'auth' => $this->isAuthenticatedFully()
+                'auth' => $this->isAuthenticatedFully(),
             ])
         );
     }

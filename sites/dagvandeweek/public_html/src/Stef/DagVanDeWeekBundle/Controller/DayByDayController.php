@@ -21,10 +21,10 @@ class DayByDayController extends BaseController
         $factory = new DateObjectFactory();
         $date = $factory->createByConvertedMonthDay($dutchMonthName, $day);
 
-        if ((integer)$date->getDay() !== (integer)$day && (integer)$day > 0 && $date->getDay() > 0) {
+        if ((integer) $date->getDay() !== (integer) $day && (integer) $day > 0 && $date->getDay() > 0) {
             return $this->redirect($this->generateUrl($request->get('_route'), [
-                'day' => (integer)$date->getDay(),
-                'dutchMonthName' => $date->getTranslator()->getMonth($date->getMonthNumber() + 1)
+                'day' => (integer) $date->getDay(),
+                'dutchMonthName' => $date->getTranslator()->getMonth($date->getMonthNumber() + 1),
             ]));
         }
 
@@ -41,19 +41,19 @@ class DayByDayController extends BaseController
         }
 
         if ($page->getTitle() == null) {
-            $page->setTitle($day . " " . $dutchMonthName . " in het verleden");
+            $page->setTitle($day.' '.$dutchMonthName.' in het verleden');
         }
 
         if ($page->getDescription() == null) {
-            $page->setDescription((integer)$day . ' ' . $dutchMonthName . ' is de ' . (integer)$day . 'e dag uit de ' . $date->getMonthNumber() . 'e maand. Bekijk hier een overzicht van gebeurtenissen op deze dag van het jaar!' );
+            $page->setDescription((integer) $day.' '.$dutchMonthName.' is de '.(integer) $day.'e dag uit de '.$date->getMonthNumber().'e maand. Bekijk hier een overzicht van gebeurtenissen op deze dag van het jaar!');
         }
 
         return $this->render('StefDagVanDeWeekBundle:DayByDay:index.html.twig', [
-                'date'      => $date,
-                'dayAfter'  => $dayAfter,
+                'date' => $date,
+                'dayAfter' => $dayAfter,
                 'dayBefore' => $dayBefore,
-                'page'      => $page,
-                'day'       => $day,
+                'page' => $page,
+                'day' => $day,
                 'histories' => $histories,
             ]
         );

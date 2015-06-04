@@ -4,12 +4,13 @@ namespace Stef\SpecialDatesBundle\Tests\Dates;
 
 use Stef\SpecialDatesBundle\Dates\DutchPancakeDay;
 
-class SecondChristmasDayTest extends \PHPUnit_Framework_TestCase {
-
+class SecondChristmasDayTest extends \PHPUnit_Framework_TestCase
+{
     /**
      * @dataProvider provider
      */
-    public function testSlugManipulator($year, $dateformat, $expected) {
+    public function testSlugManipulator($year, $dateformat, $expected)
+    {
         $specialDate = new DutchPancakeDay($year);
 
         var_dump($specialDate->getStartDate());
@@ -17,7 +18,8 @@ class SecondChristmasDayTest extends \PHPUnit_Framework_TestCase {
         //$this->assertEquals($expected, $result);
     }
 
-    public function provider() {
+    public function provider()
+    {
         return [
             [2000, '', ''],
             [2005, '', ''],

@@ -13,6 +13,7 @@ class IsLeapYearExtension extends \Twig_Extension
 
     /**
      * @param $year
+     *
      * @return bool
      */
     public function isLeapYearFilter($year)
@@ -28,6 +29,7 @@ class IsLeapYearExtension extends \Twig_Extension
 
     /**
      * @param $number
+     *
      * @return bool
      */
     protected function isEven($number)
@@ -37,6 +39,7 @@ class IsLeapYearExtension extends \Twig_Extension
 
     /**
      * @param $number
+     *
      * @return bool
      */
     protected function isInteger($number)
@@ -51,11 +54,12 @@ class IsLeapYearExtension extends \Twig_Extension
 
     /**
      * @param $number
+     *
      * @return bool
      */
     protected function isCentury($number)
     {
-        $result = preg_match ('/^([0-9])([0-9])([0])([0])$/', $number, $matchs) === 1;
+        $result = preg_match('/^([0-9])([0-9])([0])([0])$/', $number, $matchs) === 1;
 
         return $result;
     }

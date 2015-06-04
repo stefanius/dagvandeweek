@@ -52,7 +52,7 @@ class Generator
         if ($pathElements[0] !== trim($request->getBaseUrl(), '/')) {
             array_unshift($pathElements, '/');
         } else {
-            $pathElements[0] = '/'.$pathElements[0];
+            $pathElements[0] = '/' . $pathElements[0];
         }
 
         return $pathElements;
@@ -107,7 +107,7 @@ class Generator
         foreach ($splitItems as $splitItem) {
             $path[] = $splitItem;
             $crumb = null;
-            $crumblink = '/'.trim(implode('/', $path), '/');
+            $crumblink = '/' . trim(implode('/', $path), '/');
             $i++;
 
             $crumbs[] = $this->createCrumb($path, $crumblink, $splitItems, $splitItem, $page, $i);

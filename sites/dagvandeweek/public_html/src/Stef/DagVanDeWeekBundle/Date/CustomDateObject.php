@@ -66,7 +66,7 @@ class CustomDateObject
      */
     protected $translator;
 
-    function __construct(\DateTime $dateTime, TranslatorInterface $translator)
+    public function __construct(\DateTime $dateTime, TranslatorInterface $translator)
     {
         $this->dateTime = $dateTime;
         $this->translator = $translator;
@@ -76,14 +76,14 @@ class CustomDateObject
 
     protected function convert()
     {
-        $this->year = (integer)$this->dateTime->format("Y");
-        $this->day = (integer)$this->dateTime->format("d");
-        $this->weekDayNumber = $this->dateTime->format("w");
-        $this->monthNumber = (integer)$this->dateTime->format("m");
-        $this->yearDayNumber = $this->dateTime->format("z") + 1;
-        $this->weekNumber = (integer)$this->dateTime->format("W");
-        $this->lastDayOfMonth = $this->dateTime->format("t");
-        $this->unixSeconds = $this->dateTime->format("U");
+        $this->year = (integer) $this->dateTime->format('Y');
+        $this->day = (integer) $this->dateTime->format('d');
+        $this->weekDayNumber = $this->dateTime->format('w');
+        $this->monthNumber = (integer) $this->dateTime->format('m');
+        $this->yearDayNumber = $this->dateTime->format('z') + 1;
+        $this->weekNumber = (integer) $this->dateTime->format('W');
+        $this->lastDayOfMonth = $this->dateTime->format('t');
+        $this->unixSeconds = $this->dateTime->format('U');
         $this->translatedMonthName = $this->translator->getMonth($this->monthNumber);
         $this->translatedWeekdayName = $this->translator->getDay($this->weekDayNumber);
     }
@@ -192,7 +192,7 @@ class CustomDateObject
         $dayAfter = new \DateTime($this->year . '-' . $this->monthNumber . '-' . $this->day);
         $dayAfter->modify('+1 day');
 
-        return new CustomDateObject($dayAfter, $this->translator);
+        return new self($dayAfter, $this->translator);
     }
 
     /**
@@ -203,6 +203,6 @@ class CustomDateObject
         $dayBefore = new \DateTime($this->year . '-' . $this->monthNumber . '-' . $this->day);
         $dayBefore->modify('-1 day');
 
-        return new CustomDateObject($dayBefore, $this->translator);
+        return new self($dayBefore, $this->translator);
     }
 }

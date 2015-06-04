@@ -12,7 +12,7 @@ class DateObjectFactory
      */
     protected $translator;
 
-    function __construct()
+    public function __construct()
     {
         $this->translator = new Dutch();
     }
@@ -88,7 +88,7 @@ class DateObjectFactory
     {
         $month = $this->translator->getMonthNumberByName($monthName);
 
-        if ((integer)$day === 29 && (integer)$month === 2) {
+        if ((integer) $day === 29 && (integer) $month === 2) {
             $year = 2016;
         } else {
             $today = new \DateTime();

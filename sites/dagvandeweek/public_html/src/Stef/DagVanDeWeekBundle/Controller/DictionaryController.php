@@ -39,8 +39,8 @@ class DictionaryController extends BaseController
                 'param' => ['letter', $letter],
             ]);
 
-            $page->setTitle('Begrippenlijst - '.ucfirst($letter));
-            $page->setDescription(ucfirst($letter).' is een letter vol met Bier geheimen! Wij gever hier '.count($wordlist).' geheimen prijs met de letter '.ucfirst($letter).'! Bekijk ook de rest van ons Bier alfabet!');
+            $page->setTitle('Begrippenlijst - ' . ucfirst($letter));
+            $page->setDescription(ucfirst($letter) . ' is een letter vol met Bier geheimen! Wij gever hier ' . count($wordlist) . ' geheimen prijs met de letter ' . ucfirst($letter) . '! Bekijk ook de rest van ons Bier alfabet!');
         } else {
             return $this->show($letter);
         }

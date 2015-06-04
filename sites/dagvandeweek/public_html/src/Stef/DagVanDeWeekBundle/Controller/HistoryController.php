@@ -19,23 +19,23 @@ class HistoryController extends BaseController
 
         if ($page === null) {
             $page = new HistoryYear();
-            $page->setTitle('Historie '.$year);
+            $page->setTitle('Historie ' . $year);
             $page->setYear($year);
             $page->setSlug($year);
 
             if ($year < date('Y')) {
-                $p1 = '<p>Het jaar '.$year.' ligt alweer '.(date('Y') - $year).' jaar achter ons. Er is in dat jaar veel gebeurt en wij willen dat graag met jou delen! Elke dag van de week is beinvloed door de dagen van voorgaande weken. OF iets nu gisteren of vorgie week is gebeurt. Vorig jaar of 400 jaar geleden. Wij zoeken het uit. En delen het met jou! Elke dag opnieuw. Wat vandaag in het nieuws is, is morgen geschiedenis!</p>';
+                $p1 = '<p>Het jaar ' . $year . ' ligt alweer ' . (date('Y') - $year) . ' jaar achter ons. Er is in dat jaar veel gebeurt en wij willen dat graag met jou delen! Elke dag van de week is beinvloed door de dagen van voorgaande weken. OF iets nu gisteren of vorgie week is gebeurt. Vorig jaar of 400 jaar geleden. Wij zoeken het uit. En delen het met jou! Elke dag opnieuw. Wat vandaag in het nieuws is, is morgen geschiedenis!</p>';
 
                 $page->setBody($p1);
             } else {
-                $p1 = "<p>Deze pagina's gaan over de geschiedenis. Ons verleden. Het jaar ".$year.' laat nog '.($year - date('Y')).' jaar op zich wachten. Het is dus zeer aannemelijk dat wij nog niet beschikken over enorme hoeveelheden gebeurtenissen uit het jaar '.$year.'. Wellicht ben je wel geintreseerd in de '.'<a href="http://dagvandeweek.nl/kalender/'.$year.'">kalender</a> uit de (verre) toekomst?</p>';
+                $p1 = "<p>Deze pagina's gaan over de geschiedenis. Ons verleden. Het jaar " . $year . ' laat nog ' . ($year - date('Y')) . ' jaar op zich wachten. Het is dus zeer aannemelijk dat wij nog niet beschikken over enorme hoeveelheden gebeurtenissen uit het jaar ' . $year . '. Wellicht ben je wel geintreseerd in de ' . '<a href="http://dagvandeweek.nl/kalender/' . $year . '">kalender</a> uit de (verre) toekomst?</p>';
 
                 $page->setBody($p1);
             }
         }
 
         if ($page->getTitle() == $year && strlen($page->getTitle()) < 5) {
-            $page->setTitle('Historie '.$page->getYear());
+            $page->setTitle('Historie ' . $page->getYear());
         }
 
         return $page;
@@ -56,18 +56,18 @@ class HistoryController extends BaseController
         }
 
         if ($month == null || $month === '00' || $month === '0') {
-            return $this->redirect('/historie/'.$year);
+            return $this->redirect('/historie/' . $year);
         }
 
         if ($day == null || $day === '00' || $day === '0') {
-            return $this->redirect('/historie/'.$year.'/'.sprintf('%1$02d', $month));
+            return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d', $month));
         }
 
         if ($slug == null) {
-            return $this->redirect('/historie/'.$year.'/'.sprintf('%1$02d', $month).'/'.sprintf('%1$02d', $day));
+            return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d', $month) . '/' . sprintf('%1$02d', $day));
         }
 
-        return $this->redirect('/historie/'.$year.'/'.sprintf('%1$02d', $month).'/'.sprintf('%1$02d', $day).'/'.$slug);
+        return $this->redirect('/historie/' . $year . '/' . sprintf('%1$02d', $month) . '/' . sprintf('%1$02d', $day) . '/' . $slug);
     }
 
     /**
@@ -153,7 +153,7 @@ class HistoryController extends BaseController
         $page->setDay($day);
         $page->setMonth($month);
         $page->setYear($year);
-        $page->setTitle(ucfirst($dayInfo['dutchWeekdayName']).' '.$day.' '.$dayInfo['dutchMonthName'].' '.$year);
+        $page->setTitle(ucfirst($dayInfo['dutchWeekdayName']) . ' ' . $day . ' ' . $dayInfo['dutchMonthName'] . ' ' . $year);
 
         $page->setRobotsIndex(false);
         $page->setRobotsFollow(true);

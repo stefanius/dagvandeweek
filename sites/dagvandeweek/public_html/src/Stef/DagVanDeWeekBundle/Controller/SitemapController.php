@@ -24,7 +24,7 @@ class SitemapController extends BaseController
             $this->redirect('/');
         }
 
-        return $this->render('StefDagVanDeWeekBundle:Sitemap:'.$mappingKey.'.xml.twig', [
+        return $this->render('StefDagVanDeWeekBundle:Sitemap:' . $mappingKey . '.xml.twig', [
                 'records' => $records,
             ],
             $response

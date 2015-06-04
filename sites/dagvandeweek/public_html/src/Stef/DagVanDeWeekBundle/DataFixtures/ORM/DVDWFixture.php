@@ -14,7 +14,7 @@ class DVDWFixture extends AbstractFixture
         $loader = new Yaml();
         $finder = new Finder();
         $fixtures = $finder
-            ->in(__DIR__. '/../../Resources/fixtures/')
+            ->in(__DIR__ . '/../../Resources/fixtures/')
             ->files()
             ->name('*.yml')
             ->sortByName()

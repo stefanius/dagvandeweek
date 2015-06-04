@@ -8,7 +8,7 @@ class HistoryControllerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Test if a response will be returned which contains a redirect to a month and day
-     * with two digits (with leading zero's)
+     * with two digits (with leading zero's).
      */
     public function testResponse()
     {

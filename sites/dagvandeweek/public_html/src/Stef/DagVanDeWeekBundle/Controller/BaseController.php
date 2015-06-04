@@ -183,7 +183,7 @@ class BaseController extends Controller
     protected function createDayInfo($year, $month, $day)
     {
         $translation = new Dutch();
-        $date = new \DateTime($year.'-'.$month.'-'.$day);
+        $date = new \DateTime($year . '-' . $month . '-' . $day);
 
         $weekDayNumber = $date->format('w');
         $yearDayNumber = $date->format('z');

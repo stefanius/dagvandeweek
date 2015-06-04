@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Stef\SimpleCmsBundle\Entity\AbstractCmsContent;
 
 /**
- * Day
+ * Day.
  *
  * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(name="unique_day_month", columns={"day", "month"})})
  * @ORM\Entity
@@ -19,14 +19,14 @@ class Day extends AbstractCmsContent
     protected $title;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="day", type="integer", length=255)
      */
     protected $day;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="month", type="integer", length=255)
      */

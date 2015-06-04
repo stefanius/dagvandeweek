@@ -19,7 +19,7 @@ class WeekHeroController extends BaseController
     {
         $heroes = $this->getWeekHeroManager()->findByYear($year);
         $page = new Page();
-        $page->setTitle('Topper van de Week '.$year);
+        $page->setTitle('Topper van de Week ' . $year);
 
         if (count($heroes) == 0 || $year < 2012 || $year > 2015) {
             $page->setRobotsIndex(false);

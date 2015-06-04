@@ -14,7 +14,7 @@ class GetTranslatedMonthExtension extends \Twig_Extension
     /**
      * @param Dutch $translations
      */
-    function __construct(Dutch $translations = null)
+    public function __construct(Dutch $translations = null)
     {
         if ($translations === null) {
             $translations = new Dutch(); //Will be refactored later on.
@@ -32,6 +32,7 @@ class GetTranslatedMonthExtension extends \Twig_Extension
 
     /**
      * @param $number
+     *
      * @return mixed
      */
     public function getTranslated($number)

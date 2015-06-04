@@ -41,11 +41,11 @@ class DayByDayController extends BaseController
         }
 
         if ($page->getTitle() == null) {
-            $page->setTitle($day.' '.$dutchMonthName.' in het verleden');
+            $page->setTitle($day . ' ' . $dutchMonthName . ' in het verleden');
         }
 
         if ($page->getDescription() == null) {
-            $page->setDescription((integer) $day.' '.$dutchMonthName.' is de '.(integer) $day.'e dag uit de '.$date->getMonthNumber().'e maand. Bekijk hier een overzicht van gebeurtenissen op deze dag van het jaar!');
+            $page->setDescription((integer) $day . ' ' . $dutchMonthName . ' is de ' . (integer) $day . 'e dag uit de ' . $date->getMonthNumber() . 'e maand. Bekijk hier een overzicht van gebeurtenissen op deze dag van het jaar!');
         }
 
         return $this->render('StefDagVanDeWeekBundle:DayByDay:index.html.twig', [

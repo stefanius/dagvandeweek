@@ -4,7 +4,7 @@ namespace Stef\DagVanDeWeekBundle\CalendarTranslations;
 
 class Dutch extends AbstractTranslator
 {
-    function __construct()
+    public function __construct()
     {
         $this->months['01'] = 'januari';
         $this->months['02'] = 'februari';

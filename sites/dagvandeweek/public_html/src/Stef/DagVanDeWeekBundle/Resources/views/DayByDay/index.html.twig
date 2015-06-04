@@ -1,0 +1,32 @@
+{% extends 'StefDagVanDeWeekBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <article class="col-sm-9 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">{{ page.title }}</h1>
+            </header>
+
+            <p>
+                {{ date.day }} {{ date.translatedMonthName }} is dag {{ date.yearDayNumber }} van het jaar {{ date.year }}. Deze dag is dit jaar te vinden in week {{ date.weekNumber }}.
+                {% if date.day == 28 and date.monthNumber == 02 %}
+                    De bijzondere situatie van 29 februari (immers, elke 4 jaar is er pas een 29e van de 2e) heeft ons hoofdpijn bezorgd bij de telling van het aantal dagen. Natuurlijk is <a href="/">29 februari</a> te bezoeken, maar we tellen hem maar eens per 4 jaar mee.
+                {% else %}
+                    Als je van mening bent dat deze dag niets nieuws onder de zon is, kijk dan eens naar de <a href="/">vorige dag</a> of de <a href="/">volgende dag</a>.
+                {% endif %}
+            </p>
+
+            <p>
+                {% if date.day == 28 and date.monthNumber == 02 %}
+                    Deze dag komt maar eens in de vier jaar voor. Het spreekt daarom bijna voor zich dat de lijst van gebeurtenissen iets kleiner is dan op andere dagen. Maar zeker niet minder spectaculair!
+                {% endif %}
+            </p>
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
+
+            {{ page.body|raw }}
+
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
+
+        </article>
+    </div>
+{% endblock %}

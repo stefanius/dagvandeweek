@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6a2916a93c91394c4f14aa35ba434c2f",
+    "hash": "df6da2f0e8d6908cf6ce0ed3c4a3379d",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -3270,6 +3270,42 @@
             "time": "2014-11-13 19:17:45"
         },
         {
+            "name": "stef/special-dates",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stefanius/special-dates.git",
+                "reference": "5106526eb64ae3d6b831f970cf31ab80d7f20d46"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stefanius/special-dates/zipball/5106526eb64ae3d6b831f970cf31ab80d7f20d46",
+                "reference": "5106526eb64ae3d6b831f970cf31ab80d7f20d46",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stef\\SpecialDates\\": "src/Stef/SpecialDates/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Stephan Grootveld",
+                    "email": "sgrootveld@gmail.com"
+                }
+            ],
+            "description": "Library with special dates. Mainly for the Netherlands, but if you will you may use and extends it in foreign countries ;)",
+            "time": "2015-06-06 16:27:22"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.0",
             "source": {
@@ -3882,7 +3918,8 @@
         "stef/key-value-manipulation": 20,
         "stef/generate-fixtures-bundle": 20,
         "stef/simple-cms-bundle": 20,
-        "stef/redirect-trailing-slash-bundle": 20
+        "stef/redirect-trailing-slash-bundle": 20,
+        "stef/special-dates": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

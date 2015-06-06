@@ -58,7 +58,8 @@
         "stef/key-value-manipulation": "dev-master",
         "stef/generate-fixtures-bundle": "dev-master",
         "stef/simple-cms-bundle": "dev-master",
-        "stef/redirect-trailing-slash-bundle": "dev-master"
+        "stef/redirect-trailing-slash-bundle": "dev-master",
+        "stef/special-dates": "dev-master"
 
     },
     "scripts": {

@@ -80,7 +80,7 @@ class CustomDateObject
         $this->day                   = (integer) $this->dateTime->format('d');
         $this->weekDayNumber         = $this->dateTime->format('w');
         $this->monthNumber           = (integer) $this->dateTime->format('m');
-        $this->yearDayNumber         = $this->dateTime->format('z') + 1;
+        $this->yearDayNumber         = (integer) $this->dateTime->format('z') + 1;
         $this->weekNumber            = (integer) $this->dateTime->format('W');
         $this->lastDayOfMonth        = $this->dateTime->format('t');
         $this->unixSeconds           = $this->dateTime->format('U');

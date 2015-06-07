@@ -217,4 +217,17 @@ class BaseController extends Controller
 
         return $translation->getMonthNumberByName($monthName, $leadingZero);
     }
+
+    /**
+     * @return \Stef\SpecialDates\DateParser\Parser
+     */
+    protected function getSpecialDateParser()
+    {
+        return new \Stef\SpecialDates\DateParser\Parser();
+    }
+
+    protected function findSpecialDates(\DateTime $date)
+    {
+        return $this->getSpecialDateParser()->findSpecialDateByDateTime($date);
+    }
 }

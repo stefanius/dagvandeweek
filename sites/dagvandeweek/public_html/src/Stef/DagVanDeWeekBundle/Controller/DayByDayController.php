@@ -20,6 +20,7 @@ class DayByDayController extends BaseController
     {
         $factory = new DateObjectFactory();
         $date    = $factory->createByConvertedMonthDay($dutchMonthName, $day);
+        $specialDates = $this->findSpecialDates($date->getDateTime());
 
         if ((integer) $date->getDay() !== (integer) $day && (integer) $day > 0 && $date->getDay() > 0) {
             return $this->redirect($this->generateUrl($request->get('_route'), [
@@ -49,12 +50,13 @@ class DayByDayController extends BaseController
         }
 
         return $this->render('StefDagVanDeWeekBundle:DayByDay:index.html.twig', [
-                'date'      => $date,
-                'dayAfter'  => $dayAfter,
-                'dayBefore' => $dayBefore,
-                'page'      => $page,
-                'day'       => $day,
-                'histories' => $histories,
+                'date'         => $date,
+                'dayAfter'     => $dayAfter,
+                'dayBefore'    => $dayBefore,
+                'page'         => $page,
+                'day'          => $day,
+                'histories'    => $histories,
+                'specialDates' => $specialDates,
             ]
         );
     }

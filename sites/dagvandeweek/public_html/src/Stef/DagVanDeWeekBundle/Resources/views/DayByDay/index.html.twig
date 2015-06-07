@@ -22,6 +22,20 @@
                 {% endif %}
             </p>
 
+            {% if specialDates|length > 0 %}
+                <h2>Speciale (thema)dagen</h2>
+                <p>
+                    Elk jaar zijn er een of meer bijzondere themadagen. Naast de nationale feestdagen zijn er ook nog een aantal andere dagen die aandacht vragen voor een bepaald probleem. Wij hebben er zoveel mogelijk voor je verzameld!
+                </p>
+                <p> Voor deze datum hebben wij maar liefst {{ specialDates|length }} dag(en) gevonden!
+                        <ol>
+                            {% for specialDate in specialDates %}
+                                <li>{{ specialDate.description }}</li>
+                            {% endfor %}
+                        </ol>
+                </p>
+            {% endif %}
+
             {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
 
             <h2>Gebeurtenissen uit het verleden</h2>

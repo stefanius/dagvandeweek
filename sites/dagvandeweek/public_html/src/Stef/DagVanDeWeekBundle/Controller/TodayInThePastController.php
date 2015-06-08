@@ -14,7 +14,7 @@ class TodayInThePastController extends BaseController
      *
      * @return Response
      */
-    public function showTodayInThePastAction(Request $request)
+    public function showTodayAction(Request $request)
     {
         $today = new \DateTime();
         $factory = new DateObjectFactory();
@@ -36,7 +36,7 @@ class TodayInThePastController extends BaseController
      *
      * @return Response
      */
-    public function showTodayAction(Request $request)
+    public function showTodayInThePastAction(Request $request)
     {
         $today = new \DateTime();
         $factory = new DateObjectFactory();

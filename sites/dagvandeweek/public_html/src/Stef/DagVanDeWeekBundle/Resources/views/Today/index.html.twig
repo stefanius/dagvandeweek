@@ -1,0 +1,31 @@
+{% extends 'StefDagVanDeWeekBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <article class="col-sm-9 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">{{ page.title }}</h1>
+            </header>
+            <p>Je hebt haast en je maakt snel nog even een afspraak bij de tandarts voor week 21. Maar wanneer is het week 21? Je moet dan eerst weten wat de week is waarin je nu leeft. Uiteindelijk geeft je agenda je het juiste antwoord. Maar dat kan vanaf nu dus makkelijker. Kijk gewoon regelmatig op deze pagina en alle datum informatie die je nodog hebt geven wij aan je door. <strong>De maand van vandaag</strong> en zeker ook de <strong>de dag van de week</strong>. En nu dus ook de <strong>week van het jaar</strong>. Want weet jij alle 52 weken uit je hoofd?</p>
+
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
+
+            <h2>De dag van vandaag</h2>
+            <p style="font-size: 1.5em;">
+                <strong>Datum van vandaag: </strong> {{ date.translatedWeekdayName }} {{ date.day }} {{ date.translatedMonthName }} {{ date.year }} </br>
+                <strong>Maandnaam en nummer: </strong> {{ date.translatedMonthName }} (nummer {{ date.monthNumber }}) </br>
+                <strong>Weeknummer: </strong> week {{ date.weeknumber }} </br>
+                <strong>Dag van het jaar: </strong> {{ date.yearDayNumber }} </br>
+                <strong>Unix Timestamp: </strong> {{ date.unixSeconds }} (middernacht)</br>
+            </p>
+
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
+
+            <h2>Meer weten?</h2>
+            <p>
+                Als je meer wilt weten over het huidige jaar (bijvoorbeeld de weeknummers van toekomstige weken opzoeken) kijk dan zeker eens naar onze uitgebreide <a href="/kalender/{{ date.year }}">kalender</a>. Als je niet warm wordt voor de dag van morgen, kijk dan eens naar de <a href="/{{ date.day }}-{{ date.translatedMonthName }}">dag van gisteren</a> en dui met ons mee in het verleden van vandaag!
+            </p>
+        </article>
+    </div>
+
+{% endblock %}

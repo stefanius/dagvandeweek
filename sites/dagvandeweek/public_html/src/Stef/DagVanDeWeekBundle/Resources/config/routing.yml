@@ -43,6 +43,10 @@ stef_dag_van_de_week_contact:
 
 stef_dag_van_de_week_today_in_the_past:
     pattern:  /vandaag-in-het-verleden
+    defaults: { _controller: StefDagVanDeWeekBundle:TodayInThePast:showTodayInThePast }
+
+stef_dag_van_de_week_today:
+    pattern:  /vandaag
     defaults: { _controller: StefDagVanDeWeekBundle:TodayInThePast:showToday }
 
 stef_dag_van_de_week_day_by_day:

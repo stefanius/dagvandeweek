@@ -54,12 +54,25 @@ rewrite ^/historie/1944/00/05/dolle-dinsdag /historie/1944/09/05/dolle-dinsdag p
 #rewrite ^/kalender/29 /kalender permanent;
 #rewrite ^/kalender/30 /kalender permanent;
 
-#historie
+#historie - by year
 rewrite ^/histories/historie/1944 /historie/1944 permanent;
 rewrite ^/histories/historie/2001 /historie/2001 permanent;
 rewrite ^/histories/historie/1911 /historie/1911 permanent;
 rewrite ^/histories/historie/1980 /historie/1980 permanent;
 rewrite ^/histories/historie/2000 /historie/2000 permanent;
+
+#historie - year/month
+rewrite ^/histories/historie/1912/04 /historie/1912/04 permanent;
+rewrite ^/histories/historie/1948/07 /historie/1948/07 permanent;
+
+#historie - full date
+rewrite ^/histories/historie/1945/05/05 /historie/1945/05/05 permanent;
+rewrite ^/histories/historie/2007/07/25 /historie/2007/07/25 permanent;
+rewrite ^/histories/historie/1959/08/21 /historie/1959/08/21 permanent;
+rewrite ^/histories/historie/1921/07/29 /historie/1921/07/29 permanent;
+rewrite ^/histories/historie/1909/09/01 /historie/1909/09/01 permanent;
+rewrite ^/histories/historie/1675/08/01 /historie/1675/08/01 permanent;
+
 
 #Corrected URLs
 rewrite ^/historie/1940/05/14/bombardement%20-rotterdam /historie/1940/05/14/bombardement-rotterdam permanent;

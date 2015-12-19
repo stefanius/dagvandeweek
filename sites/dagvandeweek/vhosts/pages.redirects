@@ -60,11 +60,13 @@ rewrite ^/histories/historie/2001 /historie/2001 permanent;
 rewrite ^/histories/historie/1911 /historie/1911 permanent;
 rewrite ^/histories/historie/1980 /historie/1980 permanent;
 rewrite ^/histories/historie/2000 /historie/2000 permanent;
+rewrite ^/histories/historie/1990 /historie/1990 permanent;
 
 #historie - year/month
 rewrite ^/histories/historie/1912/04 /historie/1912/04 permanent;
 rewrite ^/histories/historie/1948/07 /historie/1948/07 permanent;
 rewrite ^/histories/historie/1990/08 /historie/1990/08 permanent;
+rewrite ^/histories/historie/1959/08 /historie/1959/08 permanent;
 
 #historie - full date
 rewrite ^/histories/historie/1945/05/05 /historie/1945/05/05 permanent;
@@ -88,3 +90,4 @@ rewrite ^/watis/donderdag /alle-zeven-op-een-rijtje/donderdag permanent;
 rewrite ^/watis/vrijdag /alle-zeven-op-een-rijtje/vrijdag permanent;
 rewrite ^/watis/zaterdag /alle-zeven-op-een-rijtje/zaterdag permanent;
 rewrite ^/watis/zondag /alle-zeven-op-een-rijtje/zondag permanent;
+rewrite ^/watis/weekday /alle-zeven-op-een-rijtje permanent;

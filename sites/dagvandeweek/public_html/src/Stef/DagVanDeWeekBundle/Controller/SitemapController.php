@@ -18,6 +18,8 @@ class SitemapController extends BaseController
             $records = $this->getPageManager()->getAllRecords();
         } elseif ($mappingKey === 'history') {
             $records = $this->getHistoryManager()->getAllRecords();
+        } elseif ($mappingKey === 'day') {
+            $records = $this->getDayManager()->getAllRecords();
         }
 
         if ($records === null || !is_array($records) || count($records) == 0) {

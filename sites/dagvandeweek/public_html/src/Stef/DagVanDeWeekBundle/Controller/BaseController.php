@@ -230,4 +230,9 @@ class BaseController extends Controller
     {
         return $this->getSpecialDateParser()->findSpecialDateByDateTime($date);
     }
+
+    protected function findSpecialDatesByMonth($year, $monthNumber)
+    {
+        return $this->getSpecialDateParser()->findSpecialDateByMonthNumber($year, $monthNumber);
+    }
 }

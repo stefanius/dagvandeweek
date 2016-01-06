@@ -49,6 +49,12 @@ stef_dag_van_de_week_today:
     pattern:  /vandaag
     defaults: { _controller: StefDagVanDeWeekBundle:TodayInThePast:showToday }
 
+stef_dag_van_de_week_month:
+    pattern:  /maandoverzicht-{dutchMonthName}
+    defaults: { _controller: StefDagVanDeWeekBundle:Month:showMonth }
+    requirements:
+       dutchMonthName: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
+
 stef_dag_van_de_week_day_by_day:
     pattern:  /{day}-{dutchMonthName}
     defaults: { _controller: StefDagVanDeWeekBundle:DayByDay:showToday }

@@ -99,4 +99,16 @@ class DateObjectFactory
 
         return $this->createByDateTime($date);
     }
+
+    /**
+     * Convert a month name into a monthnumber.
+     *
+     * @param $monthName
+     *
+     * @return int
+     */
+    public function getConvertedMonthNumber($monthName)
+    {
+        return $this->translator->getMonthNumberByName($monthName);
+    }
 }

@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "df6da2f0e8d6908cf6ce0ed3c4a3379d",
+    "content-hash": "ad299b5535b3b6fb8b07f86d83a9b495",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -1201,7 +1202,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/92d5624f2a29e74d8fd9d2a94d7ed7998a8c2809",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/e5e7a2b8984da8dfedaf44adc7e5f60a62ad280c",
                 "reference": "92d5624f2a29e74d8fd9d2a94d7ed7998a8c2809",
                 "shasum": ""
             },
@@ -1579,7 +1580,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/c49628cfc8b8ce7404665b4e6528487d780e7d68",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/3e396c980545350c2efb65a50041d2a9f9d6562e",
                 "reference": "c49628cfc8b8ce7404665b4e6528487d780e7d68",
                 "shasum": ""
             },
@@ -3031,7 +3032,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/generate-fixtures-bundle/zipball/a764b26f0edf92e5337811e51a2af38a15d75e60",
+                "url": "https://api.github.com/repos/stefanius/generate-fixtures-bundle/zipball/357f4f906b6b79579d8e0e98ffa7d65df15e0376",
                 "reference": "a764b26f0edf92e5337811e51a2af38a15d75e60",
                 "shasum": ""
             },
@@ -3173,7 +3174,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/90e7970894386a6dd10fb978f42d464f0b7bcfcc",
+                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/aff0dc14006f28f7a011a110d331c8da07230f6c",
                 "reference": "90e7970894386a6dd10fb978f42d464f0b7bcfcc",
                 "shasum": ""
             },
@@ -3274,12 +3275,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stefanius/special-dates.git",
-                "reference": "0667af52cd248cb181fc3c603c2191207b2affd3"
+                "reference": "2dd332446f92c8e275105ef94cc1d3ad3808095f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/special-dates/zipball/0667af52cd248cb181fc3c603c2191207b2affd3",
-                "reference": "0667af52cd248cb181fc3c603c2191207b2affd3",
+                "url": "https://api.github.com/repos/stefanius/special-dates/zipball/2dd332446f92c8e275105ef94cc1d3ad3808095f",
+                "reference": "2dd332446f92c8e275105ef94cc1d3ad3808095f",
                 "shasum": ""
             },
             "require": {
@@ -3302,7 +3303,7 @@
                 }
             ],
             "description": "Library with special dates. Mainly for the Netherlands, but if you will you may use and extends it in foreign countries ;)",
-            "time": "2015-06-06 21:36:36"
+            "time": "2015-12-29 21:46:12"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3362,12 +3363,12 @@
             "version": "v2.6.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/AsseticBundle.git",
+                "url": "https://github.com/symfony/assetic-bundle.git",
                 "reference": "422b0add2110f0cf9bc7a873a386ea053f4a89f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/422b0add2110f0cf9bc7a873a386ea053f4a89f0",
+                "url": "https://api.github.com/repos/symfony/assetic-bundle/zipball/422b0add2110f0cf9bc7a873a386ea053f4a89f0",
                 "reference": "422b0add2110f0cf9bc7a873a386ea053f4a89f0",
                 "shasum": ""
             },
@@ -3427,12 +3428,12 @@
             "version": "v2.7.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/MonologBundle.git",
+                "url": "https://github.com/symfony/monolog-bundle.git",
                 "reference": "9320b6863404c70ebe111e9040dab96f251de7ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/9320b6863404c70ebe111e9040dab96f251de7ac",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/9320b6863404c70ebe111e9040dab96f251de7ac",
                 "reference": "9320b6863404c70ebe111e9040dab96f251de7ac",
                 "shasum": ""
             },
@@ -3486,12 +3487,12 @@
             "version": "v2.3.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/SwiftmailerBundle.git",
+                "url": "https://github.com/symfony/swiftmailer-bundle.git",
                 "reference": "970b13d01871207e81d17b17ddda025e7e21e797"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/970b13d01871207e81d17b17ddda025e7e21e797",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/970b13d01871207e81d17b17ddda025e7e21e797",
                 "reference": "970b13d01871207e81d17b17ddda025e7e21e797",
                 "shasum": ""
             },

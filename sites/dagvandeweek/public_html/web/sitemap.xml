@@ -14,5 +14,64 @@
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
-
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-januari</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-februari</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-maart</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-april</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-mei</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-juni</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-juli</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-augustus</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-september</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-oktober</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-november</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://dagvandeweek.nl/maandoverzicht-december</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
 </urlset>

@@ -61,12 +61,15 @@ rewrite ^/histories/historie/1911 /historie/1911 permanent;
 rewrite ^/histories/historie/1980 /historie/1980 permanent;
 rewrite ^/histories/historie/2000 /historie/2000 permanent;
 rewrite ^/histories/historie/1990 /historie/1990 permanent;
+rewrite ^/histories/historie/1940 /historie/1940 permanent;
 
 #historie - year/month
 rewrite ^/histories/historie/1912/04 /historie/1912/04 permanent;
 rewrite ^/histories/historie/1948/07 /historie/1948/07 permanent;
 rewrite ^/histories/historie/1990/08 /historie/1990/08 permanent;
 rewrite ^/histories/historie/1959/08 /historie/1959/08 permanent;
+rewrite ^/histories/historie/1980/07 /historie/1980/07 permanent;
+rewrite ^/histories/historie/1944/08 /historie/1944/08 permanent;
 
 #historie - full date
 rewrite ^/histories/historie/1945/05/05 /historie/1945/05/05 permanent;
@@ -76,7 +79,9 @@ rewrite ^/histories/historie/1921/07/29 /historie/1921/07/29 permanent;
 rewrite ^/histories/historie/1909/09/01 /historie/1909/09/01 permanent;
 rewrite ^/histories/historie/1675/08/01 /historie/1675/08/01 permanent;
 rewrite ^/histories/historie/1909/03/31 /historie/1909/03/31 permanent;
-
+rewrite ^/histories/historie/1911/07/24 /historie/1911/07/24 permanent;
+rewrite ^/histories/historie/1948/01/01 /historie/1948/01/01 permanent;
+rewrite ^/histories/historie/1948/07/29 /historie/1948/07/29 permanent;
 
 #Corrected URLs
 rewrite ^/historie/1940/05/14/bombardement%20-rotterdam /historie/1940/05/14/bombardement-rotterdam permanent;

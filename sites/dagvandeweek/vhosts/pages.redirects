@@ -75,13 +75,13 @@ rewrite ^/histories/historie/1980/07 /historie/1980/07 permanent;
 rewrite ^/histories/historie/1944/08 /historie/1944/08 permanent;
 
 #historie - by year
-rewrite ^/histories/historie/1944 /historie/1944 permanent;
-rewrite ^/histories/historie/2001 /historie/2001 permanent;
-rewrite ^/histories/historie/1911 /historie/1911 permanent;
-rewrite ^/histories/historie/1980 /historie/1980 permanent;
-rewrite ^/histories/historie/2000 /historie/2000 permanent;
-rewrite ^/histories/historie/1990 /historie/1990 permanent;
-rewrite ^/histories/historie/1940 /historie/1940 permanent;
+#rewrite ^/histories/historie/1944 /historie/1944 permanent;
+#rewrite ^/histories/historie/2001 /historie/2001 permanent;
+#rewrite ^/histories/historie/1911 /historie/1911 permanent;
+#rewrite ^/histories/historie/1980 /historie/1980 permanent;
+#rewrite ^/histories/historie/2000 /historie/2000 permanent;
+#rewrite ^/histories/historie/1990 /historie/1990 permanent;
+#rewrite ^/histories/historie/1940 /historie/1940 permanent;
 
 #Corrected URLs
 rewrite ^/historie/1940/05/14/bombardement%20-rotterdam /historie/1940/05/14/bombardement-rotterdam permanent;

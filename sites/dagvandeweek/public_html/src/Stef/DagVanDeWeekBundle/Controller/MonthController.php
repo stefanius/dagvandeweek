@@ -33,8 +33,10 @@ class MonthController extends BaseController
         $page->setDescription('Maandoverzicht ' . $dutchMonthName . '. Wij hebben ' . count($histories) . ' gebeurtenissen gevonden voor de maand ' . $dutchMonthName);
 
         return $this->render('StefDagVanDeWeekBundle:Month:index.html.twig', [
+                'year'           => 2016,
                 'page'           => $page,
                 'histories'      => $histories,
+                'monthNumber'    => $monthNumber,
                 'specialDates'   => $specialDates,
                 'dutchMonthName' => $dutchMonthName,
             ]

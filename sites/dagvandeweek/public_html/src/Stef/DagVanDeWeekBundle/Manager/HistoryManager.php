@@ -51,7 +51,14 @@ class HistoryManager extends AbstractObjectManager
 
     public function findByMonth($month)
     {
-        return $this->om->getRepository($this->repoName)->findByMonth($month);
+        $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
+
+        $qb->select('e');
+        $qb->where('e.month = :month');
+        $qb->orderBy('e.year', 'ASC');
+        $qb->setParameter('month', $month);
+
+        return $qb->getQuery()->getResult();
     }
 
     public function findByMonthYear($month, $year)
@@ -72,6 +79,7 @@ class HistoryManager extends AbstractObjectManager
 
         $qb->select('e');
         $qb->where('e.year = :year AND e.month = :month AND e.day = :day');
+        $qb->orderBy('e.day', 'ASC');
         $qb->setParameter('day', $day);
         $qb->setParameter('month', $month);
         $qb->setParameter('year', $year);
@@ -85,6 +93,7 @@ class HistoryManager extends AbstractObjectManager
 
         $qb->select('e');
         $qb->where('e.month = :month AND e.day = :day');
+        $qb->orderBy('e.year', 'ASC');
         $qb->setParameter('day', $day);
         $qb->setParameter('month', $month);
 
@@ -113,6 +122,7 @@ class HistoryManager extends AbstractObjectManager
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
 
         $qb->select('e.year')
+            ->orderBy('e.year', 'ASC')
             ->distinct();
 
         return $qb->getQuery()->getResult();

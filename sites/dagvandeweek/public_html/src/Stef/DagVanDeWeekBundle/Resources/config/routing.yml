@@ -2,6 +2,22 @@ stef_dag_van_de_week_homepage:
     path:     /
     defaults: { _controller: StefDagVanDeWeekBundle:Index:index }
 
+stef_dag_van_de_week_sitemaps_monthdays:
+    pattern:  '/sitemaps/{month}-per-day.xml'
+    defaults: { _controller: StefDagVanDeWeekBundle:Sitemap:generateByMonthPerDay }
+    requirements:
+        month: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
+        _method:  GET
+        _format:  xml
+
+stef_dag_van_de_week_sitemaps_history:
+    pattern:  /sitemaps/{month}.xml
+    defaults: { _controller: StefDagVanDeWeekBundle:Sitemap:generateByMonth }
+    requirements:
+        month: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
+        _method:  GET
+        _format:  xml
+
 stef_dag_van_de_week_sitemaps:
     pattern:  /sitemaps/{mappingKey}.xml
     defaults: { _controller: StefDagVanDeWeekBundle:Sitemap:generate }

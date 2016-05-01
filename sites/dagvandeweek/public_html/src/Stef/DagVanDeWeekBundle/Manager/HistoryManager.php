@@ -127,4 +127,17 @@ class HistoryManager extends AbstractObjectManager
 
         return $qb->getQuery()->getResult();
     }
+
+    public function getActiveDays($month)
+    {
+        $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
+
+        $qb->select('e.day')
+            ->where('e.month = :month')
+            ->orderBy('e.day', 'ASC')
+            ->setParameter('month', $month)
+            ->distinct();
+
+        return $qb->getQuery()->getResult();
+    }
 }

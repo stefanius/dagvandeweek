@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             /*FrequenceWeb*/
-            new FrequenceWeb\Bundle\CalendRBundle\FrequenceWebCalendRBundle(), //Twig Calendar extensions
+            //new FrequenceWeb\Bundle\CalendRBundle\FrequenceWebCalendRBundle(), //Twig Calendar extensions
             /*Braincrafted */
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             /* FOS*/
@@ -27,11 +27,9 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
             /* Ivory */
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
-            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
             /* WhiteOctober */
             new WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle(),
             /* Stefanius */
-            new Stef\GenerateFixturesBundle\StefGenerateFixturesBundle(),
             new Stef\SimpleCmsBundle\StefSimpleCmsBundle(),
             new Stef\DagVanDeWeekBundle\StefDagVanDeWeekBundle(),
             new Stef\RedirectTrailingSlashBundle\StefRedirectTrailingSlashBundle()
@@ -39,7 +37,6 @@ class AppKernel extends Kernel
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
-            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
 

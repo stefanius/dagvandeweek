@@ -2,8 +2,6 @@
 
 namespace Stef\DagVanDeWeekBundle\Controller;
 
-use Doctrine\ORM\QueryBuilder;
-use Doctrine\ORM\EntityManager;
 use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\DefaultTitleBuilder;
 use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
 use Symfony\Component\HttpFoundation\Request;

@@ -17,3 +17,6 @@ sites:
     - map: dagvandeweek.dev
       to: /home/vagrant/dagvandeweek/web
       type: symfony
+
+databases:
+    - dagvandeweek

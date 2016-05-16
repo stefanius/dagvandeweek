@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c1dbe54c6887d11facc36af9f29be5c7",
-    "content-hash": "a51932300bdbb313b2aaa17f6134e246",
+    "hash": "7c9abd84f5e34a135d4199c59c89e4a1",
+    "content-hash": "2216cc3294214044ba3d5a2089ff94f5",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -404,30 +404,38 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.4.5",
+            "version": "v2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "5a1f4bf34d61d997ccd9f0539fbc14c7a772aa16"
+                "reference": "abbdfd1cff43a7b99d027af3be709bc8fc7d4769"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/5a1f4bf34d61d997ccd9f0539fbc14c7a772aa16",
-                "reference": "5a1f4bf34d61d997ccd9f0539fbc14c7a772aa16",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
+                "reference": "abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.4",
+                "doctrine/common": ">=2.4,<2.7-dev",
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "symfony/console": "~2.0"
+                "phpunit/phpunit": "4.*",
+                "symfony/console": "2.*"
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
             },
+            "bin": [
+                "bin/doctrine-dbal"
+            ],
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\DBAL\\": "lib/"
@@ -463,7 +471,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2016-01-05 22:18:20"
+            "time": "2016-01-05 22:11:12"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -866,28 +874,31 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.4.8",
+            "version": "v2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "5aedac1e5c5caaeac14798822c70325dc242d467"
+                "reference": "bc4ddbfb0114cb33438cc811c9a740d8aa304aab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/5aedac1e5c5caaeac14798822c70325dc242d467",
-                "reference": "5aedac1e5c5caaeac14798822c70325dc242d467",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
+                "reference": "bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
                 "shasum": ""
             },
             "require": {
-                "doctrine/collections": "~1.1",
-                "doctrine/dbal": "~2.4",
+                "doctrine/cache": "~1.4",
+                "doctrine/collections": "~1.2",
+                "doctrine/common": ">=2.5-dev,<2.7-dev",
+                "doctrine/dbal": ">=2.5-dev,<2.6-dev",
+                "doctrine/instantiator": "~1.0.1",
                 "ext-pdo": "*",
-                "php": ">=5.3.2",
-                "symfony/console": "~2.0"
+                "php": ">=5.4",
+                "symfony/console": "~2.5|~3.0"
             },
             "require-dev": {
-                "satooshi/php-coveralls": "dev-master",
-                "symfony/yaml": "~2.1"
+                "phpunit/phpunit": "~4.0",
+                "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
@@ -899,7 +910,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.6.x-dev"
                 }
             },
             "autoload": {
@@ -935,45 +946,45 @@
                 "database",
                 "orm"
             ],
-            "time": "2015-08-31 13:19:01"
+            "time": "2016-01-05 21:34:58"
         },
         {
             "name": "egeloen/ckeditor-bundle",
-            "version": "2.5.2",
+            "version": "2.2.1",
+            "target-dir": "Ivory/CKEditorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egeloen/IvoryCKEditorBundle.git",
-                "reference": "702109e94cbda9deebbcc9604aa8654cf71f08ee"
+                "reference": "8f7ce17be05e649c2a7f3a2e2577836631de7c83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egeloen/IvoryCKEditorBundle/zipball/702109e94cbda9deebbcc9604aa8654cf71f08ee",
-                "reference": "702109e94cbda9deebbcc9604aa8654cf71f08ee",
+                "url": "https://api.github.com/repos/egeloen/IvoryCKEditorBundle/zipball/8f7ce17be05e649c2a7f3a2e2577836631de7c83",
+                "reference": "8f7ce17be05e649c2a7f3a2e2577836631de7c83",
                 "shasum": ""
             },
             "require": {
-                "egeloen/json-builder": "~1.0.0",
-                "php": ">=5.3.3",
-                "symfony/form": "~2.2",
-                "symfony/framework-bundle": "~2.2"
+                "php": ">=5.3.0",
+                "symfony/form": ">=2.1",
+                "symfony/framework-bundle": ">=2.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "~0.6",
-                "twig/twig": "~1.12"
+                "phpunit/phpunit": "3.7.*",
+                "twig/twig": "1.*"
             },
             "suggest": {
-                "twig/twig": "Allows to use twig templates"
+                "helios-ag/fm-elfinder-bundle": "Allows to use the elfinder as CKEditor file manager",
+                "twig/twig": "Allows to use Ivory CKEditor twig templates"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.2-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Ivory\\CKEditorBundle\\": ""
+                "psr-0": {
+                    "Ivory\\CKEditorBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -990,210 +1001,7 @@
             "keywords": [
                 "CKEditor"
             ],
-            "time": "2014-11-08 10:48:36"
-        },
-        {
-            "name": "egeloen/google-map",
-            "version": "1.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/egeloen/ivory-google-map.git",
-                "reference": "9770a3f47888494e9f2d449144508bc805af124f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/egeloen/ivory-google-map/zipball/9770a3f47888494e9f2d449144508bc805af124f",
-                "reference": "9770a3f47888494e9f2d449144508bc805af124f",
-                "shasum": ""
-            },
-            "require": {
-                "egeloen/json-builder": "~1.0.0",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "~0.6",
-                "widop/http-adapter": "~1.1.0",
-                "willdurand/geocoder": "~2.0"
-            },
-            "suggest": {
-                "widop/http-adapter": "Allows to use services",
-                "willdurand/geocoder": "Allows to use geocoding service"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ivory\\GoogleMap\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eric GELOEN",
-                    "email": "geloen.eric@gmail.com"
-                }
-            ],
-            "description": "Google Map API v3 integration for PHP 5.3+",
-            "keywords": [
-                "google map"
-            ],
-            "time": "2014-10-30 19:30:44"
-        },
-        {
-            "name": "egeloen/google-map-bundle",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/egeloen/IvoryGoogleMapBundle.git",
-                "reference": "92abf41dbf77e395fba685538c4c99b857f7114c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/egeloen/IvoryGoogleMapBundle/zipball/92abf41dbf77e395fba685538c4c99b857f7114c",
-                "reference": "92abf41dbf77e395fba685538c4c99b857f7114c",
-                "shasum": ""
-            },
-            "require": {
-                "egeloen/google-map": "~1.4.0",
-                "php": ">=5.3.0",
-                "symfony/framework-bundle": "~2.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "~0.6",
-                "symfony/form": "~2.1",
-                "symfony/yaml": "~2.0",
-                "twig/twig": "~1.12",
-                "widop/http-adapter-bundle": "~1.1.0",
-                "willdurand/geocoder": "~2.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ivory\\GoogleMapBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eric GELOEN",
-                    "email": "geloen.eric@gmail.com"
-                }
-            ],
-            "description": "Provides a google map integration for your Symfony2 Project.",
-            "keywords": [
-                "google map"
-            ],
-            "time": "2014-10-30 19:37:27"
-        },
-        {
-            "name": "egeloen/json-builder",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/egeloen/ivory-json-builder.git",
-                "reference": "6209142ed808e9899473e9b6091b8a4f4d8de794"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/egeloen/ivory-json-builder/zipball/6209142ed808e9899473e9b6091b8a4f4d8de794",
-                "reference": "6209142ed808e9899473e9b6091b8a4f4d8de794",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=5.3.0",
-                "symfony/property-access": "~2.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "~0.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Ivory\\JsonBuilder\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eric GELOEN",
-                    "email": "geloen.eric@gmail.com"
-                }
-            ],
-            "description": "JSON builder with escaping control for PHP 5.3+",
-            "keywords": [
-                "Escape",
-                "builder",
-                "json"
-            ],
-            "time": "2014-11-08 10:51:34"
-        },
-        {
-            "name": "frequence-web/calendr-bundle",
-            "version": "1.0.0",
-            "target-dir": "FrequenceWeb/Bundle/CalendRBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/frequence-web/FrequenceWebCalendRBundle.git",
-                "reference": "469dc42aa37d46cf4702ffa70353587e9305d63b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/frequence-web/FrequenceWebCalendRBundle/zipball/469dc42aa37d46cf4702ffa70353587e9305d63b",
-                "reference": "469dc42aa37d46cf4702ffa70353587e9305d63b",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/framework-bundle": "2.*",
-                "yohang/calendr": ">=1.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "FrequenceWeb\\Bundle\\CalendRBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yohan Giarelli",
-                    "homepage": "http://github.com/yohang"
-                }
-            ],
-            "description": "This bundle provides an integration of the CalendR library",
-            "keywords": [
-                "calendar"
-            ],
-            "time": "2013-01-23 12:08:05"
+            "time": "2014-01-31 15:15:28"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1362,48 +1170,6 @@
                 "parameters management"
             ],
             "time": "2015-11-10 17:04:01"
-        },
-        {
-            "name": "ircmaxell/password-compat",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ircmaxell/password_compat.git",
-                "reference": "5c5cde8822a69545767f7c7f3058cb15ff84614c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/5c5cde8822a69545767f7c7f3058cb15ff84614c",
-                "reference": "5c5cde8822a69545767f7c7f3058cb15ff84614c",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "lib/password.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anthony Ferrara",
-                    "email": "ircmaxell@php.net",
-                    "homepage": "http://blog.ircmaxell.com"
-                }
-            ],
-            "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
-            "homepage": "https://github.com/ircmaxell/password_compat",
-            "keywords": [
-                "hashing",
-                "password"
-            ],
-            "time": "2014-11-20 16:49:30"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1899,37 +1665,37 @@
         },
         {
             "name": "nelmio/alice",
-            "version": "1.6.0",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nelmio/alice.git",
-                "reference": "e225020d8e1f0ca867b4219698d6089b7a997761"
+                "reference": "c8cb3413ab5d1fa76ee84296dafe356b0c703014"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/alice/zipball/e225020d8e1f0ca867b4219698d6089b7a997761",
-                "reference": "e225020d8e1f0ca867b4219698d6089b7a997761",
+                "url": "https://api.github.com/repos/nelmio/alice/zipball/c8cb3413ab5d1fa76ee84296dafe356b0c703014",
+                "reference": "c8cb3413ab5d1fa76ee84296dafe356b0c703014",
                 "shasum": ""
             },
             "require": {
                 "fzaninotto/faker": "~1.0",
-                "php": ">=5.3",
-                "symfony/yaml": "~2.0"
+                "php": ">=5.4",
+                "symfony/yaml": "~2.0|~3.0"
             },
             "require-dev": {
                 "doctrine/common": "~2.3",
-                "phpunit/phpunit": "3.7.*",
-                "symfony/property-access": "~2.2"
+                "phpunit/phpunit": "~4.0",
+                "symfony/property-access": "~2.2|~3.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Nelmio\\Alice\\": "src/"
+                "psr-4": {
+                    "Nelmio\\Alice\\": "src/Nelmio/Alice"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1938,8 +1704,12 @@
             ],
             "authors": [
                 {
-                    "name": "Nelmio",
-                    "homepage": "http://nelm.io"
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be"
+                },
+                {
+                    "name": "Tim Shelburne",
+                    "email": "shelburt02@gmail.com"
                 }
             ],
             "description": "Expressive fixtures generator",
@@ -1949,7 +1719,7 @@
                 "orm",
                 "test"
             ],
-            "time": "2014-02-05 22:35:38"
+            "time": "2016-01-07 14:44:47"
         },
         {
             "name": "paragonie/random_compat",
@@ -2991,52 +2761,6 @@
             "time": "2015-06-21 13:59:46"
         },
         {
-            "name": "sensio/distribution-bundle",
-            "version": "v2.3.22",
-            "target-dir": "Sensio/Bundle/DistributionBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "98bdda791e7c2dfb5fd55781e69a4b00e4f751a6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/98bdda791e7c2dfb5fd55781e69a4b00e4f751a6",
-                "reference": "98bdda791e7c2dfb5fd55781e69a4b00e4f751a6",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/framework-bundle": "~2.2"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Sensio\\Bundle\\DistributionBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "The base bundle for the Symfony Distributions",
-            "keywords": [
-                "configuration",
-                "distribution"
-            ],
-            "time": "2015-06-05 22:32:08"
-        },
-        {
             "name": "sensio/framework-extra-bundle",
             "version": "v3.0.16",
             "source": {
@@ -3100,38 +2824,42 @@
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v2.5.3",
-            "target-dir": "Sensio/Bundle/GeneratorBundle",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3"
+                "reference": "ac91535054d025937d897d78ebb5fc2da5e955a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/e50108c2133ee5c9c484555faed50c17a61221d3",
-                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/ac91535054d025937d897d78ebb5fc2da5e955a4",
+                "reference": "ac91535054d025937d897d78ebb5fc2da5e955a4",
                 "shasum": ""
             },
             "require": {
-                "symfony/console": "~2.5",
-                "symfony/framework-bundle": "~2.2"
+                "symfony/console": "~2.7|~3.0",
+                "symfony/framework-bundle": "~2.7|~3.0",
+                "symfony/process": "~2.7|~3.0",
+                "symfony/yaml": "~2.7|~3.0"
             },
             "require-dev": {
-                "doctrine/orm": "~2.2,>=2.2.3",
-                "symfony/doctrine-bridge": "~2.2",
-                "twig/twig": "~1.11"
+                "doctrine/orm": "~2.4",
+                "symfony/doctrine-bridge": "~2.7|~3.0",
+                "twig/twig": "~1.18"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Sensio\\Bundle\\GeneratorBundle": ""
-                }
+                "psr-4": {
+                    "Sensio\\Bundle\\GeneratorBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3144,7 +2872,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2015-03-17 06:36:52"
+            "time": "2016-02-26 04:36:01"
         },
         {
             "name": "stef/crud-contract",
@@ -3178,42 +2906,6 @@
             ],
             "description": "Base contract (interface) to setup a CRUD controller",
             "time": "2014-11-11 20:23:25"
-        },
-        {
-            "name": "stef/generate-fixtures-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stefanius/generate-fixtures-bundle.git",
-                "reference": "357f4f906b6b79579d8e0e98ffa7d65df15e0376"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/generate-fixtures-bundle/zipball/357f4f906b6b79579d8e0e98ffa7d65df15e0376",
-                "reference": "357f4f906b6b79579d8e0e98ffa7d65df15e0376",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Stef\\GenerateFixturesBundle\\": "src/Stef/GenerateFixturesBundle/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Stefanius",
-                    "email": "sgrootveld@gmail.com"
-                }
-            ],
-            "description": "Generate fixtures  for use with Alice!",
-            "support": {
-                "source": "https://github.com/stefanius/generate-fixtures-bundle/tree/master",
-                "issues": "https://github.com/stefanius/generate-fixtures-bundle/issues"
-            },
-            "time": "2015-06-11 20:04:08"
         },
         {
             "name": "stef/key-value-manipulation",
@@ -3254,40 +2946,6 @@
             "time": "2016-05-16 13:07:42"
         },
         {
-            "name": "stef/manipulation",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stefanius/manipulation.git",
-                "reference": "6d429a495ef9ef993066cf83a17361a64ea37a2f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/manipulation/zipball/6d429a495ef9ef993066cf83a17361a64ea37a2f",
-                "reference": "6d429a495ef9ef993066cf83a17361a64ea37a2f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Stefanius\\Manipulation\\": "src/Stefanius/Manipulation/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Stefanius",
-                    "email": "sgrootveld@gmail.com"
-                }
-            ],
-            "description": "Basic classes for manipulate values. You can build your own by inherit this package",
-            "abandoned": "stefanius/manipulation",
-            "time": "2016-03-07 22:32:37"
-        },
-        {
             "name": "stef/redirect-trailing-slash-bundle",
             "version": "dev-master",
             "source": {
@@ -3326,23 +2984,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stefanius/simple-cms-bundle.git",
-                "reference": "312be338ed38399d0d3c243c51e54a5b983f9da0"
+                "reference": "d9c4c96d49da2facd917836298149631bc6edbe6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/312be338ed38399d0d3c243c51e54a5b983f9da0",
-                "reference": "312be338ed38399d0d3c243c51e54a5b983f9da0",
+                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/d9c4c96d49da2facd917836298149631bc6edbe6",
+                "reference": "d9c4c96d49da2facd917836298149631bc6edbe6",
                 "shasum": ""
             },
             "require": {
                 "braincrafted/bootstrap-bundle": "~2.1",
                 "egeloen/ckeditor-bundle": "~2.0",
-                "egeloen/google-map-bundle": "~2.2",
                 "friendsofsymfony/user-bundle": "~2.0@dev",
                 "incenteev/composer-parameter-handler": "~2.0",
                 "jms/serializer-bundle": "dev-master",
                 "jquery/jquery": "1.10.*",
-                "nelmio/alice": "v1.6.0",
+                "nelmio/alice": "~2.0",
                 "php": ">=5.5",
                 "phpunit/phpunit": "~4.1",
                 "stef/key-value-manipulation": "dev-master",
@@ -3383,7 +3040,7 @@
                 "source": "https://github.com/stefanius/simple-cms-bundle/tree/master",
                 "issues": "https://github.com/stefanius/simple-cms-bundle/issues"
             },
-            "time": "2016-05-16 13:10:10"
+            "time": "2016-05-16 17:33:46"
         },
         {
             "name": "stef/slug-manipulation",
@@ -3675,59 +3332,6 @@
             "time": "2016-04-13 16:21:01"
         },
         {
-            "name": "symfony/polyfill-apcu",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-apcu.git",
-                "reference": "0c901e4e65a2f7ece68f0fd249b56d6ad3adc214"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/0c901e4e65a2f7ece68f0fd249b56d6ad3adc214",
-                "reference": "0c901e4e65a2f7ece68f0fd249b56d6ad3adc214",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting apcu_* functions to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "apcu",
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "time": "2016-03-03 16:49:40"
-        },
-        {
             "name": "symfony/polyfill-intl-icu",
             "version": "v1.1.1",
             "source": {
@@ -3838,120 +3442,6 @@
             "keywords": [
                 "compatibility",
                 "mbstring",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "time": "2016-01-20 09:13:37"
-        },
-        {
-            "name": "symfony/polyfill-php54",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php54.git",
-                "reference": "9ba741ca01c77282ecf5796c2c1d667f03454ffb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php54/zipball/9ba741ca01c77282ecf5796c2c1d667f03454ffb",
-                "reference": "9ba741ca01c77282ecf5796c2c1d667f03454ffb",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php54\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ],
-                "classmap": [
-                    "Resources/stubs"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 5.4+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "time": "2016-01-25 19:13:00"
-        },
-        {
-            "name": "symfony/polyfill-php55",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php55.git",
-                "reference": "b4f3f07d91702f8f926339fc4fcf81671d8c27e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php55/zipball/b4f3f07d91702f8f926339fc4fcf81671d8c27e6",
-                "reference": "b4f3f07d91702f8f926339fc4fcf81671d8c27e6",
-                "shasum": ""
-            },
-            "require": {
-                "ircmaxell/password-compat": "~1.0",
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php55\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 5.5+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
                 "polyfill",
                 "portable",
                 "shim"
@@ -4126,67 +3616,6 @@
             "time": "2016-01-20 09:13:37"
         },
         {
-            "name": "symfony/security-acl",
-            "version": "v3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/security-acl.git",
-                "reference": "053b49bf4aa333a392c83296855989bcf88ddad1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-acl/zipball/053b49bf4aa333a392c83296855989bcf88ddad1",
-                "reference": "053b49bf4aa333a392c83296855989bcf88ddad1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "symfony/security-core": "~2.8|~3.0"
-            },
-            "require-dev": {
-                "doctrine/common": "~2.2",
-                "doctrine/dbal": "~2.2",
-                "psr/log": "~1.0",
-                "symfony/phpunit-bridge": "~2.8|~3.0"
-            },
-            "suggest": {
-                "doctrine/dbal": "For using the built-in ACL implementation",
-                "symfony/class-loader": "For using the ACL generateSql script",
-                "symfony/finder": "For using the ACL generateSql script"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Security\\Acl\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Security Component - ACL (Access Control List)",
-            "homepage": "https://symfony.com",
-            "time": "2015-12-28 09:39:46"
-        },
-        {
             "name": "symfony/swiftmailer-bundle",
             "version": "v2.3.11",
             "source": {
@@ -4245,31 +3674,27 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.6",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "8408816780215fae055599d100b5385d9a247151"
+                "reference": "a821ed51b87f5ceda834140e5f0c06e9547a86d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/8408816780215fae055599d100b5385d9a247151",
-                "reference": "8408816780215fae055599d100b5385d9a247151",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/a821ed51b87f5ceda834140e5f0c06e9547a86d4",
+                "reference": "a821ed51b87f5ceda834140e5f0c06e9547a86d4",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.4",
-                "php": ">=5.3.9",
+                "php": ">=5.5.9",
                 "psr/log": "~1.0",
-                "symfony/polyfill-apcu": "~1.1",
                 "symfony/polyfill-intl-icu": "~1.0",
                 "symfony/polyfill-mbstring": "~1.0",
-                "symfony/polyfill-php54": "~1.0",
-                "symfony/polyfill-php55": "~1.0",
                 "symfony/polyfill-php56": "~1.0",
                 "symfony/polyfill-php70": "~1.0",
                 "symfony/polyfill-util": "~1.0",
-                "symfony/security-acl": "~2.7|~3.0.0",
                 "twig/twig": "~1.23|~2.0"
             },
             "conflict": {
@@ -4297,7 +3722,6 @@
                 "symfony/http-kernel": "self.version",
                 "symfony/intl": "self.version",
                 "symfony/ldap": "self.version",
-                "symfony/locale": "self.version",
                 "symfony/monolog-bridge": "self.version",
                 "symfony/options-resolver": "self.version",
                 "symfony/process": "self.version",
@@ -4313,7 +3737,6 @@
                 "symfony/security-http": "self.version",
                 "symfony/serializer": "self.version",
                 "symfony/stopwatch": "self.version",
-                "symfony/swiftmailer-bridge": "self.version",
                 "symfony/templating": "self.version",
                 "symfony/translation": "self.version",
                 "symfony/twig-bridge": "self.version",
@@ -4326,17 +3749,19 @@
             "require-dev": {
                 "doctrine/data-fixtures": "1.0.*",
                 "doctrine/dbal": "~2.4",
-                "doctrine/doctrine-bundle": "~1.2",
+                "doctrine/doctrine-bundle": "~1.4",
                 "doctrine/orm": "~2.4,>=2.4.5",
                 "egulias/email-validator": "~1.2",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
-                "phpdocumentor/reflection": "^1.0.7"
+                "phpdocumentor/reflection": "^1.0.7",
+                "symfony/polyfill-apcu": "~1.1",
+                "symfony/security-acl": "~2.8|~3.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -4375,7 +3800,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-05-09 21:45:54"
+            "time": "2016-05-09 22:13:31"
         },
         {
             "name": "twbs/bootstrap",
@@ -4583,63 +4008,6 @@
                 "symfony"
             ],
             "time": "2016-02-05 10:46:40"
-        },
-        {
-            "name": "yohang/calendr",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yohang/CalendR.git",
-                "reference": "019c651adbb952fed4d76f944cee5b46bf687be5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yohang/CalendR/zipball/019c651adbb952fed4d76f944cee5b46bf687be5",
-                "reference": "019c651adbb952fed4d76f944cee5b46bf687be5",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5|^7.0",
-                "symfony/options-resolver": "^2.7|^3.0"
-            },
-            "require-dev": {
-                "doctrine/cache": "^1.5",
-                "doctrine/common": "^2.5",
-                "doctrine/orm": "^2.5",
-                "phpunit/phpunit": "^4.0",
-                "silex/silex": "^1.3",
-                "twig/twig": "^1.23"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "CalendR": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yohan GIARELLI",
-                    "email": "yohan@giarel.li",
-                    "homepage": "http://yohan.giarel.li"
-                }
-            ],
-            "description": "Object Oriented calendar management",
-            "homepage": "https://github.com/yohang/CalendR",
-            "keywords": [
-                "calendar",
-                "date",
-                "events"
-            ],
-            "time": "2016-04-17 15:22:39"
         }
     ],
     "packages-dev": [],
@@ -4649,10 +4017,8 @@
         "friendsofsymfony/user-bundle": 20,
         "jms/serializer-bundle": 20,
         "stef/crud-contract": 20,
-        "stef/manipulation": 20,
         "stef/slug-manipulation": 20,
         "stef/key-value-manipulation": 20,
-        "stef/generate-fixtures-bundle": 20,
         "stef/simple-cms-bundle": 20,
         "stef/redirect-trailing-slash-bundle": 20,
         "stef/special-dates": 20

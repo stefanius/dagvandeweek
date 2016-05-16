@@ -3,26 +3,26 @@ stef_dag_van_de_week_homepage:
     defaults: { _controller: StefDagVanDeWeekBundle:Index:index }
 
 stef_dag_van_de_week_sitemaps_monthdays:
-    pattern:  '/sitemaps/{month}-per-day.xml'
+    path:  '/sitemaps/{month}-per-day.xml'
     defaults: { _controller: StefDagVanDeWeekBundle:Sitemap:generateByMonthPerDay }
+    methods: [GET]
     requirements:
         month: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
-        _method:  GET
         _format:  xml
 
 stef_dag_van_de_week_sitemaps_history:
-    pattern:  /sitemaps/{month}.xml
+    path:  /sitemaps/{month}.xml
     defaults: { _controller: StefDagVanDeWeekBundle:Sitemap:generateByMonth }
+    methods: [GET]
     requirements:
         month: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
-        _method:  GET
         _format:  xml
 
 stef_dag_van_de_week_sitemaps:
-    pattern:  /sitemaps/{mappingKey}.xml
+    path:  /sitemaps/{mappingKey}.xml
     defaults: { _controller: StefDagVanDeWeekBundle:Sitemap:generate }
+    methods: [GET]
     requirements:
-        _method:  GET
         _format:  xml
 
 stef_dag_van_de_week_calendar_routing:
@@ -35,52 +35,50 @@ stef_dag_van_de_week_weekhero_routing:
     resource: "@StefDagVanDeWeekBundle/Resources/config/weekhero_routing.yml"
 
 stef_dag_van_de_week_special_days_by_year:
-    pattern:  /bijzondere-dagen-{year}
+    path:  /bijzondere-dagen-{year}
     defaults: { _controller: StefDagVanDeWeekBundle:SpecialDates:show }
+    methods: [GET]
     requirements:
-        _method:  GET
         year:  \d+
 
 stef_dag_van_de_week_news_archive_index:
-    pattern:  /nieuws
+    path:  /nieuws
     defaults: { _controller: StefDagVanDeWeekBundle:News:showMainNewsPage }
-    requirements:
-        _method:  GET
+    methods: [GET]
 
 stef_dag_van_de_week_news_show:
-    pattern:  /nieuws/{slug}
+    path:  /nieuws/{slug}
     defaults: { _controller: StefDagVanDeWeekBundle:News:show }
-    requirements:
-        _method:  GET
+    methods: [GET]
 
 stef_dag_van_de_week_contact:
-    pattern:  /contact
+    path:  /contact
     defaults: { _controller: StefDagVanDeWeekBundle:Index:contact }
 
 stef_dag_van_de_week_today_in_the_past:
-    pattern:  /vandaag-in-het-verleden
+    path:  /vandaag-in-het-verleden
     defaults: { _controller: StefDagVanDeWeekBundle:TodayInThePast:showTodayInThePast }
 
 stef_dag_van_de_week_today:
-    pattern:  /vandaag
+    path:  /vandaag
     defaults: { _controller: StefDagVanDeWeekBundle:TodayInThePast:showToday }
 
 stef_dag_van_de_week_month:
-    pattern:  /maandoverzicht-{dutchMonthName}
+    path:  /maandoverzicht-{dutchMonthName}
     defaults: { _controller: StefDagVanDeWeekBundle:Month:showMonth }
     requirements:
        dutchMonthName: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
 
 stef_dag_van_de_week_day_by_day:
-    pattern:  /{day}-{dutchMonthName}
+    path:  /{day}-{dutchMonthName}
     defaults: { _controller: StefDagVanDeWeekBundle:DayByDay:showToday }
     requirements:
        day: \d+
        dutchMonthName: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
 
 stef_dag_van_de_week_website_pages:
-    pattern:  /{slug}
+    path:  /{slug}
     defaults: { _controller: StefDagVanDeWeekBundle:Page:show }
+    methods: [GET]
     requirements:
-        _method:  GET
         slug: .+

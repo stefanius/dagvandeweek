@@ -29,36 +29,32 @@
     ],
     "require": {
         "php": ">=5.5",
-        "symfony/symfony": "~2.6",
-        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
-        "doctrine/dbal": "<2.5",
+        "symfony/symfony": "~3.0",
+        "doctrine/orm": "~2.5",
+        "doctrine/dbal": "~2.5",
         "doctrine/doctrine-bundle": "~1.2",
         "phpunit/phpunit": "~4.1",
         "doctrine/doctrine-fixtures-bundle": "~2.2",
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
         "symfony/monolog-bundle": "~2.4",
-        "sensio/distribution-bundle": "~2.3",
         "sensio/framework-extra-bundle": "~3.0",
-        "sensio/generator-bundle": "~2.3",
+        "sensio/generator-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "braincrafted/bootstrap-bundle": "~2.0",
         "jms/serializer-bundle": "dev-master",
-        "nelmio/alice": "v1.6.0",
+        "nelmio/alice": "~2.0",
         "egeloen/ckeditor-bundle": "~2.0",
-        "egeloen/google-map-bundle": "~2.2",
-        "frequence-web/calendr-bundle": "~1.0",
         "whiteoctober/breadcrumbs-bundle": "~1.0",
         "stef/crud-contract": "dev-master",
-        "stef/manipulation": "dev-master",
         "stef/slug-manipulation": "dev-master",
         "stef/key-value-manipulation": "dev-master",
-        "stef/generate-fixtures-bundle": "dev-master",
         "stef/simple-cms-bundle": "dev-master",
         "stef/redirect-trailing-slash-bundle": "dev-master",
         "stef/special-dates": "dev-master",
-        "laravel/homestead": "^3.0"
+        "laravel/homestead": "^3.0",
+        "symfony/debug": "^3.0"
     },
     "scripts": {
       "post-root-package-install": [
@@ -70,8 +66,7 @@
         "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
         "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
         "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-        "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-        "Braincrafted\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::install"
+        "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
       ],
       "post-update-cmd": [
         "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -79,12 +74,8 @@
         "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
         "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
         "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-        "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-        "Braincrafted\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::install"
+        "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
       ]
-    },
-    "config": {
-        "bin-dir": "bin"
     },
     "extra": {
         "symfony-app-dir": "app",

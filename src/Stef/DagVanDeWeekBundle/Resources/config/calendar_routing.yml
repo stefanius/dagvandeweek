@@ -1,11 +1,9 @@
 stef_dag_van_de_week_calendar_show:
-    pattern:  /kalender/{year}
+    path:  /kalender/{year}
     defaults: { _controller: StefDagVanDeWeekBundle:Calendar:show }
-    requirements:
-        _method:  GET
+    methods: [GET]
 
 stef_dag_van_de_week_calendar_index:
-    pattern:  /kalender
+    path:  /kalender
     defaults: { _controller: StefDagVanDeWeekBundle:Calendar:showIndex }
-    requirements:
-        _method:  GET
+    methods: [GET]

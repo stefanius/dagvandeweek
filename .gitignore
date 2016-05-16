@@ -37,3 +37,8 @@
 /composer.phar
 
 .vagrant
+
+node_modules
+/node_modules/*
+node_modules/*
+/app/sessions/*

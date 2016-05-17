@@ -46,25 +46,12 @@ services:
     stef_simple_cms.entity_mapper:
         class: Stef\SimpleCmsBundle\EntityMapper\Mapper
         calls:
-            - [addNewMapping, ["News", "StefSimpleCmsBundle", "Stef\\SimpleCmsBundle\\Entity", "@stef_simple_cms.news_manager"]]
-            - [addNewMapping, ["Page", "StefSimpleCmsBundle", "Stef\\SimpleCmsBundle\\Entity", "@stef_simple_cms.page_manager"]]
-            - [addNewMapping, ["Dictionary", "StefSimpleCmsBundle", "Stef\\SimpleCmsBundle\\Entity", "@stef_simple_cms.dictionary_manager"]]
-            - [addNewMapping, ["User", "StefSimpleCmsBundle", "Stef\\SimpleCmsBundle\\Entity", "@stef_simple_cms.user_manager"]]
+            - [addNewMapping, ["News", "StefSimpleCmsBundle", "Stef\\SimpleCmsBundle\\Entity", "@stef_simple_cms.news_manager", "Stef\\SimpleCmsBundle\\Form\\NewsType"]]
+            - [addNewMapping, ["Page", "StefSimpleCmsBundle", "Stef\\SimpleCmsBundle\\Entity", "@stef_simple_cms.page_manager", "Stef\\SimpleCmsBundle\\Form\\NewsType"]]
+            - [addNewMapping, ["Dictionary", "StefSimpleCmsBundle", "Stef\\SimpleCmsBundle\\Entity", "@stef_simple_cms.dictionary_manager", "Stef\\SimpleCmsBundle\\Form\\NewsType"]]
+            - [addNewMapping, ["User", "StefSimpleCmsBundle", "Stef\\SimpleCmsBundle\\Entity", "@stef_simple_cms.user_manager", "Stef\\SimpleCmsBundle\\Form\\NewsType"]]
             - [addNewMapping, ["CalendarYear", "StefDagVanDeWeekBundle", "Stef\\DagVanDeWeekBundle\\Entity", "@stef_simple_cms.calendar_year_manager"]]
             - [addNewMapping, ["HistoryYear", "StefDagVanDeWeekBundle", "Stef\\DagVanDeWeekBundle\\Entity", "@stef_simple_cms.history_year_manager"]]
             - [addNewMapping, ["History", "StefDagVanDeWeekBundle", "Stef\\DagVanDeWeekBundle\\Entity", "@stef_simple_cms.history_manager"]]
             - [addNewMapping, ["Contact", "StefDagVanDeWeekBundle", "Stef\\DagVanDeWeekBundle\\Entity", "@stef_simple_cms.contact_manager"]]
             - [addNewMapping, ["Day", "StefDagVanDeWeekBundle", "Stef\\DagVanDeWeekBundle\\Entity", "@stef_simple_cms.day_manager"]]
-
-    stef_simple_cms.form_options:
-        class: Stef\SimpleCmsBundle\Form\FormOptions
-        calls:
-            - [addOptions, ['page', 'body', [], 'ckeditor']]
-            - [addOptions, ['news', 'body', [], 'ckeditor']]
-            - [addOptions, ['day', 'body', [], 'ckeditor']]
-            - [addOptions, ['historyyear', 'body', [], 'ckeditor']]
-            - [addOptions, ['history', 'body', [], 'ckeditor']]
-            - [addOptions, ['calendaryear', 'body', [], 'ckeditor']]
-            - [addOptions, ['dictionary', 'body', [], 'ckeditor']]
-            - [addOptions, ['news', 'slug', [], 'hidden']]
-            - [addOptions, ['day', 'slug', [], 'hidden']]

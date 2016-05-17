@@ -20,10 +20,6 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/stefanius/generate-fixtures-bundle"
-        },
-        {
-            "type": "vcs",
             "url": "https://github.com/stefanius/simple-cms-bundle"
         }
     ],

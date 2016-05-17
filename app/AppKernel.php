@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             /*FrequenceWeb*/
-            //new FrequenceWeb\Bundle\CalendRBundle\FrequenceWebCalendRBundle(), //Twig Calendar extensions
+            new FrequenceWeb\Bundle\CalendRBundle\FrequenceWebCalendRBundle(),
             /*Braincrafted */
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             /* FOS*/

@@ -3,7 +3,7 @@
 namespace Stef\DagVanDeWeekBundle\Controller;
 
 use Stef\DagVanDeWeekBundle\Date\DateObjectFactory;
-use Stef\SimpleCmsBundle\Entity\Page;
+use Stefanius\SimpleCmsBundle\Entity\Page;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

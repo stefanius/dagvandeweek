@@ -7,7 +7,7 @@ use Stef\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
 use Stef\DagVanDeWeekBundle\Entity\History;
 use Stef\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stef\DagVanDeWeekBundle\Entity\HistoryYear;
-use Stef\SimpleCmsBundle\Entity\Page;
+use Stefanius\SimpleCmsBundle\Entity\Page;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 

@@ -4,7 +4,7 @@ namespace Stef\DagVanDeWeekBundle\Controller;
 
 use Stef\DagVanDeWeekBundle\Entity\Contact;
 use Stef\DagVanDeWeekBundle\Form\ContactType;
-use Stef\SimpleCmsBundle\Entity\Page;
+use Stefanius\SimpleCmsBundle\Entity\Page;
 use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends BaseController

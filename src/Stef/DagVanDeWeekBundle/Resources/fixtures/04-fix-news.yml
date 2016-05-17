@@ -1,4 +1,4 @@
-Stef\SimpleCmsBundle\Entity\News:
+Stefanius\SimpleCmsBundle\Entity\News:
   hist-1:
     id: 10
     title: Wij Zijn Online

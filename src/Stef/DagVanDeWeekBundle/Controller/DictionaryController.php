@@ -2,7 +2,7 @@
 
 namespace Stef\DagVanDeWeekBundle\Controller;
 
-use Stef\SimpleCmsBundle\Entity\Page;
+use Stefanius\SimpleCmsBundle\Entity\Page;
 
 class DictionaryController extends BaseController
 {

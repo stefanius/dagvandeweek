@@ -3,7 +3,7 @@
 namespace Stef\DagVanDeWeekBundle\Manager;
 
 use Doctrine\Entity;
-use Stef\SimpleCmsBundle\Manager\AbstractObjectManager;
+use Stefanius\SimpleCmsBundle\Manager\AbstractObjectManager;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 class CalendarYearManager extends AbstractObjectManager

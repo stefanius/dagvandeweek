@@ -2,7 +2,7 @@
 
 namespace Stef\DagVanDeWeekBundle\Controller;
 
-use Stef\SimpleCmsBundle\Entity\Page;
+use Stefanius\SimpleCmsBundle\Entity\Page;
 use Stef\SpecialDates\DateParser\Parser;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

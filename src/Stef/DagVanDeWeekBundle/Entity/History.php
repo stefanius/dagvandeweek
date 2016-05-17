@@ -3,7 +3,7 @@
 namespace Stef\DagVanDeWeekBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Stef\SimpleCmsBundle\Entity\AbstractCmsContent;
+use Stefanius\SimpleCmsBundle\Entity\AbstractCmsContent;
 
 /**
  * @ORM\Entity

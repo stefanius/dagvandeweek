@@ -30,7 +30,7 @@ class AppKernel extends Kernel
             /* WhiteOctober */
             new WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle(),
             /* Stefanius */
-            new Stef\SimpleCmsBundle\StefSimpleCmsBundle(),
+            new Stefanius\SimpleCmsBundle\StefSimpleCmsBundle(),
             new Stef\DagVanDeWeekBundle\StefDagVanDeWeekBundle(),
             new Stef\RedirectTrailingSlashBundle\StefRedirectTrailingSlashBundle()
         );

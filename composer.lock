@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "202d7c6cedca52d317e1019949a01f9a",
-    "content-hash": "394c84939244c46e7b0e5b9325f341d6",
+    "hash": "2a2284986395341c4d58a55afc227689",
+    "content-hash": "4eaf7f61993b6224355cc0bff786dcff",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -2979,57 +2979,6 @@
             "time": "2015-01-20 20:21:45"
         },
         {
-            "name": "stef/simple-cms-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stefanius/simple-cms-bundle.git",
-                "reference": "db1c9a1e4e833b69d1c2e180098618f5e6f9f21c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/db1c9a1e4e833b69d1c2e180098618f5e6f9f21c",
-                "reference": "db1c9a1e4e833b69d1c2e180098618f5e6f9f21c",
-                "shasum": ""
-            },
-            "require": {
-                "braincrafted/bootstrap-bundle": "~2.1",
-                "egeloen/ckeditor-bundle": "~2.0",
-                "friendsofsymfony/user-bundle": "~2.0@dev",
-                "incenteev/composer-parameter-handler": "~2.0",
-                "jms/serializer-bundle": "dev-master",
-                "jquery/jquery": "1.10.*",
-                "nelmio/alice": "~2.0",
-                "php": ">=7.0",
-                "phpunit/phpunit": "~4.1",
-                "stef/key-value-manipulation": "dev-master",
-                "stefanius/manipulation": "~0",
-                "stefanius/slugifier": "~0",
-                "symfony/form": "~3.0",
-                "twbs/bootstrap": "~3.3",
-                "twig/extensions": "~1.3"
-            },
-            "type": "project",
-            "autoload": {
-                "psr-4": {
-                    "Stef\\SimpleCmsBundle\\": "src/Stef/SimpleCmsBundle/"
-                }
-            },
-            "scripts": {
-                "post-install-cmd": [],
-                "post-update-cmd": []
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Easy to use backoffice / CMS bundle",
-            "support": {
-                "source": "https://github.com/stefanius/simple-cms-bundle/tree/master",
-                "issues": "https://github.com/stefanius/simple-cms-bundle/issues"
-            },
-            "time": "2016-05-17 19:36:29"
-        },
-        {
             "name": "stef/slug-manipulation",
             "version": "dev-master",
             "source": {
@@ -3134,6 +3083,59 @@
             ],
             "description": "Basic classes for manipulate values. You can build your own by inherit this package",
             "time": "2016-03-07 22:32:37"
+        },
+        {
+            "name": "stefanius/simple-cms-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stefanius/simple-cms-bundle.git",
+                "reference": "88a24888422223dff85c1690c66905017883d3a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/88a24888422223dff85c1690c66905017883d3a5",
+                "reference": "88a24888422223dff85c1690c66905017883d3a5",
+                "shasum": ""
+            },
+            "require": {
+                "braincrafted/bootstrap-bundle": "~2.1",
+                "egeloen/ckeditor-bundle": "~2.0",
+                "friendsofsymfony/user-bundle": "~2.0@dev",
+                "incenteev/composer-parameter-handler": "~2.0",
+                "jms/serializer-bundle": "dev-master",
+                "jquery/jquery": "1.10.*",
+                "nelmio/alice": "~2.0",
+                "php": ">=7.0",
+                "stef/key-value-manipulation": "dev-master",
+                "stefanius/manipulation": "~0",
+                "stefanius/slugifier": "~0",
+                "symfony/form": "~3.0",
+                "twbs/bootstrap": "~3.3",
+                "twig/extensions": "~1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Stefanius\\SimpleCmsBundle\\": "src/Stefanius/SimpleCmsBundle/"
+                }
+            },
+            "scripts": {
+                "post-install-cmd": [],
+                "post-update-cmd": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Easy to use backoffice / CMS bundle",
+            "support": {
+                "source": "https://github.com/stefanius/simple-cms-bundle/tree/master",
+                "issues": "https://github.com/stefanius/simple-cms-bundle/issues"
+            },
+            "time": "2016-05-17 20:08:57"
         },
         {
             "name": "stefanius/slugifier",
@@ -4043,7 +4045,7 @@
         "stef/crud-contract": 20,
         "stef/key-value-manipulation": 20,
         "stef/slug-manipulation": 20,
-        "stef/simple-cms-bundle": 20,
+        "stefanius/simple-cms-bundle": 20,
         "stef/redirect-trailing-slash-bundle": 20,
         "stef/special-dates": 20
     },

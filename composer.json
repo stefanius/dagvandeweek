@@ -1,5 +1,5 @@
 {
-    "name": "stef/dagvandeweek",
+    "name": "stefanius/dagvandeweek",
     "license": "Not decided yet",
     "type": "project",
     "description": "Website DagVanDeWeek.nl",
@@ -44,8 +44,8 @@
         "jms/serializer-bundle": "dev-master",
         "whiteoctober/breadcrumbs-bundle": "~1.0",
         "stefanius/simple-cms-bundle": "dev-master",
-        "stef/redirect-trailing-slash-bundle": "dev-master",
-        "stef/special-dates": "dev-master",
+        "stefanius/redirect-trailing-slash-bundle": "dev-master",
+        "stefanius/special-dates": "dev-master",
         "laravel/homestead": "^3.0",
         "symfony/debug": "^3.0",
         "frequence-web/calendr-bundle": "dev-master"

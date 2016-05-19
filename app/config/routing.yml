@@ -1,5 +1,5 @@
 stef_redirect_trailing_slash:
-    resource: "@StefRedirectTrailingSlashBundle/Resources/config/routing.yml"
+    resource: "@StefaniusRedirectTrailingSlashBundle/Resources/config/routing.yml"
     prefix:   /
 
 fos_user:
@@ -14,5 +14,5 @@ stef_simple_cms_index:
     prefix:   /cms
 
 stef_dag_van_de_week:
-    resource: "@StefDagVanDeWeekBundle/Resources/config/routing.yml"
+    resource: "@StefaniusDagVanDeWeekBundle/Resources/config/routing.yml"
     prefix:   /

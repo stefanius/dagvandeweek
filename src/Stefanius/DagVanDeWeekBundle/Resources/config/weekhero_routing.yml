@@ -1,0 +1,9 @@
+stef_dag_van_de_week_weekhero_show:
+    path:  /topper-van-de-week/{year}/{week}
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:WeekHero:show }
+    methods: [GET]
+
+stef_dag_van_de_week_weekhero_year_index:
+    path:  /topper-van-de-week/{year}
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:WeekHero:showByYear }
+    methods: [GET]

@@ -1,0 +1,84 @@
+stef_dag_van_de_week_homepage:
+    path:     /
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:Index:index }
+
+stef_dag_van_de_week_sitemaps_monthdays:
+    path:  '/sitemaps/{month}-per-day.xml'
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:Sitemap:generateByMonthPerDay }
+    methods: [GET]
+    requirements:
+        month: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
+        _format:  xml
+
+stef_dag_van_de_week_sitemaps_history:
+    path:  /sitemaps/{month}.xml
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:Sitemap:generateByMonth }
+    methods: [GET]
+    requirements:
+        month: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
+        _format:  xml
+
+stef_dag_van_de_week_sitemaps:
+    path:  /sitemaps/{mappingKey}.xml
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:Sitemap:generate }
+    methods: [GET]
+    requirements:
+        _format:  xml
+
+stef_dag_van_de_week_calendar_routing:
+    resource: "@StefaniusDagVanDeWeekBundle/Resources/config/calendar_routing.yml"
+
+stef_dag_van_de_week_history_routing:
+    resource: "@StefaniusDagVanDeWeekBundle/Resources/config/history_routing.yml"
+
+stef_dag_van_de_week_weekhero_routing:
+    resource: "@StefaniusDagVanDeWeekBundle/Resources/config/weekhero_routing.yml"
+
+stef_dag_van_de_week_special_days_by_year:
+    path:  /bijzondere-dagen-{year}
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:SpecialDates:show }
+    methods: [GET]
+    requirements:
+        year:  \d+
+
+stef_dag_van_de_week_news_archive_index:
+    path:  /nieuws
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:News:showMainNewsPage }
+    methods: [GET]
+
+stef_dag_van_de_week_news_show:
+    path:  /nieuws/{slug}
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:News:show }
+    methods: [GET]
+
+stef_dag_van_de_week_contact:
+    path:  /contact
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:Index:contact }
+
+stef_dag_van_de_week_today_in_the_past:
+    path:  /vandaag-in-het-verleden
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:TodayInThePast:showTodayInThePast }
+
+stef_dag_van_de_week_today:
+    path:  /vandaag
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:TodayInThePast:showToday }
+
+stef_dag_van_de_week_month:
+    path:  /maandoverzicht-{dutchMonthName}
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:Month:showMonth }
+    requirements:
+       dutchMonthName: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
+
+stef_dag_van_de_week_day_by_day:
+    path:  /{day}-{dutchMonthName}
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:DayByDay:showToday }
+    requirements:
+       day: \d+
+       dutchMonthName: januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december
+
+stef_dag_van_de_week_website_pages:
+    path:  /{slug}
+    defaults: { _controller: StefaniusDagVanDeWeekBundle:Page:show }
+    methods: [GET]
+    requirements:
+        slug: .+

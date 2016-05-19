@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7067e68b35858f9b6ad36da6f171de92",
-    "content-hash": "bd712d05a094a7572691f68f25b07a18",
+    "hash": "0b0899ce4e2345ba629bc53a2804e7b7",
+    "content-hash": "e95d8c5046e8e803900ef63127be90ef",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -2121,75 +2121,6 @@
             "time": "2016-02-26 04:36:01"
         },
         {
-            "name": "stef/redirect-trailing-slash-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stefanius/redirect-trailing-slash-bundle.git",
-                "reference": "22b835ba430a8654c2c56c07c8fb0756cdd8b702"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/redirect-trailing-slash-bundle/zipball/22b835ba430a8654c2c56c07c8fb0756cdd8b702",
-                "reference": "22b835ba430a8654c2c56c07c8fb0756cdd8b702",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Stef\\RedirectTrailingSlashBundle\\": "src/Stef/RedirectTrailingSlashBundle/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Stefanius",
-                    "email": "sgrootveld@gmail.com"
-                }
-            ],
-            "description": "Redirect all URL's to a non-trailing slash URL",
-            "time": "2015-01-20 20:21:45"
-        },
-        {
-            "name": "stef/special-dates",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stefanius/special-dates.git",
-                "reference": "2dd332446f92c8e275105ef94cc1d3ad3808095f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/special-dates/zipball/2dd332446f92c8e275105ef94cc1d3ad3808095f",
-                "reference": "2dd332446f92c8e275105ef94cc1d3ad3808095f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Stef\\SpecialDates\\": "src/Stef/SpecialDates/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Stephan Grootveld",
-                    "email": "sgrootveld@gmail.com"
-                }
-            ],
-            "description": "Library with special dates. Mainly for the Netherlands, but if you will you may use and extends it in foreign countries ;)",
-            "time": "2015-12-29 21:46:12"
-        },
-        {
             "name": "stefanius/manipulation",
             "version": "v0.0.3",
             "source": {
@@ -2221,6 +2152,39 @@
             ],
             "description": "Basic classes for manipulate values. You can build your own by inherit this package",
             "time": "2016-03-07 22:32:37"
+        },
+        {
+            "name": "stefanius/redirect-trailing-slash-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stefanius/redirect-trailing-slash-bundle.git",
+                "reference": "0433f6e3464f7a5f4a8805827021408e63e6f6fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stefanius/redirect-trailing-slash-bundle/zipball/0433f6e3464f7a5f4a8805827021408e63e6f6fe",
+                "reference": "0433f6e3464f7a5f4a8805827021408e63e6f6fe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stefanius\\RedirectTrailingSlashBundle\\": "src/Stefanius/RedirectTrailingSlashBundle/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Stefanius",
+                    "email": "sgrootveld@gmail.com"
+                }
+            ],
+            "description": "Redirect all URL's to a non-trailing slash URL",
+            "time": "2016-05-19 20:41:45"
         },
         {
             "name": "stefanius/simple-cms-bundle",
@@ -2310,6 +2274,42 @@
             ],
             "description": "Slugify your text!",
             "time": "2016-03-09 19:37:48"
+        },
+        {
+            "name": "stefanius/special-dates",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stefanius/special-dates.git",
+                "reference": "d6426f57422f4f7380ecedbacba7ecc864e690ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stefanius/special-dates/zipball/d6426f57422f4f7380ecedbacba7ecc864e690ed",
+                "reference": "d6426f57422f4f7380ecedbacba7ecc864e690ed",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stefanius\\SpecialDates\\": "src/Stefanius/SpecialDates/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Stephan Grootveld",
+                    "email": "sgrootveld@gmail.com"
+                }
+            ],
+            "description": "Library with special dates. Mainly for the Netherlands, but if you will you may use and extends it in foreign countries ;)",
+            "time": "2016-05-19 19:59:57"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4278,8 +4278,8 @@
         "friendsofsymfony/user-bundle": 20,
         "jms/serializer-bundle": 20,
         "stefanius/simple-cms-bundle": 20,
-        "stef/redirect-trailing-slash-bundle": 20,
-        "stef/special-dates": 20,
+        "stefanius/redirect-trailing-slash-bundle": 20,
+        "stefanius/special-dates": 20,
         "frequence-web/calendr-bundle": 20
     },
     "prefer-stable": false,

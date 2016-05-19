@@ -31,8 +31,8 @@ class AppKernel extends Kernel
             new WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle(),
             /* Stefanius */
             new Stefanius\SimpleCmsBundle\StefSimpleCmsBundle(),
-            new Stef\DagVanDeWeekBundle\StefDagVanDeWeekBundle(),
-            new Stef\RedirectTrailingSlashBundle\StefRedirectTrailingSlashBundle()
+            new Stefanius\DagVanDeWeekBundle\StefaniusDagVanDeWeekBundle(),
+            new Stefanius\RedirectTrailingSlashBundle\StefaniusRedirectTrailingSlashBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

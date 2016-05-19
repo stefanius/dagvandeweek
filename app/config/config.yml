@@ -101,4 +101,4 @@ white_october_breadcrumbs:
     linkRel:            ''
     locale:             ~
     translation_domain: ~
-    viewTemplate:       "StefDagVanDeWeekBundle:Elements:breadcrumbs.html.twig"
+    viewTemplate:       "StefaniusDagVanDeWeekBundle:Elements:breadcrumbs.html.twig"

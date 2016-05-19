@@ -1,0 +1,66 @@
+{% extends 'StefaniusDagVanDeWeekBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <article class="col-sm-9 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">{{ page.title }}</h1>
+            </header>
+
+            <a href="http://partnerprogramma.bol.com/click/click?p=1&t=url&s=38915&url=http%3A//www.bol.com/nl/m/koken-tafelen/kerstkookwinkel/index.html&f=BAN&name=Kerst kookwinkel 2015" target="_blank"><img src="http://www.bol.com/nl/upload/images/banners/cross/feestdagen2015/kerst/kerst_kerstkoken_151205_728x90.jpg" width="728" height="90" alt="Kerst kookwinkel 2015"  /></a><img src="http://partnerprogramma.bol.com/click/impression?p=1&s=38915&t=url&f=BAN&name=Kerst kookwinkel 2015" width="1" height="1" />
+
+            <p>
+                {{ date.day }} {{ date.translatedMonthName }} is dag {{ date.yearDayNumber }} van het jaar {{ date.year }}. Deze dag is dit jaar te vinden in week {{ date.weekNumber }}.
+                {% if date.day == 28 and date.monthNumber == 02 %}
+                    De bijzondere situatie van 29 februari (immers, elke 4 jaar is er pas een 29e van de 2e) heeft ons hoofdpijn bezorgd bij de telling van het aantal dagen. Natuurlijk is <a href="/">29 februari</a> te bezoeken, maar we tellen hem maar eens per 4 jaar mee.
+                {% else %}
+                    Als je van mening bent dat deze dag niets nieuws onder de zon is, kijk dan eens naar de <a href="{{ path('stef_dag_van_de_week_day_by_day', {'day': dayBefore.day, 'dutchMonthName': dayBefore.translatedMonthName}) }}">vorige dag</a> of de <a href="{{ path('stef_dag_van_de_week_day_by_day', {'day': dayAfter.day, 'dutchMonthName': dayAfter.translatedMonthName}) }}">volgende dag</a>.
+                {% endif %}
+            </p>
+
+            <p>
+                {% if date.day == 28 and date.monthNumber == 02 %}
+                    Deze dag komt maar eens in de vier jaar voor. Het spreekt daarom bijna voor zich dat de lijst van gebeurtenissen iets kleiner is dan op andere dagen. Maar zeker niet minder spectaculair!
+                {% endif %}
+            </p>
+
+            {% if specialDates|length > 0 %}
+                <h2>Speciale (thema)dagen</h2>
+                <p>
+                    Elk jaar zijn er een of meer bijzondere themadagen. Naast de nationale feestdagen zijn er ook nog een aantal andere dagen die aandacht vragen voor een bepaald probleem. Wij hebben er zoveel mogelijk voor je verzameld!
+                </p>
+                <p> Voor deze datum hebben wij maar liefst {{ specialDates|length }} dag(en) gevonden!
+                        <ol>
+                            {% for specialDate in specialDates %}
+                                <li>{{ specialDate.description }}</li>
+                            {% endfor %}
+                        </ol>
+                </p>
+            {% endif %}
+
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
+
+            <h2>Gebeurtenissen uit het verleden</h2>
+            <p>
+                {% if histories|length > 0 %}
+                    Wij hebben hard gewerkt om onderstaande lijst met gebeurtenissen op te stellen. Kijk snel in het overzicht en spring terug in de tijd!
+                    <ul>
+                        {% for history in histories %}
+                            <li><a href="{{ path('stef_dag_van_de_week_history_article_show', {'slug': history.slug, 'day': '%02d'|format(history.day), 'month': '%02d'|format(history.month), 'year': history.year}) }}">({{ history.year }}) {{ history.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                {% else %}
+
+                    We hebben (nog) geen artikelen geschreven over {{ date.day }} {{ date.translatedMonthName }}. Maar wat niet is, kan zeker nog komen! Kom snel terug of, nog beter, <a href="/contact">vul onze database aan</a> en word schrijver!
+
+                {% endif %}
+            </p>
+
+
+            {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
+
+            {{ page.body|raw }}
+        </article>
+    </div>
+{% endblock %}

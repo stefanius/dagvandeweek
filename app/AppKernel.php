@@ -32,7 +32,7 @@ class AppKernel extends Kernel
             /* Stefanius */
             new Stefanius\SimpleCmsBundle\StefSimpleCmsBundle(),
             new Stefanius\DagVanDeWeekBundle\StefaniusDagVanDeWeekBundle(),
-            new Stefanius\RedirectTrailingSlashBundle\StefaniusRedirectTrailingSlashBundle()
+            new Stefanius\RedirectTrailingSlashBundle\StefaniusRedirectTrailingSlashBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

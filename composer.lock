@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f438a6ce27391bffd03e843072d41b2e",
-    "content-hash": "b57b8370fbd7ab2f4a74910d2d23a628",
+    "hash": "1fca929a4bb69e2ce9ac39ba6b97936d",
+    "content-hash": "d2026a6c32e992e7ac1dfc6c7607ef31",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -2192,26 +2192,33 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stefanius/simple-cms-bundle.git",
-                "reference": "e12e9cb6167b788dc81cc78ee1dd061ab1431985"
+                "reference": "be1358827d538a45015c1db51d916fdfbb003200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/e12e9cb6167b788dc81cc78ee1dd061ab1431985",
-                "reference": "e12e9cb6167b788dc81cc78ee1dd061ab1431985",
+                "url": "https://api.github.com/repos/stefanius/simple-cms-bundle/zipball/be1358827d538a45015c1db51d916fdfbb003200",
+                "reference": "be1358827d538a45015c1db51d916fdfbb003200",
                 "shasum": ""
             },
             "require": {
-                "braincrafted/bootstrap-bundle": "~2.1",
+                "doctrine/dbal": "~2.5",
+                "doctrine/doctrine-bundle": "~1.2",
+                "doctrine/doctrine-fixtures-bundle": "~2.2",
+                "doctrine/orm": "~2.5",
                 "egeloen/ckeditor-bundle": "~4.0",
-                "friendsofsymfony/user-bundle": "~2.0@dev",
                 "incenteev/composer-parameter-handler": "~2.0",
-                "jms/serializer-bundle": "dev-master",
                 "jquery/jquery": "1.10.*",
                 "nelmio/alice": "~2.0",
                 "php": ">=7.0",
+                "sensio/framework-extra-bundle": "~3.0",
+                "sensio/generator-bundle": "~3.0",
                 "stefanius/manipulation": "~0",
                 "stefanius/slugifier": "~0",
+                "symfony/assetic-bundle": "~2.3",
                 "symfony/form": "~3.0",
+                "symfony/monolog-bundle": "~2.4",
+                "symfony/swiftmailer-bundle": "~2.3",
+                "symfony/symfony": "~3.0",
                 "twbs/bootstrap": "~3.3",
                 "twig/extensions": "~1.3"
             },
@@ -2236,7 +2243,7 @@
                 "source": "https://github.com/stefanius/simple-cms-bundle/tree/master",
                 "issues": "https://github.com/stefanius/simple-cms-bundle/issues"
             },
-            "time": "2016-05-17 21:36:43"
+            "time": "2016-05-20 19:51:36"
         },
         {
             "name": "stefanius/slugifier",
@@ -4275,12 +4282,12 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofsymfony/user-bundle": 20,
-        "jms/serializer-bundle": 20,
         "stefanius/simple-cms-bundle": 20,
         "stefanius/redirect-trailing-slash-bundle": 20,
         "stefanius/special-dates": 20,
-        "frequence-web/calendr-bundle": 20
+        "frequence-web/calendr-bundle": 20,
+        "friendsofsymfony/user-bundle": 20,
+        "jms/serializer-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

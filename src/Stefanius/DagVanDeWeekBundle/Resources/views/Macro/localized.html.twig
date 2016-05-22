@@ -1,0 +1,3 @@
+{% macro date(datetime, format) %}
+    {{ datetime|localizeddate("medium", "none", null, null, format)|capitalize }}
+{% endmacro %}

@@ -1,3 +1,5 @@
+{% import 'StefaniusDagVanDeWeekBundle:Macro:localized.html.twig' as localized %}
+
 <h2>Maandoverzicht</h2>
 
 <ul class="calendar-container">
@@ -7,7 +9,7 @@
 
         <li>
             <div class="calendar-wrapper">
-                <h3>{{ month.begin|localizeddate("medium", "none", null, null, 'MMMM')|capitalize }} {{ page.year }}</h3>
+                <h3>{{ localized.date(month.begin, "MMMM") }} {{ page.year }}</h3>
                 <table>
                     <tr>
                         <th>MA</th>

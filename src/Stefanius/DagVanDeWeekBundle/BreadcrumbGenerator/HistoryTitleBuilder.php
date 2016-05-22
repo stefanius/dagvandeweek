@@ -2,20 +2,8 @@
 
 namespace Stefanius\DagVanDeWeekBundle\BreadcrumbGenerator;
 
-use Stefanius\DagVanDeWeekBundle\CalendarTranslations\Dutch;
-
 class HistoryTitleBuilder implements TitleBuilderInterface
 {
-    /**
-     * @var Dutch
-     */
-    protected $calenderTranslation;
-
-    public function __construct($calenderTranslation)
-    {
-        $this->calenderTranslation = $calenderTranslation;
-    }
-
     /**
      * {@inheritdoc}
      */

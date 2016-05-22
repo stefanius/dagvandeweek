@@ -1,3 +1,5 @@
+{% import 'StefaniusDagVanDeWeekBundle:Macro:localized.html.twig' as localized %}
+
 <ul class="calendar-container">
 
         {% set month = calendr_month(year, monthNumber) %}
@@ -5,7 +7,7 @@
                 <li>
                 <div class="calendar-wrapper">
 
-                <h3>Maand {{ month.begin.format('m')|translate_month|capitalize }}</h3>
+                <h3>Maand {{ localized.date(month.begin, "MMMM") }}</h3>
                 <table>
                     <tr>
                         <th>MA</th>

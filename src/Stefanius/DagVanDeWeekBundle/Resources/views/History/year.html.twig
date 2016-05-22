@@ -5,7 +5,7 @@
         <article class="col-sm-9 maincontent">
             <header class="page-header">
                 {% if month is defined %}
-                    <h1 class="page-title">{{ month|translate_month|capitalize }} {{ page.year }}</h1>
+                    <h1 class="page-title">{{ month }} {{ page.year }}</h1>
                 {% else %}
                     <h1 class="page-title">Historie {{ page.year }}</h1>
                 {% endif %}
@@ -20,11 +20,11 @@
             <p>De aangegeven datum achter de gebeurtenis is vermeld in jaar/maand/dag.</p>
             <ol>
                 {% for item in items %}
-                    <li>
-                        <a href="{{ path('stef_dag_van_de_week_history_article_show', {'slug': item.slug, 'day': '%02d'|format(item.day), 'month': '%02d'|format(item.month), 'year': item.year}) }}">
-                            {{ item.title }}
-                        </a> ({{ item.year }}/{{ '%02d'|format(item.month) }}/{{ '%02d'|format(item.day) }})
-                    </li>
+                    {#<li>#}
+                        {#<a href="{{ path('stef_dag_van_de_week_history_article_show', {'slug': item.slug, 'day': '%02d'|format(item.day), 'month': '%02d'|format(item.month), 'year': item.year}) }}">#}
+                            {#{{ item.title }}#}
+                        {#</a> ({{ item.year }}/{{ '%02d'|format(item.month) }}/{{ '%02d'|format(item.day) }})#}
+                    {#</li>#}
                 {% endfor %}
             </ol>
         </article>

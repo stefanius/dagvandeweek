@@ -2,8 +2,6 @@
 
 namespace Stefanius\DagVanDeWeekBundle\Date;
 
-use Stefanius\DagVanDeWeekBundle\CalendarTranslations\TranslatorInterface;
-
 class CustomDateObject
 {
     /**
@@ -54,38 +52,33 @@ class CustomDateObject
     /**
      * @var string
      */
-    protected $translatedMonthName;
+    protected $montName;
 
     /**
      * @var string
      */
-    protected $translatedWeekdayName;
+    protected $weekDayName;
 
-    /**
-     * @var TranslatorInterface
-     */
-    protected $translator;
 
-    public function __construct(\DateTime $dateTime, TranslatorInterface $translator)
+    public function __construct(\DateTime $dateTime)
     {
         $this->dateTime   = $dateTime;
-        $this->translator = $translator;
 
         $this->convert();
     }
 
     protected function convert()
     {
-        $this->year                  = (integer) $this->dateTime->format('Y');
-        $this->day                   = (integer) $this->dateTime->format('d');
-        $this->weekDayNumber         = $this->dateTime->format('w');
-        $this->monthNumber           = (integer) $this->dateTime->format('m');
-        $this->yearDayNumber         = (integer) $this->dateTime->format('z') + 1;
-        $this->weekNumber            = (integer) $this->dateTime->format('W');
-        $this->lastDayOfMonth        = $this->dateTime->format('t');
-        $this->unixSeconds           = $this->dateTime->format('U');
-        $this->translatedMonthName   = $this->translator->getMonth($this->monthNumber);
-        $this->translatedWeekdayName = $this->translator->getDay($this->weekDayNumber);
+        $this->year           = (integer) $this->dateTime->format('Y');
+        $this->day            = (integer) $this->dateTime->format('d');
+        $this->weekDayNumber  = $this->dateTime->format('w');
+        $this->monthNumber    = (integer) $this->dateTime->format('m');
+        $this->yearDayNumber  = (integer) $this->dateTime->format('z') + 1;
+        $this->weekNumber     = (integer) $this->dateTime->format('W');
+        $this->lastDayOfMonth = $this->dateTime->format('t');
+        $this->unixSeconds    = $this->dateTime->format('U');
+        $this->montName       = $this->dateTime->format('F');
+        $this->weekDayName    = $this->dateTime->format('F');
     }
 
     /**
@@ -139,17 +132,17 @@ class CustomDateObject
     /**
      * @return string
      */
-    public function getTranslatedMonthName()
+    public function getMonthName()
     {
-        return $this->translatedMonthName;
+        return $this->montName;
     }
 
     /**
      * @return string
      */
-    public function getTranslatedWeekdayName()
+    public function getWeekdayName()
     {
-        return $this->translatedWeekdayName;
+        return $this->weekDayName;
     }
 
     /**
@@ -177,14 +170,6 @@ class CustomDateObject
     }
 
     /**
-     * @return TranslatorInterface
-     */
-    public function getTranslator()
-    {
-        return $this->translator;
-    }
-
-    /**
      * @return CustomDateObject
      */
     public function getDayAfter()
@@ -192,7 +177,7 @@ class CustomDateObject
         $dayAfter = new \DateTime($this->year . '-' . $this->monthNumber . '-' . $this->day);
         $dayAfter->modify('+1 day');
 
-        return new self($dayAfter, $this->translator);
+        return new self($dayAfter);
     }
 
     /**
@@ -203,6 +188,6 @@ class CustomDateObject
         $dayBefore = new \DateTime($this->year . '-' . $this->monthNumber . '-' . $this->day);
         $dayBefore->modify('-1 day');
 
-        return new self($dayBefore, $this->translator);
+        return new self($dayBefore);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Stefanius\DagVanDeWeekBundle\Controller;
 
+use Carbon\Carbon;
 use Ivory\GoogleMap\Map;
 use Stefanius\DagVanDeWeekBundle\BreadcrumbGenerator\Generator;
 use Stefanius\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
@@ -13,7 +14,6 @@ use Stefanius\DagVanDeWeekBundle\Manager\HistoryManager;
 use Stefanius\DagVanDeWeekBundle\Manager\HistoryYearManager;
 use Stefanius\DagVanDeWeekBundle\Manager\WeekHeroManager;
 use Stefanius\SimpleCmsBundle\Entity\AbstractCmsContent;
-use Stefanius\SimpleCmsBundle\KeyValueParser\Parser;
 use Stefanius\SimpleCmsBundle\Manager\DictionaryManager;
 use Stefanius\SimpleCmsBundle\Manager\NewsManager;
 use Stefanius\SimpleCmsBundle\Manager\PageManager;
@@ -162,31 +162,11 @@ class BaseController extends Controller
      * @param $month
      * @param $day
      *
-     * @return array
+     * @return Carbon
      */
     protected function createDayInfo($year, $month, $day)
     {
-        $translation = new Dutch();
-        $date        = new \DateTime($year . '-' . $month . '-' . $day);
-
-        $weekDayNumber    = $date->format('w');
-        $yearDayNumber    = $date->format('z');
-        $weekNumber       = $date->format('W');
-        $lastDayOfMonth   = $date->format('t');
-        $unixSeconds      = $date->format('U');
-        $dutchMonthName   = $translation->getMonth($month);
-        $dutchWeekdayName = $translation->getDay($weekDayNumber);
-
-        return [
-            'weekDayNumber'    => $weekDayNumber,
-            'yearDayNumber'    => $yearDayNumber,
-            'monthNumber'      => (int) $month,
-            'weekNumber'       => $weekNumber,
-            'unixSeconds'      => $unixSeconds,
-            'dutchMonthName'   => $dutchMonthName,
-            'dutchWeekdayName' => $dutchWeekdayName,
-            'lastDayOfMonth'   => $lastDayOfMonth,
-        ];
+        return Carbon::createFromDate($year, $month, $day);
     }
 
     /**
@@ -218,5 +198,30 @@ class BaseController extends Controller
     protected function findSpecialDatesByMonth($year, $monthNumber)
     {
         return $this->getSpecialDateParser()->findSpecialDateByMonthNumber($year, $monthNumber);
+    }
+
+    /**
+     * @param $monthName
+     * 
+     * @return integer
+     */
+    protected function getConvertedMonthNumber($monthName)
+    {
+        $months = [
+            'januari'   => 1,
+            'februari'  => 2,
+            'maart'     => 3,
+            'april'     => 4,
+            'mei'       => 5,
+            'juni'      => 6,
+            'juli'      => 7,
+            'augustus'  => 8,
+            'september' => 9,
+            'oktober'   => 10,
+            'november'  => 11,
+            'december'  => 12,
+        ];
+
+        return $months[strtolower(trim($monthName))];
     }
 }

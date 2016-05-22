@@ -1,5 +1,7 @@
 {% extends "StefaniusDagVanDeWeekBundle::layout.html.twig" %}
 
+{% import 'StefaniusDagVanDeWeekBundle:Macro:localized.html.twig' as localized %}
+
 {% block content %}
     <div class="row">
         <article class="col-sm-9 maincontent">
@@ -24,7 +26,7 @@
                     {% if date.valid %}
                         <tr>
                             <td>{{ date.description }} {{ year }}</td>
-                            <td>{{ date.startDate|date("w")|translate_weekday|capitalize }} {{ date.startDate|date("j") }} {{ date.startDate|date("m")|translate_month }}   {{ date.startDate|date("Y") }}</td>
+                            <td>{{ localized.date(date.startDate, "l") }} {{ date.startDate|date("j") }} {{ localized.date(date.startDate, "MMMM") }} {{ date.startDate|date("Y") }}</td>
                             <td>{{ date.startDate|date("d/m/Y") }}</td>
                         </tr>
                     {% endif %}

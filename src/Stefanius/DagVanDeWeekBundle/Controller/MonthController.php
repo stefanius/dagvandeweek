@@ -17,8 +17,7 @@ class MonthController extends BaseController
      */
     public function showMonthAction(Request $request, $dutchMonthName)
     {
-        $factory = new DateObjectFactory();
-        $monthNumber    = $factory->getConvertedMonthNumber($dutchMonthName);
+        $monthNumber    = $this->getConvertedMonthNumber($dutchMonthName);
 
         $specialDates = $this->findSpecialDatesByMonth(2016, $monthNumber);
 

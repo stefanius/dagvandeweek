@@ -14,16 +14,6 @@ services:
         tags:
             - { name: twig.extension }
 
-    stef.twig.weekday_extension:
-        class: Stefanius\DagVanDeWeekBundle\Twig\Extension\GetTranslatedWeekdayExtension
-        tags:
-            - { name: twig.extension }
-
-    stef.twig.month_extension:
-        class: Stefanius\DagVanDeWeekBundle\Twig\Extension\GetTranslatedMonthExtension
-        tags:
-            - { name: twig.extension }
-
     stef_simple_cms.history_year_manager:
         class: Stefanius\DagVanDeWeekBundle\Manager\HistoryYearManager
         arguments: ["@doctrine.orm.entity_manager"]

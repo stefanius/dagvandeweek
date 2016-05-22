@@ -7,6 +7,9 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
+        setlocale(LC_ALL, 'nl_NL');
+        \Carbon\Carbon::setLocale('nl');
+
         $bundles = array(
             /*Symfony / Doctrine / Sensio Core */
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),

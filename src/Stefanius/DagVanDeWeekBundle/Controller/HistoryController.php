@@ -221,7 +221,7 @@ class HistoryController extends BaseController
     public function render($view, array $parameters = array(), Response $response = null, Request $request = null, TitleBuilderInterface $breadcrumbTitleBuilder = null)
     {
         if ($breadcrumbTitleBuilder === null) {
-            $breadcrumbTitleBuilder = new HistoryTitleBuilder(new Dutch());
+            $breadcrumbTitleBuilder = new HistoryTitleBuilder();
         }
 
         return parent::render($view, $parameters, $response, $request, $breadcrumbTitleBuilder);

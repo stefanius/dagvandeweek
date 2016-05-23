@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>../src/*/*/Tests</directory>
+            <directory>../tests</directory>
             <directory>../vendor/stef/*/src/*/*/Tests</directory>
         </testsuite>
     </testsuites>

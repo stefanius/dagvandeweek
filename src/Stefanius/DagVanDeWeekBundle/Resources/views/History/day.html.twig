@@ -4,14 +4,14 @@
     <div class="row">
         <article class="col-sm-9 maincontent">
             <header class="page-header">
-                <h1 class="page-title">{{ dayInfo.dutchWeekdayName }} {{ page.day }} {{ dayInfo.dutchMonthName }} {{ page.year }}</h1>
+                <h1 class="page-title">{{ dayInfo.formatLocalized('%A') }} {{ page.day }} {{ dayInfo.formatLocalized('%B') }} {{ page.year }}</h1>
             </header>
 
-            <p>{{ page.day }} {{ dayInfo.dutchMonthName }} is de {{ dayInfo.yearDayNumber }}e dag van het jaar {{ page.year }}. Verder valt deze dag in week {{ dayInfo.weekNumber }}.</p>
+            <p>{{ page.day }} {{ dayInfo.formatLocalized('%B') }} is de {{ dayInfo.formatLocalized('%j') }}e dag van het jaar {{ page.year }}. Verder valt deze dag in week {{ dayInfo.formatLocalized('%V') }}.</p>
 
             {% include 'StefSimpleCmsBundle:GoogleAdsense:728x90.html.twig' with {'pubid': 'ca-pub-1143505562670221', 'slotid': '4350506819'} %}
 
-            <h2>Gebeurtenissen {{ page.day }} {{ dayInfo.dutchMonthName }} {{ page.year }}</h2>
+            <h2>Gebeurtenissen {{ page.day }} {{ dayInfo.formatLocalized('%B') }} {{ page.year }}</h2>
             <p>In onderstaand overzicht staan de (bij ons bekende) gebeurtenissen</p>
             <ol>
                 {% for item in items %}

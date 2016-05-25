@@ -2,6 +2,8 @@
 
 namespace Stefanius\DagVanDeWeekBundle\BreadcrumbGenerator;
 
+use Carbon\Carbon;
+
 class HistoryTitleBuilder implements TitleBuilderInterface
 {
     /**
@@ -14,13 +16,12 @@ class HistoryTitleBuilder implements TitleBuilderInterface
                 $title = 'Geschiedenis ' . $title;
                 break;
             case 4:
-                $title = 'Overzicht ' . $this->calenderTranslation->getMonth($title) . ' ' . $path[2];
+                $title = 'Overzicht ' . Carbon::createFromDate(1984, $title)->formatLocalized('%B') . ' ' . $path[2];
                 break;
             case 5:
-                $date = new \DateTime();
-                $date->setDate($path[2], $path[3], $path[4]);
+                $date = Carbon::createFromDate($path[2], $path[3], $path[4]);
 
-                $title = ucfirst($this->calenderTranslation->getDay($date->format('w'))) . ' ' . (int) $title . ' ' . $this->calenderTranslation->getMonth($path[3]) . ' ' . $path[2];
+                $title = ucfirst($date->formatLocalized('%A')) . ' ' . (int) $title . ' ' . $date->formatLocalized('%B') . ' ' . $path[2];
                 break;
             default:
                 $title = ucfirst($title);

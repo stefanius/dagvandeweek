@@ -153,7 +153,7 @@ class HistoryController extends BaseController
         $page->setDay($day);
         $page->setMonth($month);
         $page->setYear($year);
-        $page->setTitle(ucfirst($dayInfo['dutchWeekdayName']) . ' ' . $day . ' ' . $dayInfo['dutchMonthName'] . ' ' . $year);
+        $page->setTitle(ucfirst($dayInfo->formatLocalized('%A') . ' ' . $day . ' ' . $dayInfo->formatLocalized('%A') . ' ' . $year));
 
         $page->setRobotsIndex(false);
         $page->setRobotsFollow(true);

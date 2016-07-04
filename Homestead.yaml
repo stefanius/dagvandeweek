@@ -1,6 +1,7 @@
 ---
-ip: "192.168.10.10"
+ip: "192.168.10.12"
 memory: 2024
+name: dagvandeweek
 cpus: 2
 provider: virtualbox
 
@@ -11,11 +12,11 @@ keys:
 
 folders:
     - map: ./
-      to: /home/vagrant/dagvandeweek
+      to: /home/vagrant/dagvandeweek.nl
 
 sites:
     - map: dagvandeweek.dev
-      to: /home/vagrant/dagvandeweek/web
+      to: /home/vagrant/dagvandeweek.nl/web
       type: symfony
 
 databases:

@@ -14,9 +14,9 @@ sudo apt-get install language-pack-NL
 sudo apt-get install language-pack-DE
 sudo apt-get install language-pack-FR
 
-mysql -uhomestead -psecret dagvandeweek < /home/vagrant/dagvandeweek/database.sql
+mysql -uhomestead -psecret dagvandeweek < /home/vagrant/dagvandeweek.nl/database.sql
 
 sudo service php7.0-fpm restart
 
-php /home/vagrant/dagvandeweek/app/console doctrine:schema:create
-php /home/vagrant/dagvandeweek/app/console fos:user:create admin admin@stefanius.nl 1234
+#php /home/vagrant/dagvandeweek.nl/app/console doctrine:schema:create
+php /home/vagrant/dagvandeweek.nl/app/console fos:user:create admin admin@stefanius.nl 1234

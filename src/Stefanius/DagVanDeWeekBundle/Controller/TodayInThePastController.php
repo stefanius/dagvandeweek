@@ -2,7 +2,7 @@
 
 namespace Stefanius\DagVanDeWeekBundle\Controller;
 
-use Stefanius\DagVanDeWeekBundle\Date\DateObjectFactory;
+use Carbon\Carbon;
 use Stefanius\SimpleCmsBundle\Entity\Page;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,9 +16,7 @@ class TodayInThePastController extends BaseController
      */
     public function showTodayAction(Request $request)
     {
-        $today = new \DateTime();
-        $factory = new DateObjectFactory();
-        $date    = $factory->createByDateTime($today);
+        $date = Carbon::now();
 
         $page = new Page();
         $page->setTitle('Vandaag');
@@ -38,16 +36,14 @@ class TodayInThePastController extends BaseController
      */
     public function showTodayInThePastAction(Request $request)
     {
-        $today = new \DateTime();
-        $factory = new DateObjectFactory();
-        $date    = $factory->createByDateTime($today);
+        $date = Carbon::now();
 
         $manager   = $this->getHistoryManager();
-        $histories = $manager->findByDayMonth($date->getDay(), $date->getMonthNumber());
+        $histories = $manager->findByDayMonth($date->day, $date->month);
 
         $page = new Page();
         $page->setTitle('Vandaag in het verleden');
-        $page->setDescription('De dag van vandaag heeft een verleden. Bekijk hier de datum van vandaag en duik in het verleden van ' . $date->getDay(). ' ' . $date->getTranslatedMonthName());
+        $page->setDescription('De dag van vandaag heeft een verleden. Bekijk hier de datum van vandaag en duik in het verleden van ' . $date->formatLocalized('%D %M'));
 
         return $this->render('StefaniusDagVanDeWeekBundle:TodayInThePast:index.html.twig', [
                 'page'      => $page,

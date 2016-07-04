@@ -170,16 +170,14 @@ class BaseController extends Controller
     }
 
     /**
-     * @param $monthName
-     * @param bool $leadingZero
+     * @param string $monthName
+     * @param bool   $leadingZero
      *
      * @return int
      */
     protected function getMonthNumber($monthName, $leadingZero = true)
     {
-        $translation = new Dutch();
-
-        return $translation->getMonthNumberByName($monthName, $leadingZero);
+        return Carbon::parse($monthName)->format('m');
     }
 
     /**

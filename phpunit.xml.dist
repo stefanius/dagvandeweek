@@ -10,8 +10,7 @@
     convertWarningsToExceptions = "true"
     processIsolation            = "false"
     stopOnFailure               = "true"
-    syntaxCheck                 = "false"
-    bootstrap                   = "./app/bootstrap.php.cache" >
+    syntaxCheck                 = "false" >
 
     <testsuites>
         <testsuite name="Project Test Suite">

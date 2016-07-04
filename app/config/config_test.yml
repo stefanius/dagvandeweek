@@ -17,7 +17,5 @@ swiftmailer:
 
 doctrine:
     dbal:
-        host:     127.0.0.1
-        dbname:   dagvandeweek
-        user:     homestead
-        password: secret
+        driver:   pdo_sqlite
+        path:     %kernel.cache_dir%/test.db

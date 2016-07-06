@@ -9,6 +9,7 @@ build_settings:
     - "resources"
     - "config"
     - "database"
+    - "app"
 
 setup:
   env:

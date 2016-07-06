@@ -8,6 +8,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SitemapController extends BaseController
 {
+    /**
+     * @param Request $request
+     * @param $mappingKey
+     *
+     * @return Response
+     */
     public function generateAction(Request $request, $mappingKey)
     {
         $response = new Response();
@@ -34,6 +40,12 @@ class SitemapController extends BaseController
         );
     }
 
+    /**
+     * @param Request $request
+     * @param $month
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
     public function generateByMonthAction(Request $request, $month)
     {
         $months = new Dutch();
@@ -55,6 +67,12 @@ class SitemapController extends BaseController
         return $this->redirect('/');
     }
 
+    /**
+     * @param Request $request
+     * @param $month
+     * 
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
     public function generateByMonthPerDayAction(Request $request, $month)
     {
         $months = new Dutch();

@@ -2,7 +2,6 @@
 
 namespace Stefanius\DagVanDeWeekBundle\Manager;
 
-use Doctrine\Entity;
 use Stefanius\SimpleCmsBundle\Manager\AbstractObjectManager;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -11,9 +10,7 @@ class CalendarYearManager extends AbstractObjectManager
     protected $repoName = 'StefaniusDagVanDeWeekBundle:CalendarYear';
 
     /**
-     * @param ParameterBag $data
-     *
-     * @return Entity
+     * {@inheritdoc}
      */
     public function create(ParameterBag $data)
     {

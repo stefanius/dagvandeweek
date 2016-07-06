@@ -11,6 +11,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CalendarController extends BaseController
 {
+    /**
+     * @param $year
+     *
+     * @return Page
+     */
     protected function buildCalendarPage($year)
     {
         $page = $this->getCalendarYearManager()->read($year);
@@ -43,6 +48,12 @@ class CalendarController extends BaseController
         return $page;
     }
 
+    /**
+     * @param Request $request
+     * @param $year
+     *
+     * @return Response
+     */
     public function showAction(Request $request, $year)
     {
         if (!is_numeric($year)) {
@@ -60,13 +71,20 @@ class CalendarController extends BaseController
         ], null, $request);
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return Response
+     */
     public function showIndexAction(Request $request)
     {
         $years = $this->getHistoryManager()->getActiveYears();
         $page  = new Page();
 
         $page->setTitle('Jaarkalenders');
-        $page->setDescription('Elk jaar bevat maanden, dagen en weken. Elk dag is een klein stukje van een jaar! Wij bieden hier uitgebreide kalenders aan van een groot aantal jaren!');
+        $page->setDescription(
+            'Elk jaar bevat maanden, dagen en weken. Elk dag is een klein stukje van een jaar! Wij bieden hier uitgebreide kalenders aan van een groot aantal jaren!'
+        );
 
         return $this->render('StefaniusDagVanDeWeekBundle:Calendar:index.html.twig', [
             'years' => $years,
@@ -77,8 +95,13 @@ class CalendarController extends BaseController
     /**
      * {@inheritdoc}
      */
-    public function render($view, array $parameters = array(), Response $response = null, Request $request = null, TitleBuilderInterface $breadcrumbTitleBuilder = null)
-    {
+    public function render(
+        $view,
+        array $parameters = array(),
+        Response $response = null,
+        Request $request = null,
+        TitleBuilderInterface $breadcrumbTitleBuilder = null
+    ) {
         if ($breadcrumbTitleBuilder === null) {
             $breadcrumbTitleBuilder = new CalendarTitleBuilder();
         }

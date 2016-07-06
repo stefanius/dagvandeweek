@@ -13,6 +13,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 class HistoryController extends BaseController
 {
+    /**
+     * @param $year
+     * 
+     * @return mixed|HistoryYear
+     */
     protected function buildHistoryPage($year)
     {
         $page = $this->getHistoryYearManager()->read($year);
@@ -200,6 +205,9 @@ class HistoryController extends BaseController
         ], null, $request);
     }
 
+    /**
+     * @return Response
+     */
     public function showIndexAction()
     {
         $latestItems = $this->getHistoryManager()->getLatestEntries(10);

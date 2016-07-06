@@ -2,7 +2,6 @@
 
 namespace Stefanius\DagVanDeWeekBundle\Manager;
 
-use Doctrine\Entity;
 use Stefanius\SimpleCmsBundle\Manager\AbstractObjectManager;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -11,9 +10,7 @@ class WeekHeroManager extends AbstractObjectManager
     protected $repoName = 'StefaniusDagVanDeWeekBundle:WeekHero';
 
     /**
-     * @param ParameterBag $data
-     *
-     * @return Entity
+     * {@inheritdoc}
      */
     public function create(ParameterBag $data)
     {
@@ -28,6 +25,12 @@ class WeekHeroManager extends AbstractObjectManager
         return $news; */
     }
 
+    /**
+     * @param $year
+     * @param $week
+     *
+     * @return mixed
+     */
     public function findOneByYearAnWeek($year, $week)
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
@@ -41,6 +44,11 @@ class WeekHeroManager extends AbstractObjectManager
         return $qb->getQuery()->getSingleResult();
     }
 
+    /**
+     * @param $year
+     * 
+     * @return mixed
+     */
     public function findByYear($year)
     {
         return $this->om->getRepository($this->repoName)->findByYear($year);

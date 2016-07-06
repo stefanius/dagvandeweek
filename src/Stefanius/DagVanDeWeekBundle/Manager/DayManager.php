@@ -2,8 +2,6 @@
 
 namespace Stefanius\DagVanDeWeekBundle\Manager;
 
-use Doctrine\Entity;
-use Doctrine\ORM\QueryBuilder;
 use Stefanius\DagVanDeWeekBundle\Entity\Day;
 use Stefanius\SimpleCmsBundle\Manager\AbstractObjectManager;
 use Symfony\Component\HttpFoundation\ParameterBag;
@@ -13,9 +11,7 @@ class DayManager extends AbstractObjectManager
     protected $repoName = 'StefaniusDagVanDeWeekBundle:Day';
 
     /**
-     * @param ParameterBag $data
-     *
-     * @return Entity
+     * {@inheritdoc}
      */
     public function create(ParameterBag $data)
     {
@@ -49,10 +45,7 @@ class DayManager extends AbstractObjectManager
     public function findByDayAndMonth($day, $month)
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
-
-        /*
-         * @var QueryBuilder $qb
-         */
+        
         $qb->select('e');
         $qb->where('e.day = :day AND e.month = :month');
         $qb->setParameter('month', $month);

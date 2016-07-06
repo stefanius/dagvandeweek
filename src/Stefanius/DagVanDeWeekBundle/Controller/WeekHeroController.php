@@ -6,6 +6,12 @@ use Stefanius\SimpleCmsBundle\Entity\Page;
 
 class WeekHeroController extends BaseController
 {
+    /**
+     * @param $year
+     * @param $week
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function showAction($year, $week)
     {
         $page = $this->getWeekHeroManager()->findOneByYearAnWeek($year, $week);
@@ -15,6 +21,11 @@ class WeekHeroController extends BaseController
         ]);
     }
 
+    /**
+     * @param $year
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function showByYearAction($year)
     {
         $heroes = $this->getWeekHeroManager()->findByYear($year);

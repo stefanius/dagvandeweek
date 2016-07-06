@@ -2,7 +2,6 @@
 
 namespace Stefanius\DagVanDeWeekBundle\Manager;
 
-use Doctrine\Entity;
 use Stefanius\SimpleCmsBundle\Manager\AbstractObjectManager;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -11,9 +10,7 @@ class HistoryManager extends AbstractObjectManager
     protected $repoName = 'StefaniusDagVanDeWeekBundle:History';
 
     /**
-     * @param ParameterBag $data
-     *
-     * @return Entity
+     * {@inheritdoc}
      */
     public function create(ParameterBag $data)
     {
@@ -44,11 +41,21 @@ class HistoryManager extends AbstractObjectManager
         return $entity;
     }
 
+    /**
+     * @param $year
+     *
+     * @return mixed
+     */
     public function findByYear($year)
     {
         return $this->om->getRepository($this->repoName)->findByYear($year);
     }
 
+    /**
+     * @param $month
+     *
+     * @return mixed
+     */
     public function findByMonth($month)
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
@@ -61,6 +68,12 @@ class HistoryManager extends AbstractObjectManager
         return $qb->getQuery()->getResult();
     }
 
+    /**
+     * @param $month
+     * @param $year
+     *
+     * @return mixed
+     */
     public function findByMonthYear($month, $year)
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
@@ -73,6 +86,13 @@ class HistoryManager extends AbstractObjectManager
         return $qb->getQuery()->getResult();
     }
 
+    /**
+     * @param $day
+     * @param $month
+     * @param $year
+     *
+     * @return mixed
+     */
     public function findByDayMonthYear($day, $month, $year)
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
@@ -87,6 +107,12 @@ class HistoryManager extends AbstractObjectManager
         return $qb->getQuery()->getResult();
     }
 
+    /**
+     * @param $day
+     * @param $month
+     *
+     * @return mixed
+     */
     public function findByDayMonth($day, $month)
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
@@ -100,6 +126,14 @@ class HistoryManager extends AbstractObjectManager
         return $qb->getQuery()->getResult();
     }
 
+    /**
+     * @param $day
+     * @param $month
+     * @param $year
+     * @param $slug
+     *
+     * @return mixed
+     */
     public function findByDayMonthYearSlug($day, $month, $year, $slug)
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
@@ -117,6 +151,9 @@ class HistoryManager extends AbstractObjectManager
         return $qb->getQuery()->getSingleResult();
     }
 
+    /**
+     * @return mixed
+     */
     public function getActiveYears()
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');
@@ -128,6 +165,11 @@ class HistoryManager extends AbstractObjectManager
         return $qb->getQuery()->getResult();
     }
 
+    /**
+     * @param $month
+     * 
+     * @return mixed
+     */
     public function getActiveDays($month)
     {
         $qb = $this->om->getRepository($this->repoName)->createQueryBuilder('e');

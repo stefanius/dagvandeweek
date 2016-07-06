@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends BaseController
 {
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function indexAction()
     {
         $page = new Page();
@@ -20,6 +23,11 @@ class IndexController extends BaseController
         ]);
     }
 
+    /**
+     * @param Request $request
+     * 
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     public function contactAction(Request $request)
     {
         $form = $this->createForm(new ContactType());

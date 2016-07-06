@@ -6,6 +6,11 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 
 class PageController extends BaseController
 {
+    /**
+     * @param $slug
+     * 
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function showAction($slug)
     {
         $extra = [];

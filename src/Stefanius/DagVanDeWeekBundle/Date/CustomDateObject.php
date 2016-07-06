@@ -59,7 +59,11 @@ class CustomDateObject
      */
     protected $weekDayName;
 
-
+    /**
+     * CustomDateObject constructor.
+     * 
+     * @param \DateTime $dateTime
+     */
     public function __construct(\DateTime $dateTime)
     {
         $this->dateTime   = $dateTime;
@@ -67,6 +71,9 @@ class CustomDateObject
         $this->convert();
     }
 
+    /**
+     * Converter
+     */
     protected function convert()
     {
         $this->year           = (integer) $this->dateTime->format('Y');

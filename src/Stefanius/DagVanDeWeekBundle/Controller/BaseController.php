@@ -3,10 +3,8 @@
 namespace Stefanius\DagVanDeWeekBundle\Controller;
 
 use Carbon\Carbon;
-use Ivory\GoogleMap\Map;
 use Stefanius\DagVanDeWeekBundle\BreadcrumbGenerator\Generator;
 use Stefanius\DagVanDeWeekBundle\BreadcrumbGenerator\TitleBuilderInterface;
-use Stefanius\DagVanDeWeekBundle\CalendarTranslations\Dutch;
 use Stefanius\DagVanDeWeekBundle\Manager\CalendarYearManager;
 use Stefanius\DagVanDeWeekBundle\Manager\ContactManager;
 use Stefanius\DagVanDeWeekBundle\Manager\DayManager;
@@ -24,11 +22,19 @@ use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 class BaseController extends Controller
 {
+    /**
+     * @return object
+     */
     protected function getEntityManager()
     {
         return $this->getDoctrine()->getManager();
     }
 
+    /**
+     * @param $repository
+     *
+     * @return mixed
+     */
     protected function getRepository($repository)
     {
         $em = $this->getEntityManager();
@@ -188,11 +194,22 @@ class BaseController extends Controller
         return new \Stefanius\SpecialDates\DateParser\Parser();
     }
 
+    /**
+     * @param \DateTime $date
+     *
+     * @return array
+     */
     protected function findSpecialDates(\DateTime $date)
     {
         return $this->getSpecialDateParser()->findSpecialDateByDateTime($date);
     }
 
+    /**
+     * @param $year
+     * @param $monthNumber
+     * 
+     * @return array
+     */
     protected function findSpecialDatesByMonth($year, $monthNumber)
     {
         return $this->getSpecialDateParser()->findSpecialDateByMonthNumber($year, $monthNumber);

@@ -47,6 +47,11 @@ class IsLeapYearExtension extends \Twig_Extension
         return is_integer($number);
     }
 
+    /**
+     * @param $number
+     * 
+     * @return bool
+     */
     protected function canDividedByFour($number)
     {
         return $number % 4 === 0;

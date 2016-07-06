@@ -71,23 +71,21 @@ class Generator
     protected function createCrumb($path, $crumblink, $splitItems, $splitItem, $page, $index)
     {
         if (count($path) === 1) {
-            $crumb = [
+            return [
                 $this->linkKey  => $crumblink,
                 $this->titleKey => 'Home',
             ];
         } elseif ($index === count($splitItems) && $page !== null && property_exists($page, 'title')) {
-            $crumb = [
+            return [
                 $this->linkKey  => $crumblink,
                 $this->titleKey => $page->getTitle(),
             ];
-        } else {
-            $crumb = [
-                $this->linkKey  => $crumblink,
-                $this->titleKey => $this->titleBuilder->build($splitItem, $index, $path),
-            ];
         }
 
-        return $crumb;
+        return [
+            $this->linkKey  => $crumblink,
+            $this->titleKey => $this->titleBuilder->build($splitItem, $index, $path),
+        ];
     }
 
     /**

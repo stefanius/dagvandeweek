@@ -51,9 +51,11 @@ class Generator
     {
         if ($pathElements[0] !== trim($request->getBaseUrl(), '/')) {
             array_unshift($pathElements, '/');
-        } else {
-            $pathElements[0] = '/' . $pathElements[0];
+
+            return $pathElements;
         }
+
+        $pathElements[0] = '/' . $pathElements[0];
 
         return $pathElements;
     }

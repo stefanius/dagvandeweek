@@ -100,17 +100,16 @@ class Generator
     {
         $splitItems = $this->prepareFirstPathElement($request, $this->explodeUrlPath($request->getRequestUri()));
 
-        $crumbs = [];
-        $path   = [];
-        $i      = 0;
+        $crumbs  = [];
+        $path    = [];
+        $counter = 0;
 
         foreach ($splitItems as $splitItem) {
             $path[]    = $splitItem;
-            $crumb     = null;
             $crumblink = '/' . trim(implode('/', $path), '/');
-            $i++;
+            $counter++;
 
-            $crumbs[] = $this->createCrumb($path, $crumblink, $splitItems, $splitItem, $page, $i);
+            $crumbs[] = $this->createCrumb($path, $crumblink, $splitItems, $splitItem, $page, $counter);
         }
 
         return $crumbs;

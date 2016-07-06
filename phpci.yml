@@ -32,4 +32,5 @@ test:
   php_loc:
   php_docblock_checker:
     allowed_warnings: 0
+    skip_classes: true
   php_unit:

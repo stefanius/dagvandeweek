@@ -40,7 +40,7 @@ abstract class AbstractFunctionalTestCase extends WebTestCase
         parent::setUp();
 
         $this->client = $client = static::createClient();
-
+        
         self::runCommand('doctrine:database:create');
         self::runCommand('doctrine:schema:update --force');
     }

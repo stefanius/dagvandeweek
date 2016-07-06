@@ -1,26 +1,24 @@
+# This file is auto-generated during the composer install
 parameters:
-    database_driver:   pdo_mysql
-    database_host:     127.0.0.1
-    database_port:     ~
-    database_name:     dagvandeweek
-    database_user:     homestead
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: dagvandeweek
+    database_user: homestead
     database_password: secret
-
-    mailer_transport:  smtp
-    mailer_host:       127.0.0.1
-    mailer_user:       ~
-    mailer_password:   ~
-
-    locale:            nl
-    secret:            ThisTokenIsNotSoSecretChangeIt
-
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: nl_NL
+    secret: ThisTokenIsNotSoSecretChangeIt
     app.version: 0.0.1
     app.title: DagVanDeWeek
-    app.cmstitle: DagVanDeWeek CMS
-    app.http_entrypoint: http://dagvandeweek.dev
-    app.twitter_name: ~
-    app.twitter_url: ~
-    app.facebook_url: ~
-    app.googleplus_url: ~
-    app.domain: ~
-    app.analyticsid: ~
+    app.cmstitle: 'DagVanDeWeek CMS'
+    app.http_entrypoint: 'http://dagvandeweek.dev'
+    app.twitter_name: null
+    app.twitter_url: null
+    app.facebook_url: null
+    app.googleplus_url: null
+    app.domain: null
+    app.analyticsid: null

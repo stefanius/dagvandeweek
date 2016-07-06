@@ -4,6 +4,9 @@ namespace Stefanius\DagVanDeWeekBundle\Twig\Extension;
 
 class IsLeapYearExtension extends \Twig_Extension
 {
+    /**
+     * @return array
+     */
     public function getFilters()
     {
         return array(
@@ -49,7 +52,7 @@ class IsLeapYearExtension extends \Twig_Extension
 
     /**
      * @param $number
-     * 
+     *
      * @return bool
      */
     protected function canDividedByFour($number)

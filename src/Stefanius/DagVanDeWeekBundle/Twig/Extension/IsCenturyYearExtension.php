@@ -4,6 +4,9 @@ namespace Stefanius\DagVanDeWeekBundle\Twig\Extension;
 
 class IsCenturyYearExtension extends \Twig_Extension
 {
+    /**
+     * @return array
+     */
     public function getFilters()
     {
         return array(

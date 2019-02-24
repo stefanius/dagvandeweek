@@ -1,23 +1,19 @@
----
-ip: "192.168.10.12"
-memory: 2024
-name: dagvandeweek
-cpus: 2
+ip: 192.168.10.25
+memory: 2048
+cpus: 1
 provider: virtualbox
-
 authorize: ~/.ssh/id_rsa.pub
-
 keys:
     - ~/.ssh/id_rsa
-
 folders:
-    - map: ./
-      to: /home/vagrant/dagvandeweek.nl
-
+    -
+        map: /Users/sgrootveld/PhpstormProjects/dagvandeweek
+        to: /home/vagrant/code
 sites:
-    - map: dagvandeweek.dev
-      to: /home/vagrant/dagvandeweek.nl/web
-      type: symfony
-
+    -
+        map: dagvandeweek.test
+        to: /home/vagrant/code/public
 databases:
-    - dagvandeweek
+    - homestead
+name: dagvandeweek
+hostname: dagvandeweek

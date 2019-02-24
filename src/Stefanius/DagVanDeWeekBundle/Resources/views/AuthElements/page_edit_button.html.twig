@@ -1,5 +1,0 @@
-{% if auth is defined and page is defined and page.id is defined %}
-    {% if auth == true and page.id|length > 0 and page.id > 0 %}
-        <div><a class="btn btn-success" href="/cms/page/{{ page.id }}">Bewerken</a></div>
-    {% endif %}
-{% endif %}

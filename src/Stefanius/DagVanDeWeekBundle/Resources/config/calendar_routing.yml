@@ -1,9 +1,0 @@
-stef_dag_van_de_week_calendar_show:
-    path:  /kalender/{year}
-    defaults: { _controller: StefaniusDagVanDeWeekBundle:Calendar:show }
-    methods: [GET]
-
-stef_dag_van_de_week_calendar_index:
-    path:  /kalender
-    defaults: { _controller: StefaniusDagVanDeWeekBundle:Calendar:showIndex }
-    methods: [GET]

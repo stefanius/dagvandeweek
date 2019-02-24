@@ -1,11 +1,13 @@
 <?php
 
-namespace App\User;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
+    protected $table = 'persons';
+
     /**
      * The attributes that are mass assignable.
      *

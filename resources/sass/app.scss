@@ -6,7 +6,10 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import '~bulma/bulma';
+
+// Import Admin panel
+@import "admin";
 
 .navbar-laravel {
   background-color: #fff;

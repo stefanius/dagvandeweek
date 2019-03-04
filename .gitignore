@@ -10,3 +10,6 @@
 npm-debug.log
 yarn-error.log
 .vagrant
+mix-manifest.json
+node_modules/*
+

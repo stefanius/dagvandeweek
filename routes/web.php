@@ -17,5 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('articles', 'Backend\ArticlesController');
-Route::resource('persons', 'Backend\PersonsController');
+Route::middleware([])->as('backend.')->group(function () {
+    Route::resource('articles', 'Backend\ArticlesController');
+    Route::resource('persons', 'Backend\PersonsController');
+});
